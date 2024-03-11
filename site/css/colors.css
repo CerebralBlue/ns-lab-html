@@ -1,0 +1,24 @@
+body {
+  --color-logo-top: #fff;
+  --color-fg-default: #01090f;
+  --color-fg-secondary: #666;
+  --color-fg-primary: #0d67b4;
+  --color-fg-accent: #185183;
+  --color-href-links: #338dc2;
+  --color-canvas-default: #f8f8f8;  
+  --color-nav-hover: #cdcfd4;
+  --color-nav-expanded: #e6e7e9;
+
+
+
+  --color-canvas-sidebar: #f2f2f2; 
+  --image-canvas-default: linear-gradient(180deg, #185183 30%, #2C8FA7 60%);
+  --color-canvas-subtle: #96c3eb;
+  --color-border-default: #8badde;
+  --color-border-muted: #8badde;
+  --color-neutral-muted: rgba(110,118,129,0.4);
+  --color-accent-hover-fg: #f2984b;
+  --color-accent-emphasis: #1f6feb;
+  --color-attention-subtle: rgba(187,128,9,0.15);
+  --color-danger-fg: #f85149;
+}

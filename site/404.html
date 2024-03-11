@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="https://labs.neuralseek.com//img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="NeuralSeek Learning Labs" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="https://labs.neuralseek.com//css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="https://labs.neuralseek.com//css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="https://labs.neuralseek.com//css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://labs.neuralseek.com//css/highlight-github-theme.css">
+    <link rel="stylesheet" href="https://labs.neuralseek.com//css/highlightjs-copy.css">
+    <link href="https://labs.neuralseek.com//css/base.css" rel="stylesheet">
+    <link href="https://labs.neuralseek.com///css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://labs.neuralseek.com//js/jquery-3.2.1.min.js"></script>
+    <script src="https://labs.neuralseek.com//js/bootstrap-3.3.7.min.js"></script>
+    <script src="https://labs.neuralseek.com//js/highlight.min.js"></script>
+    <script src="https://labs.neuralseek.com//js/highlightjs-copy.min.js"></script>
+    <script src="https://labs.neuralseek.com//js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = 'https://labs.neuralseek.com/';
+  var is_top_frame = false;
+    var page_toc = null;
+
+</script>
+    <script src="https://labs.neuralseek.com//js/base.js"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+</head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="https://labs.neuralseek.com//search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="https://labs.neuralseek.com//img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+
+
+  <style>
+    .wm-content-pane {
+      padding-left: 0;
+    }
+    #wm-toc-button, .wm-header__option, .wm-top-tool  {
+      display: none;
+    }
+  </style>
+
+  <h1 style="text-align: center">404 - Page not found</h1>
+
+  <h3 style="text-align: center" id="search">Redirecting to search...</h3>
+
+  <script>
+    window.onload = function() {
+      let pathSegments = window.location.pathname.replace(/#/g, '').split('/');
+      if (pathSegments.length > 0) {
+        let lastSegment = pathSegments.pop();
+        while (pathSegments.length && !lastSegment) {
+          lastSegment = pathSegments.pop();
+        }
+
+        if (!lastSegment)
+          return;
+
+        let queryParts = lastSegment.split(/[-_]/);
+        
+        let query = queryParts.join(' ');
+        setTimeout(function() {
+          window.location.href = `https://labs.neuralseek.com//search.html?q=${encodeURIComponent(query)}`;
+        }, 3000); 
+      } 
+
+    }
+  </script>
+
+
+    
+      <br>
+        
+
+        <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://labs.neuralseek.com//scripts/watson.js"></script>
+<script> loadWatson(); </script>
+</body>
+</html>
