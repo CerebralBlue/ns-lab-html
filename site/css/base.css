@@ -411,7 +411,7 @@ p:has(.glightbox) {
   display: inline-block;
   max-width: 48%;
   white-space: nowrap;
-  color: #546e7a;
+  color: var(--color-fg-accent);
   text-align: right;
 }
 
@@ -424,7 +424,7 @@ p:has(.glightbox) {
 }
 
 .wm-article-nav > a, .wm-article-nav > a:visited, .wm-article-nav > a:hover, .wm-article-nav > a:focus {
-  color: #546e7a;
+  color: var(--color-fg-accent);
   text-decoration: none;
   outline: none;
 }
