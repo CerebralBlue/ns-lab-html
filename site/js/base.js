@@ -2,15 +2,6 @@
 /* exported getParam, onIframeLoad */
 "use strict";
 
-// The full page consists of a main window with navigation and table of contents, and an inner
-// iframe containing the current article. Which article is shown is determined by the main
-// window's #hash portion of the URL. In fact, we use the simple rule: main window's URL of
-// "rootUrl#relPath" corresponds to iframe's URL of "rootUrl/relPath".
-//
-// The main frame and the contents of the index page actually live in a single generated html
-// file: the outer frame hides one half, and the inner hides the other. TODO: this should be
-// possible to greatly simplify after mkdocs-1.0 release.
-
 var mainWindow = window;
 //var mainWindow = is_top_frame ? window : (window.parent !== window ? window.parent : null);
 var iframeWindow = null;
@@ -46,21 +37,22 @@ function qualifyUrl(url) {
 }
 
 /**
- * Turns an absolute path to relative, stripping out rootUrl + separator.
+ * Turns an absolute path to relative, stripping out rootUrl and optionally preserving the anchor link.
  */
 function getRelPath(targetAbsolutePath, preserveLinkHashes) {
-  if (!targetAbsolutePath.startsWith(base_url))
+  if (targetAbsolutePath.startsWith(rootUrl) || targetAbsolutePath.startsWith('..')) {
+    if (!preserveLinkHashes) {
+      targetAbsolutePath = targetAbsolutePath.split('#')[0];
+    }
+  } else {
     return targetAbsolutePath;
+  }
   
   const targetPath = targetAbsolutePath.replace(/^https?:\/\/[^\/]+/, '');
   const currentPath = window.location.pathname;
   const depth = (currentPath.match(/\//g) || []).length;
   const relativePrefix = '../'.repeat(depth - 1); 
   let r = relativePrefix + targetPath.substring(1); 
-  if (!preserveLinkHashes) {
-    r = r.split('#')[0];
-  }
-
   //console.log(r);
   return r;
 }
