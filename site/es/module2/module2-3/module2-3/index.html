@@ -57,6 +57,7 @@
       ]},
       {title: "Adding Intents to Virtual Agent", url: "#adding-intents-to-virtual-agent", children: [
           {title: "IBM watsonx Assistant", url: "#ibm-watsonx-assistant" },
+          {title: "AWS Lex", url: "#aws-lex" },
       ]},
       {title: "Round-Trip Monitoring", url: "#round-trip-monitoring", children: [
       ]},
@@ -477,8 +478,7 @@
 <p>Upload these files into their respective virtual agent platforms to bootstrap your project with manually curated intents. </p>
 <h4 id="ibm-watsonx-assistant">IBM watsonx Assistant<a class="headerlink" href="#ibm-watsonx-assistant" title="Permanent link"></a></h4>
 <ul>
-<li>Navigate to your watsonx Assistant project</li>
-<li>Click on Actions</li>
+<li>Navigate to your watsonx Assistant project and click on Actions.</li>
 <li>In the top right corner, click the gear icon to open Global Settings</li>
 </ul>
 <p><a class="glightbox" href="../../../../module2/module2-3/images/image-021.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gear_icon-021" src="../../../../module2/module2-3/images/image-021.png" /></a></p>
@@ -513,6 +513,37 @@
 <p><a class="glightbox" href="../../../../module2/module2-3/images/image-027.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_actions-027" src="../../../../module2/module2-3/images/image-027.png" /></a>
 <a class="glightbox" href="../../../../module2/module2-3/images/image-028.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_action-028" src="../../../../module2/module2-3/images/image-028.png" /></a>
 <a class="glightbox" href="../../../../module2/module2-3/images/image-029.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_action-029" src="../../../../module2/module2-3/images/image-029.png" /></a></p>
+<h4 id="aws-lex">AWS Lex<a class="headerlink" href="#aws-lex" title="Permanent link"></a></h4>
+<ul>
+<li>Log into AWS Management Console and navigate to AWS Lex &gt; Bots. You should see a list of available bots to merge with NeuraSeek.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/available_bots.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="available_bots" src="../../../../module2/module2-3/images/available_bots.png" /></a></p>
+<ul>
+<li>In the Bots list in the main view, select the desired bot and click Action &gt; Export. An Export Bot: dialog is shown. Leave all the default values and click Export. A blue banner is shown to indicate exporting followed by a green banner when successfully exported/downloaded.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/bot_export_dialog.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="export_bot" src="../../../../module2/module2-3/images/bot_export_dialog.png" /></a></p>
+<ul>
+<li>Navigate into your NeuralSeek instance and click on the Curate tab. Click on the <code>Import Base AWS Lex V2</code> button in the upper right corner.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/import_aws_base1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="import_base1" src="../../../../module2/module2-3/images/import_aws_base1.png" /></a></p>
+<ul>
+<li>Import the zipped AWS Lex file you exported from the Lex bot. The button will switch to <code>Base AWS Lex V2 Uploaded</code>. After import, intents will not get added to the content list, but duplicates will show an indicator if certain intents are already present.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/import_aws_base.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="import_base" src="../../../../module2/module2-3/images/import_aws_base.png" /></a></p>
+<ul>
+<li>Select the desired intents that you want to export into AWS Lex by checking the boxes next to the intent. Upon selection, a new button <code>Export to AWS Lex V2</code> will appear. Click the button to download a zipped file containing the intents. </li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/aws_intent_selection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="selected_intents" src="../../../../module2/module2-3/images/aws_intent_selection.png" /></a></p>
+<ul>
+<li>Navigate back to the Amazon Lex &gt; Bots screen in the AWS Management Console, and click Actions &gt; Import.</li>
+<li>Fill in the new Bot name, browse for the zip file, set the COPPA yes/no, set the IAM permissions, and then scroll down and click Import. You'll see a blue banner that the bot is being imported followed by a successfully imported banner.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/import_lex_bot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="aws_import_screen" src="../../../../module2/module2-3/images/import_lex_bot.png" /></a></p>
+<ul>
+<li>Find the imported bot in the bots list and open it by clicking on its name. The details for the merged bot is shown. Notice the Intents section in the left pane has both the original intents and the NeuralSeek intents merged into a single bot.</li>
+<li>Click the build button. You can now test the newly imported intents.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/build_bot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="build_button" src="../../../../module2/module2-3/images/build_bot.png" /></a></p>
 <h2 id="round-trip-monitoring">Round-Trip Monitoring<a class="headerlink" href="#round-trip-monitoring" title="Permanent link"></a></h2>
 <p>Navigate to the Integrate tab within NeuralSeek. 
 The available options containing <strong>"Logs"</strong> provide step-by-step instruction on implementing Round-Trip monitoring on deployed NeuralSeek Intents specific to the cloud provider. </p>
