@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/module3/module3-1/module3-1/">
+    <link rel="shortcut icon" href="../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>3.1 - mAIstro Tour - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="3.1 - mAIstro Tour" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../css/highlightjs-copy.css">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.min.js"></script>
+    <script src="../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Visual Editor", url: "#visual-editor", children: [
+      ]},
+      {title: "Add a Node", url: "#add-a-node", children: [
+          {title: "Configure the Website Text Node", url: "#configure-the-website-text-node" },
+      ]},
+      {title: "Add a Second Node", url: "#add-a-second-node", children: [
+          {title: "Chain the LLM Node", url: "#chain-the-llm-node" },
+          {title: "Configure the LLM Node", url: "#configure-the-llm-node" },
+      ]},
+      {title: "Add a Third Node", url: "#add-a-third-node", children: [
+          {title: "Configure the LLM Node", url: "#configure-the-llm-node_1" },
+      ]},
+      {title: "Evaluate the mAIstro Flow", url: "#evaluate-the-maistro-flow", children: [
+          {title: "Download Generated Contents", url: "#download-generated-contents" },
+      ]},
+      {title: "Debug the Flow", url: "#debug-the-flow", children: [
+      ]},
+      {title: "Save the Template", url: "#save-the-template", children: [
+      ]},
+      {title: "Continue to Explore", url: "#continue-to-explore", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev1   "><a href="../../../" class="wm-article-link wm-toc-text">Getting Started</a>
+</li>
+        
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Module 1</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module1/module1/" class="wm-article-link wm-toc-text">Overview</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">IBM Users</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introduction</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Set Up NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Set Up Virtual Agent</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrate NeuralSeek Custom Extension</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">AWS Users</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introduction</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Launch NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Set Up NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrate Virtual Agent</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Module 2</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module2/module2/" class="wm-article-link wm-toc-text">Overview</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Seeking Answers</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Caching Answers</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Curated Intents</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Intent Categorization</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Module 3</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module3/module3/" class="wm-article-link wm-toc-text">Overview</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Example Templates</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev1   "><a href="../../../closing/closing/" class="wm-article-link wm-toc-text">Closing Steps</a>
+</li>
+        
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Additional Information</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../additional_info/ibm_LLM/ibm_module1-7/" class="wm-article-link wm-toc-text">IBM - Connect LLM</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">AWS Users</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../additional_info/aws_LLM/aws_module1-4/" class="wm-article-link wm-toc-text">AWS - Connect LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../additional_info/aws_LLM/kendra_keys/" class="wm-article-link wm-toc-text">Access Keys</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../module3-2/module3-2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../module3-2/module3-2/" class="btn btn-xs btn-link">
+        3.2 - Example Templates
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module3/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module3/" class="btn btn-xs btn-link">
+        Overview
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          <p>Users will walk through an initial tour of mAIstro to learn how to effectively configure different nodes, modify natural language prompts to the Large Language Model, and generate content within the mAIstro's unique editors. </p>
+<h2 id="visual-editor">Visual Editor<a class="headerlink" href="#visual-editor" title="Permanent link"></a></h2>
+<p>The <strong>Visual Editor</strong> is the easiest way to use mAIstro. In the Visual Editor, nodes connect horizontally (called chains) and vertically. Nodes are executed starting in the upper left. As the execution runs, for each vertical level any chain existing at that level will be evaluated before continuing down.</p>
+<h2 id="add-a-node">Add a Node<a class="headerlink" href="#add-a-node" title="Permanent link"></a></h2>
+<p>On the sidebar menu, navigate to the <strong>Get Data</strong> section.</p>
+<ul>
+<li>Click on the <strong>Website Text</strong> node.
+The node will populate as a box inside the Visual Editor. </li>
+</ul>
+<p><a class="glightbox" href="../images/add_text_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_text_node" src="../images/add_text_node.png" /></a></p>
+<h4 id="configure-the-website-text-node">Configure the Website Text Node<a class="headerlink" href="#configure-the-website-text-node" title="Permanent link"></a></h4>
+<p>Click on the node box, and a properties panel will appear on the side. </p>
+<ul>
+<li>Add a URL to the configuration, for example: <code>https://neuralseek.com</code>.</li>
+</ul>
+<p><a class="glightbox" href="../images/add_url_text_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_url_text_node" src="../images/add_url_text_node.png" /></a></p>
+<h2 id="add-a-second-node">Add a Second Node<a class="headerlink" href="#add-a-second-node" title="Permanent link"></a></h2>
+<p>On the sidebar menu, navigate to the <strong>Generate Data</strong> section.</p>
+<ul>
+<li>Click on the <strong>Send to LLM</strong> node.
+The new node will populate as a box inside the Visual Editor. </li>
+</ul>
+<p><a class="glightbox" href="../images/add_first_LLM_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_first_LLM_node" src="../images/add_first_LLM_node.png" /></a></p>
+<h4 id="chain-the-llm-node">Chain the LLM Node<a class="headerlink" href="#chain-the-llm-node" title="Permanent link"></a></h4>
+<p>Click on the LLM node, and drag it to attach to the right side of the Website Text node, forming a chain.</p>
+<p><a class="glightbox" href="../images/chain_first_LLM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="chain_first_LLM" src="../images/chain_first_LLM.png" /></a></p>
+<h4 id="configure-the-llm-node">Configure the LLM Node<a class="headerlink" href="#configure-the-llm-node" title="Permanent link"></a></h4>
+<p>By clicking on the node, a properties panel will appear. </p>
+<ul>
+<li>Add a prompt inside the panel to make a bullet list from our scraped website. For example: <code>Create a bulleted list of the major topics from the documentation below.</code></li>
+</ul>
+<p><a class="glightbox" href="../images/configure_LLM_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configure_LLM_node" src="../images/configure_LLM_node.png" /></a></p>
+<h2 id="add-a-third-node">Add a Third Node<a class="headerlink" href="#add-a-third-node" title="Permanent link"></a></h2>
+<p>On the sidebar menu, navigate to the <strong>Generate Data</strong> section. </p>
+<ul>
+<li>Click on the <strong>Send to LLM</strong> node.
+The new node will populate as a box inside the Visual Editor. </li>
+</ul>
+<p><a class="glightbox" href="../images/add_second_LLM_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_second_LLM_node" src="../images/add_second_LLM_node.png" /></a></p>
+<h4 id="configure-the-llm-node_1">Configure the LLM Node<a class="headerlink" href="#configure-the-llm-node_1" title="Permanent link"></a></h4>
+<p>Notice how the second LLM node populated below the horizontal chain. </p>
+<ul>
+<li>Click on the node and a properties panel will appear. </li>
+<li>Add a prompt inside the panel to make a LinkedIn post based on the bulleted list generated from the scraped website. For example: <code>Create a LinkedIn post based on the bulleted list below.  Use lots of hashtags.</code></li>
+</ul>
+<p><a class="glightbox" href="../images/configure_LLM_node_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configure_LLM_node_2" src="../images/configure_LLM_node_2.png" /></a></p>
+<h2 id="evaluate-the-maistro-flow">Evaluate the mAIstro Flow<a class="headerlink" href="#evaluate-the-maistro-flow" title="Permanent link"></a></h2>
+<p>Let's run our flow! </p>
+<ul>
+<li>Click the blue <strong>Evaluate</strong> button on the bottom bar.
+Your generated content appears in this panel. </li>
+</ul>
+<p><a class="glightbox" href="../images/evaluate_flow.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="evaluate_flow" src="../images/evaluate_flow.png" /></a></p>
+<h4 id="download-generated-contents">Download Generated Contents<a class="headerlink" href="#download-generated-contents" title="Permanent link"></a></h4>
+<p>Optionally, you can also download it in MS Word or CSV formats.</p>
+<ul>
+<li>Click the <strong>Microsoft Word</strong> option next to <strong>Output Format</strong> to download the newly generated content as an MS Word document. </li>
+</ul>
+<p><a class="glightbox" href="../images/download_ms_word.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="download_output" src="../images/download_ms_word.png" /></a></p>
+<h2 id="debug-the-flow">Debug the Flow<a class="headerlink" href="#debug-the-flow" title="Permanent link"></a></h2>
+<p>Click on the bug icon in the top right corner to see the full path of the evaluation, plus all the context variables. </p>
+<ul>
+<li>Click on each step to expand the full evaluation. </li>
+<li><strong>Step #1: web</strong> <ul>
+<li>Notice the contents generated from the scrape of the given URL, in this example <code>https://neuralseek.com</code>. </li>
+<li><a class="glightbox" href="../images/inspect_step1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="inspect_step1" src="../images/inspect_step1.png" /></a></li>
+</ul>
+</li>
+<li><strong>Step #2: LLM</strong><ul>
+<li>Notice the chain link icon next to this step to indicate that this is a chained node. </li>
+<li>The contents generated show a bulleted list of major topics from the documentation that was pulled from the scraped website, just as the prompt indicates. </li>
+<li><a class="glightbox" href="../images/inspect_step2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="inspect_step2" src="../images/inspect_step2.png" /></a></li>
+</ul>
+</li>
+<li><strong>Step #3: LLM</strong><ul>
+<li>Notice the contents generated here are the same as the resulting contents from clicking the Evaluate button. This is due to it being the final step in the flow.</li>
+<li>The generated contents show a LinkedIn blog post with lots of hashtags based on the bulleted list of major features generated in Step #2, just as the prompt indicates. </li>
+<li><a class="glightbox" href="../images/inspect_step3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="inspect_step3" src="../images/inspect_step3.png" /></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="save-the-template">Save the Template<a class="headerlink" href="#save-the-template" title="Permanent link"></a></h2>
+<p>You can save templates for future use and to call by name via the API by clicking on the Save button on the bottom bar.</p>
+<ul>
+<li>Add a unique name to the template, for example: <code>Lab_Tour</code>. </li>
+<li>Optionally add a unique description for ease of navigation. For example: <code>A LinkedIn post based on a list of features from NeuralSeek's website.</code>.</li>
+</ul>
+<p><a class="glightbox" href="../images/save_maistrotour_template.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_maistrotour_template" src="../images/save_maistrotour_template.png" /></a></p>
+<p>You can also download an OpenAPI spec of the flow with all the required parameters to easily import into other tools, like a virtual agent, by clicking on the <strong>Generate OpenAPI Spec</strong> button on the bottom bar.</p>
+<p><a class="glightbox" href="../images/openapi_spec_maistrotour.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="openapi_spec_maistrotour" src="../images/openapi_spec_maistrotour.png" /></a></p>
+<h2 id="continue-to-explore">Continue to Explore<a class="headerlink" href="#continue-to-explore" title="Permanent link"></a></h2>
+<p>This covers the basics of the mAIstro.</p>
+<ul>
+<li>Click <strong>Next</strong> to continue to the wide variety of output generation with various example templates, data selection options, modifications to the data, and unique generative data prompts on NeuralSeek's mAIstro platform.  </li>
+</ul>
+            <br>
+            
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../module3-2/module3-2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../module3-2/module3-2/" class="btn btn-xs btn-link">
+        3.2 - Example Templates
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module3/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module3/" class="btn btn-xs btn-link">
+        Overview
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>
