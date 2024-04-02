@@ -8,25 +8,25 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/additional_info/aws_LLM/aws_module1-4/</loc>
+        <loc>https://labs.neuralseek.com/additional_info/aws_llm_info/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_LLM/aws_module1-4/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_LLM/aws_module1-4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_llm_info/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_llm_info/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/additional_info/aws_LLM/kendra_keys/</loc>
+        <loc>https://labs.neuralseek.com/additional_info/ibm_llm_info/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_LLM/kendra_keys/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_LLM/kendra_keys/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_llm_info/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_llm_info/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/additional_info/ibm_LLM/ibm_module1-7/</loc>
+        <loc>https://labs.neuralseek.com/additional_info/kendra_keys/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_LLM/ibm_module1-7/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_LLM/ibm_module1-7/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/kendra_keys/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/kendra_keys/"/>
     </url>
     <url>
         <loc>https://labs.neuralseek.com/closing/closing/</loc>
@@ -162,25 +162,25 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/es/additional_info/aws_LLM/aws_module1-4/</loc>
+        <loc>https://labs.neuralseek.com/es/additional_info/aws_llm_info/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_LLM/aws_module1-4/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_LLM/aws_module1-4/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_llm_info/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_llm_info/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/es/additional_info/aws_LLM/kendra_keys/</loc>
+        <loc>https://labs.neuralseek.com/es/additional_info/ibm_llm_info/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_LLM/kendra_keys/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_LLM/kendra_keys/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_llm_info/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_llm_info/"/>
     </url>
     <url>
-        <loc>https://labs.neuralseek.com/es/additional_info/ibm_LLM/ibm_module1-7/</loc>
+        <loc>https://labs.neuralseek.com/es/additional_info/kendra_keys/</loc>
         <lastmod>2024-04-02</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_LLM/ibm_module1-7/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_LLM/ibm_module1-7/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/kendra_keys/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/kendra_keys/"/>
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/closing/closing/</loc>
