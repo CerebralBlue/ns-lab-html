@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module3/module3-2/module3-2/">
+    <link rel="shortcut icon" href="../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>3.2 - Modelos de Exemplo - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="3.2 - Modelos de Exemplo" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../css/highlightjs-copy.css">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../js/highlight.min.js"></script>
+    <script src="../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Carregar Modelo", url: "#carregar-modelo", children: [
+      ]},
+      {title: "N\u00f3s Preenchidos", url: "#nos-preenchidos", children: [
+          {title: "N\u00f3 de Texto", url: "#no-de-texto" },
+          {title: "N\u00f3 de Busca de KB", url: "#no-de-busca-de-kb" },
+          {title: "N\u00f3 Enviar para LLM", url: "#no-enviar-para-llm" },
+      ]},
+      {title: "Avaliar o Fluxo mAIstro", url: "#avaliar-o-fluxo-maistro", children: [
+      ]},
+      {title: "Configurar o N\u00f3 LLM", url: "#configurar-o-no-llm", children: [
+      ]},
+      {title: "Depurar o Fluxo", url: "#depurar-o-fluxo", children: [
+      ]},
+      {title: "Baixar Conte\u00fados Gerados", url: "#baixar-conteudos-gerados", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../closing/closing/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../closing/closing/" class="btn btn-xs btn-link">
+        Passos de Encerramento
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module3-1/module3-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module3-1/module3-1/" class="btn btn-xs btn-link">
+        3.1 - mAIstro Tour
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>3.2 - Modelos de Exemplo</h1>
+          
+          <p>NeuralSeek's mAIstro oferece vários modelos de exemplo adaptáveis com uma variedade de capacidades mais adequadas ao seu caso de uso.</p>
+<h2 id="carregar-modelo">Carregar Modelo<a class="headerlink" href="#carregar-modelo" title="Permanent link"></a></h2>
+<p>A tela introdutória do recurso mAIstro da NeuralSeek mostrará as opções para <strong>Modelos de Exemplo</strong> e <strong>Modelos de Usuário</strong>.</p>
+<ul>
+<li>Clique em <strong>Modelos de Exemplo</strong>, em seguida, escolha a opção <strong>Escrever um Memorando</strong>.</li>
+</ul>
+<p>Se você navegou para fora da tela introdutória, então clique no botão <strong>Carregar</strong> na parte inferior da tela para acessar as mesmas opções.</p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/load_template.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="load_template" src="../../../../module3/module3-2/images/load_template.png" /></a>
+<a class="glightbox" href="../../../../module3/module3-2/images/choose_memo.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="choose_memo" src="../../../../module3/module3-2/images/choose_memo.png" /></a></p>
+<h2 id="nos-preenchidos">Nós Preenchidos<a class="headerlink" href="#nos-preenchidos" title="Permanent link"></a></h2>
+<p>Dentro do Editor Visual, o fluxo de exemplo será preenchido e mostrará três nós. Vamos explorá-los mais a fundo.</p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_template.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_template" src="../../../../module3/module3-2/images/memo_template.png" /></a></p>
+<h4 id="no-de-texto">Nó de Texto<a class="headerlink" href="#no-de-texto" title="Permanent link"></a></h4>
+<p>O primeiro nó do fluxo modelo é um nó de <strong>Texto</strong>.</p>
+<ul>
+<li>Clique na caixa do nó para mostrar o painel de propriedades. Dentro dele, há um prompt pré-escrito em linguagem natural que diz <code>Write a memo to staff discussing the following capabilites:</code>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_text_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_text_node" src="../../../../module3/module3-2/images/memo_text_node.png" /></a></p>
+<h4 id="no-de-busca-de-kb">Nó de Busca de KB<a class="headerlink" href="#no-de-busca-de-kb" title="Permanent link"></a></h4>
+<p>O segundo nó do fluxo modelo é um nó de <strong>Busca de KB</strong>.</p>
+<ul>
+<li>Clique na caixa do nó para mostrar o painel de propriedades.</li>
+<li>Usando palavras-chave, execute uma consulta diretamente no KnowledgeBase conectado. Neste exemplo, vamos substituir cognos analytics por <code>filtering</code>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_kbsearch_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_kbsearch_node" src="../../../../module3/module3-2/images/memo_kbsearch_node.png" /></a></p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memoKBsearch_Edited.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memoKBsearch_Edited" src="../../../../module3/module3-2/images/memoKBsearch_Edited.png" /></a></p>
+<h4 id="no-enviar-para-llm">Nó Enviar para LLM<a class="headerlink" href="#no-enviar-para-llm" title="Permanent link"></a></h4>
+<p>O terceiro nó do fluxo modelo é um nó de <strong>Enviar para LLM</strong>.</p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memoLLM_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memoLLM_node" src="../../../../module3/module3-2/images/memoLLM_node.png" /></a></p>
+<h2 id="avaliar-o-fluxo-maistro">Avaliar o Fluxo mAIstro<a class="headerlink" href="#avaliar-o-fluxo-maistro" title="Permanent link"></a></h2>
+<p>Vamos executar o nosso fluxo!</p>
+<ul>
+<li>Clique no botão azul <strong>Avaliar</strong> na barra inferior.</li>
+<li>Observe que o conteúdo gerado aparece no painel inferior, incluindo um cabeçalho, linha de assunto, recursos-chave em forma de tópicos e algumas parágrafos de texto.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_first_output.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_first_output" src="../../../../module3/module3-2/images/memo_first_output.png" /></a></p>
+<h2 id="configurar-o-no-llm">Configurar o Nó LLM<a class="headerlink" href="#configurar-o-no-llm" title="Permanent link"></a></h2>
+<p>Clique no nó <strong>Enviar para LLM</strong> para mostrar o painel de propriedades.</p>
+<ul>
+<li>Usando linguagem natural, opcionalmente, adicione um prompt adicional ao Large Language Model. Por exemplo, adicione <code>Limit to one paragraph</code>.</li>
+<li>Clique no botão azul <strong>Avaliar</strong> para gerar uma nova saída.</li>
+</ul>
+<p>Observe que essa saída é significativamente mais curta e formatada como um único parágrafo.</p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_LLM_edited.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_LLM_edited" src="../../../../module3/module3-2/images/memo_LLM_edited.png" /></a></p>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/memo_second_eval.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_second_eval" src="../../../../module3/module3-2/images/memo_second_eval.png" /></a></p>
+<h2 id="depurar-o-fluxo">Depurar o Fluxo<a class="headerlink" href="#depurar-o-fluxo" title="Permanent link"></a></h2>
+<p>Clique no ícone de inseto no canto superior direito para ver o caminho completo da avaliação, além de todas as variáveis de contexto.</p>
+<ul>
+<li>Clique em cada etapa para expandir a avaliação completa.</li>
+<li><strong>Etapa #1: text</strong><ul>
+<li>O prompt em linguagem natural é mostrado.</li>
+<li><a class="glightbox" href="../../../../module3/module3-2/images/memo_inspector_step1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_inspector_step1" src="../../../../module3/module3-2/images/memo_inspector_step1.png" /></a></li>
+</ul>
+</li>
+<li><strong>Etapa #2: kb</strong><ul>
+<li>O conteúdo gerado mostra as informações resultantes retiradas de nossa documentação de origem com base na consulta solicitada.</li>
+<li><a class="glightbox" href="../../../../module3/module3-2/images/memo_inspector_step2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_inspector_step2" src="../../../../module3/module3-2/images/memo_inspector_step2.png" /></a></li>
+</ul>
+</li>
+<li><strong>Etapa #3: LLM</strong><ul>
+<li>Observe que o conteúdo gerado aqui é o mesmo que o conteúdo resultante ao clicar no botão Avaliar. Isso ocorre porque esta é a etapa final do fluxo.</li>
+<li>O conteúdo gerado mostra um memorando de um parágrafo para nossa equipe com base no conteúdo gerado na Etapa #2, assim como o prompt indica.</li>
+<li><a class="glightbox" href="../../../../module3/module3-2/images/memo_inspector_step3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="memo_inspector_step3" src="../../../../module3/module3-2/images/memo_inspector_step3.png" /></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="baixar-conteudos-gerados">Baixar Conteúdos Gerados<a class="headerlink" href="#baixar-conteudos-gerados" title="Permanent link"></a></h2>
+<p>Opcionalmente, você também pode baixá-los nos formatos MS Word ou CSV.</p>
+<ul>
+<li>Clique na opção <strong>Microsoft Word</strong> ao lado de <strong>Formato de Saída</strong> para baixar o conteúdo recém-gerado como um documento MS Word.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module3/module3-2/images/download_ms_word.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="download_ms_word" src="../../../../module3/module3-2/images/download_ms_word.png" /></a>
+<a class="glightbox" href="../../../../module3/module3-2/images/ms_word.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ms_word" src="../../../../module3/module3-2/images/ms_word.png" /></a></p>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../closing/closing/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../closing/closing/" class="btn btn-xs btn-link">
+        Passos de Encerramento
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module3-1/module3-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module3-1/module3-1/" class="btn btn-xs btn-link">
+        3.1 - mAIstro Tour
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

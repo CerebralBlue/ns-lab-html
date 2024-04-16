@@ -139,6 +139,12 @@
             </a>
           </li>
         
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -406,25 +412,31 @@ For this lab, we recommend "<strong>LexV2 Lambda</strong>".</p>
 <p>Download the Lambda Archive .zip file to your local storage.</p>
 <p><a class="glightbox" href="../images/image1.5.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.3" src="../images/image1.5.3.png" /></a></p>
 <h2 id="create-a-function">Create a Function<a class="headerlink" href="#create-a-function" title="Permanent link"></a></h2>
-<p>Click the link to open the <a href="https://console.aws.amazon.com/lambda/home#/functions" target="_blank">Functions</a> page on the AWS Lambda console to create a function from scratch.
-- <strong>(a)</strong> Select "Create Function".
-- <strong>(b)</strong> Add a “Function Name”. For this lab, we recommend “learning-lab”.
-- <strong>(c)</strong> Click “Create Function”.</p>
+<p>Click the link to open the <a href="https://console.aws.amazon.com/lambda/home#/functions" target="_blank">Functions</a> page on the AWS Lambda console to create a function from scratch.</p>
+<ul>
+<li><strong>(a)</strong> Select "Create Function".</li>
+<li><strong>(b)</strong> Add a “Function Name”. For this lab, we recommend “learning-lab”.</li>
+<li><strong>(c)</strong> Click “Create Function”.</li>
+</ul>
 <p><a class="glightbox" href="../images/image1.5.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.4" src="../images/image1.5.4.png" /></a></p>
 <p><a class="glightbox" href="../images/image1.5.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.5" src="../images/image1.5.5.png" /></a></p>
 <h2 id="upload-the-downloaded-zip-file">Upload the downloaded .zip File<a class="headerlink" href="#upload-the-downloaded-zip-file" title="Permanent link"></a></h2>
-<p>Navigate to the Code Source pane in the AWS Lambda Function console. 
-- <strong>(a)</strong> Click “Upload from”. Click “.zip file”.
-- <strong>(b)</strong> Click “Upload” to select your Lambda Archive .zip file you downloaded.
-- <strong>(c)</strong> Click “Save”.</p>
+<p>Navigate to the Code Source pane in the AWS Lambda Function console. </p>
+<ul>
+<li><strong>(a)</strong> Click “Upload from”. Click “.zip file”.</li>
+<li><strong>(b)</strong> Click “Upload” to select your Lambda Archive .zip file you downloaded.</li>
+<li><strong>(c)</strong> Click “Save”.</li>
+</ul>
 <p><a class="glightbox" href="../images/image1.5.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.6" src="../images/image1.5.6.png" /></a></p>
 <p><a class="glightbox" href="../images/image1.5.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.7" src="../images/image1.5.7.png" /></a></p>
 <h2 id="edit-the-code-block">Edit the Code Block<a class="headerlink" href="#edit-the-code-block" title="Permanent link"></a></h2>
 <p>On the NeuralSeek "Integrate" page, copy the provided API key and Instance URL mentioned in the NeuralSeek's integration page.
-Navigate to the Code Source pane in the AWS Lambda Function console. 
-- <strong>(a)</strong> Click on the “index.mjs” file tab. 
-- <strong>(b)</strong> Enter the copied API key and Instance URL into the code block.
-- <strong>(c)</strong> Within the "messages" array, delete the section containing the contentType: "CustomPayload" from the code block.</p>
+Navigate to the Code Source pane in the AWS Lambda Function console. </p>
+<ul>
+<li><strong>(a)</strong> Click on the “index.mjs” file tab. </li>
+<li><strong>(b)</strong> Enter the copied API key and Instance URL into the code block.</li>
+<li><strong>(c)</strong> Within the "messages" array, delete the section containing the contentType: "CustomPayload" from the code block.</li>
+</ul>
 <p><a class="glightbox" href="../images/enter_keys_codepane.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="enter_keys_codepane" src="../images/enter_keys_codepane.png" /></a>
 <a class="glightbox" href="../images/remove_customPayload.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="remove_customPayload" src="../images/remove_customPayload.png" /></a></p>
 <ul>
@@ -442,7 +454,7 @@ Navigate to the Code Source pane in the AWS Lambda Function console.
 <p><a class="glightbox" href="../images/image1.5.10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.10" src="../images/image1.5.10.png" /></a></p>
 <h2 id="create-a-lex-bot">Create a Lex Bot<a class="headerlink" href="#create-a-lex-bot" title="Permanent link"></a></h2>
 <ol>
-<li>Open the <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex console</a>. click "Create bot" under the Bots section.</li>
+<li>Open the <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex console</a>. Click "Create bot" under the Bots section.</li>
 <li>In the creation method, select "Create a blank bot".</li>
 <li>Name the bot "TestBot".</li>
 <li>Select "Create a role with basic Amazon Lex permissions" in IAM Permissions.</li>
@@ -454,9 +466,11 @@ Navigate to the Code Source pane in the AWS Lambda Function console.
 <li>Click "Save intent" to save a default intent without adding anything.</li>
 </ol>
 <h2 id="selecting-alias">Selecting Alias<a class="headerlink" href="#selecting-alias" title="Permanent link"></a></h2>
-<p>Open the <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex console</a>. Select the "TestBot" from the list of the Bots.
-- <strong>(a)</strong> On the left side bar menu, under “Deployment”, click “Aliases”.
-- <strong>(b)</strong> From the list of alias names, choose the alias name that you want to use. Select "<strong>TestBotAlias</strong>".</p>
+<p>Open the <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex console</a>. Select the "TestBot" from the list of the Bots.</p>
+<ul>
+<li><strong>(a)</strong> On the left side bar menu, under “Deployment”, click “Aliases”.</li>
+<li><strong>(b)</strong> From the list of alias names, choose the alias name that you want to use. Select "<strong>TestBotAlias</strong>".</li>
+</ul>
 <p><a class="glightbox" href="../images/image1.5.11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="images1.5.11" src="../images/image1.5.11.png" /></a></p>
 <h2 id="select-language">Select Language<a class="headerlink" href="#select-language" title="Permanent link"></a></h2>
 <p>Under the chosen Alias, "<strong>TestBotAlias</strong>" within the <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex console</a>:</p>

@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-2/aws_module1-2/">
+    <link rel="shortcut icon" href="../../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>1.2 - Configurar o NeuralSeek - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="1.2 - Configurar o NeuralSeek" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../../css/highlightjs-copy.css">
+    <link href="../../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../../js/highlight.min.js"></script>
+    <script src="../../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Conceitos b\u00e1sicos - Come\u00e7ando", url: "#conceitos-basicos-comecando", children: [
+      ]},
+      {title: "Dados - Conectar-se \u00e0 sua Base de Conhecimento", url: "#dados-conectar-se-a-sua-base-de-conhecimento", children: [
+          {title: "Adicionar informa\u00e7\u00f5es de Base de Conhecimento", url: "#adicionar-informacoes-de-base-de-conhecimento" },
+          {title: "\u26a0\ufe0f Para criar seu pr\u00f3prio \u00edndice Kendra para fazer o laborat\u00f3rio", url: "#para-criar-seu-proprio-indice-kendra-para-fazer-o-laboratorio" },
+      ]},
+      {title: "Organizar - Sa\u00eddas e Categorias", url: "#organizar-saidas-e-categorias", children: [
+          {title: "Categoriza\u00e7\u00e3o", url: "#categorizacao" },
+          {title: "Framework do Agente Virtual", url: "#framework-do-agente-virtual" },
+      ]},
+      {title: "Ajustar - Ajustar para seus Dados", url: "#ajustar-ajustar-para-seus-dados", children: [
+      ]},
+      {title: "Perguntas e Respostas", url: "#perguntas-e-respostas", children: [
+      ]},
+      {title: "Pronto", url: "#pronto", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3  wm-current "><a href="../../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../aws_module1-3/aws_module1-3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../aws_module1-3/aws_module1-3/" class="btn btn-xs btn-link">
+        1.3 - Integrar agente virtual
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../aws_module1-1/aws_module1-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../aws_module1-1/aws_module1-1/" class="btn btn-xs btn-link">
+        1.1 - Iniciar o NeuralSeek
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>1.2 - Configurar o NeuralSeek</h1>
+          
+          <h2 id="conceitos-basicos-comecando">Conceitos básicos - Começando<a class="headerlink" href="#conceitos-basicos-comecando" title="Permanent link"></a></h2>
+<p>Primeiro, precisamos de um breve texto sobre sua empresa ou organização, enfatizando o caso de uso para esta instância do NeuralSeek.</p>
+<ul>
+<li><strong>(a)</strong> Adicione uma breve descrição da empresa ou organização.</li>
+<li><strong>(b)</strong> Selecione o Idioma de Saída no menu suspenso. Neste exemplo, selecione <strong>Inglês</strong>. É melhor combinar o idioma da sua Base de Conhecimento e perguntas, mas o NeuralSeek é capaz de traduzir entre muitos idiomas.</li>
+<li><strong>(c)</strong> Selecione o uso preferido da instância do NeuralSeek. Esta instância do NeuralSeek será usada internamente em sua organização ou será externa - voltada para o cliente? Usaremos essas informações para pré-ajustar alguns parâmetros de segurança para você. Neste exemplo, selecione <strong>Interno</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" /></a></p>
+<p>Clique em Avançar para salvar uma descrição única, idioma e escolha de caso de uso.</p>
+<h2 id="dados-conectar-se-a-sua-base-de-conhecimento">Dados - Conectar-se à sua Base de Conhecimento<a class="headerlink" href="#dados-conectar-se-a-sua-base-de-conhecimento" title="Permanent link"></a></h2>
+<ul>
+<li><strong>(a)</strong> Selecione a Base de Conhecimento desejada no menu suspenso. Para fins deste laboratório, recomendamos a Base de Conhecimento da AWS <strong>Kendra</strong>.</li>
+<li><strong>(b)</strong> Selecione o idioma desejado. Para fins deste laboratório, clique em <strong>Inglês</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" /></a></p>
+<h3 id="adicionar-informacoes-de-base-de-conhecimento">Adicionar informações de Base de Conhecimento<a class="headerlink" href="#adicionar-informacoes-de-base-de-conhecimento" title="Permanent link"></a></h3>
+<p>O usuário é responsável por fornecer informações detalhadas da Base de Conhecimento selecionada. Como leva tempo para configurar essas informações para si mesmo, usaremos uma que já está preparada para o aprendizado do laboratório, com acesso somente leitura. Os valores reais abaixo serão fornecidos durante o curso deste laboratório pelo instrutor do laboratório.</p>
+<blockquote>
+<p>Para entender como criar e localizar as chaves de acesso da AWS, consulte a seção <strong>Informações adicionais - Chaves de acesso</strong> do guia do laboratório.</p>
+</blockquote>
+<p>Por favor, informe o seguinte:</p>
+<ul>
+<li><strong>(a)</strong> Adicione o ID do índice Kendra.</li>
+<li><strong>(b)</strong> Adicione a Chave de acesso da Função da AWS.</li>
+<li><strong>(c)</strong> Adicione a Região da AWS.</li>
+<li><strong>(d)</strong> Adicione a Chave de acesso da Função Secreta da AWS.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" /></a></p>
+<p>Clique no botão Testar para testar a conexão. Em seguida, clique em Avançar para salvar a configuração da Base de Conhecimento.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" /></a></p>
+<blockquote>
+<p>O NeuralSeek agora está configurado com uma Base de Conhecimento, neste caso: <strong>Índice Kendra</strong>, e pronto para buscar.</p>
+</blockquote>
+<h3 id="para-criar-seu-proprio-indice-kendra-para-fazer-o-laboratorio">⚠️ Para criar seu próprio índice Kendra para fazer o laboratório<a class="headerlink" href="#para-criar-seu-proprio-indice-kendra-para-fazer-o-laboratorio" title="Permanent link"></a></h3>
+<p>Com o interesse de economizar tempo, o laboratório usará um índice Kendra já integrado que está pré-preenchido com os dados. Isso ocorre devido ao fato de que a criação do índice Kendra e o preenchimento dos dados levariam de 40 minutos a mais de uma hora para serem concluídos. No entanto, se você estiver interessado em posteriormente realizar o laboratório usando seu próprio índice e chaves do Kendra, poderá seguir as instruções abaixo.</p>
+<p>🔗<a href="../../../../additional_info/kendra_keys/">Configurando o índice Kendra e as chaves de acesso da AWS</a></p>
+<h2 id="organizar-saidas-e-categorias">Organizar - Saídas e Categorias<a class="headerlink" href="#organizar-saidas-e-categorias" title="Permanent link"></a></h2>
+<h3 id="categorizacao">Categorização<a class="headerlink" href="#categorizacao" title="Permanent link"></a></h3>
+<p>Categorize suas intenções para relatórios e gerenciamento mais fáceis.</p>
+<blockquote>
+<p>Se você está seguindo o laboratório ao vivo, pule esta etapa! Vamos revisitar isso no Módulo 2.</p>
+</blockquote>
+<ul>
+<li><strong>(a)</strong> Clique no ícone de lâmpada para adicionar uma nova linha.</li>
+<li><strong>(b)</strong> Digite um nome de categoria exclusivo, um URL correspondente e uma descrição detalhada da categoria com intenções que não correspondam a nenhuma outra categoria.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" /></a></p>
+<h3 id="framework-do-agente-virtual">Framework do Agente Virtual<a class="headerlink" href="#framework-do-agente-virtual" title="Permanent link"></a></h3>
+<ul>
+<li><strong>(a)</strong> Selecione o Tipo de Agente Virtual no menu suspenso. Neste exemplo, selecione <strong>AWS Lex V2</strong>.</li>
+<li><strong>(b)</strong> Selecione a opção preferida de habilitação ou desabilitação de incorporação de links nas respostas retornadas. Neste exemplo, selecione <strong>Desabilitar</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" /></a></p>
+<p>Clique em Avançar para salvar categorias relatadas e o framework selecionado do Agente Virtual.</p>
+<h2 id="ajustar-ajustar-para-seus-dados">Ajustar - Ajustar para seus Dados<a class="headerlink" href="#ajustar-ajustar-para-seus-dados" title="Permanent link"></a></h2>
+<p>Vamos ajustar o NeuralSeek para seus dados.</p>
+<ul>
+<li><strong>(a)</strong> Selecione a opção preferida para Qual destes parece mais com seus dados? Para este exemplo, selecione <strong>Frasess importantes são cercadas por muitas linhas de texto que as explicam.</strong>.<ul>
+<li>A opção <em>Frasess importantes são cercadas por muitas linhas de texto que as explicam</em>, descreve dados com explicações mais elaboradas com passagens de texto mais extensas para uma melhor compreensão.  </li>
+<li>A opção <em>Frasess importantes são cercadas por apenas uma ou duas linhas de informações relevantes</em>, descreve dados com cobertura sucinta de frases-chave com apenas uma ou duas linhas de contexto necessário.</li>
+</ul>
+</li>
+<li><strong>(b)</strong> Selecione a opção preferida que melhor descreve suas necessidades de dados. Para este exemplo, selecione <strong>Quero fornecer muitas informações para a LLM e dar margem para que ela decida a resposta</strong>.</li>
+<li><strong>(c)</strong> Selecione a opção preferida que melhor descreve a atualidade dos seus dados. Para este exemplo, selecione <strong>Todos os meus documentos estão atualizados e relevantes</strong>.<ul>
+<li>A opção <em>Todos os meus documentos estão atualizados e relevantes</em> descreve dados que estão atualizados.</li>
+<li>A opção <em>Tenho muitos documentos antigos ou posts de blog, alguns com informações conflitantes. Preciso que o NeuralSeek me ajude com a priorização de datas</em> descreve dados que podem conter detalhes conflitantes ou irrelevantes em diferentes fontes ou documentos.</li>
+</ul>
+</li>
+</ul>
+<p>Clique em Próximo para salvar as configurações de ajuste relatadas.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" /></a></p>
+<h2 id="perguntas-e-respostas">Perguntas e Respostas<a class="headerlink" href="#perguntas-e-respostas" title="Permanent link"></a></h2>
+<p>À medida que as perguntas são respondidas pelo NeuralSeek, podemos automaticamente construir e manter porções do seu agente virtual.</p>
+<p>Use os botões abaixo para gerar rapidamente conteúdo de Perguntas e Respostas (Q&amp;A) para iniciar e testar seu agente virtual.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image3" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.3.png" /></a></p>
+<ul>
+<li><strong>Gerar automaticamente perguntas</strong> fará uma consulta à base de dados, pedirá ao NeuralSeek para gerar insights e produzirá diversos testes de perguntas com base no conteúdo corporativo. Clique em Enviar para ter o NeuralSeek gerando respostas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image3" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.4.png" /></a></p>
+<ul>
+<li><strong>Inserir perguntas manualmente</strong> fornecerá uma caixa de teste em branco para que você possa inserir perguntas, uma por linha, com base no conteúdo corporativo. Clique em Enviar para que o NeuralSeek gere respostas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image4" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.6.png" /></a></p>
+<ul>
+<li><strong>Carregar perguntas de teste</strong> fornecerá um link para o seu navegador de arquivos local para carregar um arquivo CSV de perguntas de teste. As perguntas serão executadas no endpoint do Seek em paralelo e pontuadas. Use o modelo de arquivo .csv fornecido para criar suas perguntas. Os arquivos de entrada devem manter esses títulos de coluna como mínimo, mas você pode adicionar colunas de payload adicionais. Clique em Enviar para que o NeuralSeek gere respostas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image5" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" /></a></p>
+<blockquote>
+<p>NeuralSeek está pronto para responder!</p>
+</blockquote>
+<h2 id="pronto">Pronto<a class="headerlink" href="#pronto" title="Permanent link"></a></h2>
+<p>NeuralSeek está pronto para procurar.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_008.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_008.png" /></a></p>
+<blockquote>
+<p>NeuralSeek está agora configurado e pronto para uso.</p>
+</blockquote>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../aws_module1-3/aws_module1-3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../aws_module1-3/aws_module1-3/" class="btn btn-xs btn-link">
+        1.3 - Integrar agente virtual
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../aws_module1-1/aws_module1-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../aws_module1-1/aws_module1-1/" class="btn btn-xs btn-link">
+        1.1 - Iniciar o NeuralSeek
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

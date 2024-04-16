@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-3/aws_module1-3/">
+    <link rel="shortcut icon" href="../../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>1.3 - Integrar agente virtual - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="1.3 - Integrar agente virtual" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../../css/highlightjs-copy.css">
+    <link href="../../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../../js/highlight.min.js"></script>
+    <script src="../../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Integre", url: "#integre", children: [
+      ]},
+      {title: "Selecione o Agente Virtual", url: "#selecione-o-agente-virtual", children: [
+      ]},
+      {title: "Baixe o Arquivo", url: "#baixe-o-arquivo", children: [
+      ]},
+      {title: "Crie uma Fun\u00e7\u00e3o", url: "#crie-uma-funcao", children: [
+      ]},
+      {title: "Fa\u00e7a o Upload do Arquivo .zip Baixado", url: "#faca-o-upload-do-arquivo-zip-baixado", children: [
+      ]},
+      {title: "Edite o Bloco de C\u00f3digo", url: "#edite-o-bloco-de-codigo", children: [
+      ]},
+      {title: "Atualizar Configura\u00e7\u00e3o de Tempo Limite", url: "#atualizar-configuracao-de-tempo-limite", children: [
+      ]},
+      {title: "Crie um Bot Lex", url: "#crie-um-bot-lex", children: [
+      ]},
+      {title: "Selecionando Alias", url: "#selecionando-alias", children: [
+      ]},
+      {title: "Selecionar Idioma", url: "#selecionar-idioma", children: [
+      ]},
+      {title: "Conex\u00e3o Opcional da Fun\u00e7\u00e3o Lambda", url: "#conexao-opcional-da-funcao-lambda", children: [
+      ]},
+      {title: "Atividades de fallback", url: "#atividades-de-fallback", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3  wm-current "><a href="../../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../../module2/module2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../../module2/module2/" class="btn btn-xs btn-link">
+        Módulo 2 Visão geral
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../aws_module1-2/aws_module1-2/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../aws_module1-2/aws_module1-2/" class="btn btn-xs btn-link">
+        1.2 - Configurar o NeuralSeek
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>1.3 - Integrar agente virtual</h1>
+          
+          <h2 id="integre">Integre<a class="headerlink" href="#integre" title="Permanent link"></a></h2>
+<p>Navegue até a guia "Integrar" no NeuralSeek.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.1" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.1.png" /></a></p>
+<h2 id="selecione-o-agente-virtual">Selecione o Agente Virtual<a class="headerlink" href="#selecione-o-agente-virtual" title="Permanent link"></a></h2>
+<p>Selecione a opção preferida de agente virtual no menu lateral esquerdo.
+Para este laboratório, recomendamos <strong>LexV2 Lambda</strong>.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.2" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.2.png" /></a></p>
+<h2 id="baixe-o-arquivo">Baixe o Arquivo<a class="headerlink" href="#baixe-o-arquivo" title="Permanent link"></a></h2>
+<p>Baixe o arquivo .zip do Arquivo Lambda para o armazenamento local.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.3" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.3.png" /></a></p>
+<h2 id="crie-uma-funcao">Crie uma Função<a class="headerlink" href="#crie-uma-funcao" title="Permanent link"></a></h2>
+<p>Clique no link para abrir a <a href="https://console.aws.amazon.com/lambda/home#/functions" target="_blank">Página de Funções</a> no console AWS Lambda para criar uma função do zero.</p>
+<ul>
+<li><strong>(a)</strong> Selecione Criar Função.</li>
+<li><strong>(b)</strong> Adicione um "Nome da Função". Para este laboratório, recomendamos "learning-lab".</li>
+<li><strong>(c)</strong> Clique em "Criar Função".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.4" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.4.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.5" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.5.png" /></a></p>
+<h2 id="faca-o-upload-do-arquivo-zip-baixado">Faça o Upload do Arquivo .zip Baixado<a class="headerlink" href="#faca-o-upload-do-arquivo-zip-baixado" title="Permanent link"></a></h2>
+<p>Navegue até o painel de Origem do Código no console da Função AWS Lambda. </p>
+<ul>
+<li><strong>(a)</strong> Clique em "Carregar de". Clique em "Arquivo .zip".</li>
+<li><strong>(b)</strong> Clique em "Carregar" para selecionar o arquivo .zip do Arquivo Lambda baixado.</li>
+<li><strong>(c)</strong> Clique em "Salvar".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.6" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.6.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.7" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.7.png" /></a></p>
+<h2 id="edite-o-bloco-de-codigo">Edite o Bloco de Código<a class="headerlink" href="#edite-o-bloco-de-codigo" title="Permanent link"></a></h2>
+<p>Na página de Integração NeuralSeek, copie a chave da API fornecida e a URL da Instância mencionadas na página de integração do NeuralSeek.
+Navegue até o painel de Origem do Código no console da Função AWS Lambda. </p>
+<ul>
+<li><strong>(a)</strong> Clique na guia do arquivo "index.mjs". </li>
+<li><strong>(b)</strong> Insira a chave da API copiada e a URL da Instância no bloco de código.</li>
+<li><strong>(c)</strong> Dentro da matriz de mensagens, exclua a seção que contém contentType: CustomPayload do bloco de código.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/enter_keys_codepane.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="enter_keys_codepane" src="../../../../../module1/module1_aws/aws_module1-3/images/enter_keys_codepane.png" /></a>
+<a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/remove_customPayload.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="remove_customPayload" src="../../../../../module1/module1_aws/aws_module1-3/images/remove_customPayload.png" /></a></p>
+<ul>
+<li>O botão Implantar será ativado. Clique em Implantar para atualizar e implantar a função com sucesso.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.8" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.8.png" /></a></p>
+<h2 id="atualizar-configuracao-de-tempo-limite">Atualizar Configuração de Tempo Limite<a class="headerlink" href="#atualizar-configuracao-de-tempo-limite" title="Permanent link"></a></h2>
+<p>Navegue até a guia de Configuração no Console da Função AWS Lambda.</p>
+<ul>
+<li><strong>(a)</strong> Na guia de Configuração Geral, clique em Editar.</li>
+<li><strong>(b)</strong> Atualize em "Tempo Limite": defina o mínimo como "1" e o segundo como "0". Isso garantirá que a função lambda não se esgote por 1 minuto.</li>
+<li><strong>(c)</strong> Clique em Salvar.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.9" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.9.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.10" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.10.png" /></a></p>
+<h2 id="crie-um-bot-lex">Crie um Bot Lex<a class="headerlink" href="#crie-um-bot-lex" title="Permanent link"></a></h2>
+<ol>
+<li>Abra o <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">console Amazon Lex</a>. Clique em Criar bot na seção Bots.</li>
+<li>No método de criação, selecione Criar um bot vazio.</li>
+<li>Nomeie o bot como TestBot.</li>
+<li>Selecione Criar uma função com permissões básicas do Amazon Lex em Permissões do IAM.</li>
+<li>Selecione Não em Lei de Proteção Online à Privacidade Infantil (COPPA).</li>
+<li>Clique em Avançar.</li>
+<li>Clique em Concluído.</li>
+<li>Na seção <code>Sample utterances</code>, adicione uma declaração. Pode ser qualquer coisa (por exemplo, Olá).</li>
+<li>Na seção <code>Initial response</code>, adicione qualquer resposta que possa ser adequada (por exemplo, Bem-vindo ao bot de teste).</li>
+<li>Clique em Salvar intenção para salvar uma intenção padrão sem adicionar nada.</li>
+</ol>
+<h2 id="selecionando-alias">Selecionando Alias<a class="headerlink" href="#selecionando-alias" title="Permanent link"></a></h2>
+<p>Abra o <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">console Amazon Lex</a>. Selecione o TestBot na lista de Bots.</p>
+<ul>
+<li><strong>(a)</strong> No menu de barra lateral esquerda, em "Implantação", clique em "Aliases".</li>
+<li><strong>(b)</strong> Na lista de nomes de alias, escolha o nome de alias que deseja usar. Selecione <strong>TestBotAlias</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="images1.5.11" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.11.png" /></a></p>
+<h2 id="selecionar-idioma">Selecionar Idioma<a class="headerlink" href="#selecionar-idioma" title="Permanent link"></a></h2>
+<p>Sob o Alias escolhido, <strong>TestBotAlias</strong> dentro do console <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">Amazon Lex</a>:</p>
+<ul>
+<li><strong>(a)</strong> Na lista de idiomas suportados, clique no idioma para o qual a função Lambda é usada. Para este laboratório, recomendamos "<strong>Inglês</strong>".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.17" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.17.png" /></a></p>
+<h2 id="conexao-opcional-da-funcao-lambda">Conexão Opcional da Função Lambda<a class="headerlink" href="#conexao-opcional-da-funcao-lambda" title="Permanent link"></a></h2>
+<ul>
+<li><strong>(a)</strong> Em Fonte, clique no nome do alias da função Lambda a ser utilizada. Para este laboratório, recomendamos "<strong>learning-lab</strong>".</li>
+<li><strong>(b)</strong> Em Versão ou Alias da função Lambda, a opção <strong>$LATEST</strong> será popular.</li>
+<li><strong>(c)</strong> Clique em "Salvar".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.18" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.18.png" /></a></p>
+<h2 id="atividades-de-fallback">Atividades de fallback<a class="headerlink" href="#atividades-de-fallback" title="Permanent link"></a></h2>
+<p>O intent padrão de fallback permite que a função Lambda seja chamada quando for detectada. A ideia é que o Lex invoque o NeuralSeek para responder quando não houver nenhum intent correspondente encontrado. Para ativar isso, navegue até o <a href="https://console.aws.amazon.com/lexv2/home#bots" target="_blank">console Amazon Lex</a>.</p>
+<ul>
+<li><strong>(a)</strong> Clique em "TestBot".</li>
+<li><strong>(b)</strong> Clique em "Intents" abaixo de "Inglês (US)" no menu lateral esquerdo.</li>
+<li><strong>(c)</strong> Clique no link "FallbackIntent".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.12_updated.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.12" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.12_updated.png" /></a></p>
+<p>Na seção Fulfilledment (Preenchimento), clique no ícone de Ativar.</p>
+<ul>
+<li><strong>(a)</strong> Clique em Opções Avançadas</li>
+<li><strong>(b)</strong> Selecione a opção "Use uma Função Lambda para Preenchimento".</li>
+<li><strong>(c)</strong> Clique em Atualizar Opções.</li>
+<li>Clique em Salvar Intent.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.13" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.13.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.14" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.14.png" /></a></p>
+<p>Construa o chatbot e teste a rotina FallbackIntent com uma pergunta.</p>
+<ul>
+<li><strong>(a)</strong> Clique em "Construir". Esta etapa pode levar alguns momentos.</li>
+<li><strong>(b)</strong> Clique em "Testar". O chatbot Amazon Lex será gerado.</li>
+<li>Solicite ao chatbot uma pergunta. Para o propósito deste laboratório, utilizamos "<strong>O que é NeuralSeek?</strong>"</li>
+<li>Observe a resposta e as informações detalhadas sobre a resposta retornada ao chatbot.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.15" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.15.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.16" src="../../../../../module1/module1_aws/aws_module1-3/images/image1.5.16.png" /></a></p>
+<blockquote>
+<p>O <strong>Agente Virtual AWS LexV2 Lambda</strong> agora está configurado, integrado com NeuralSeek, testado e pronto para uso.</p>
+</blockquote>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../../module2/module2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../../module2/module2/" class="btn btn-xs btn-link">
+        Módulo 2 Visão geral
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../aws_module1-2/aws_module1-2/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../aws_module1-2/aws_module1-2/" class="btn btn-xs btn-link">
+        1.2 - Configurar o NeuralSeek
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

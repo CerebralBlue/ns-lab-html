@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module2/module2-4/module2-4/">
+    <link rel="shortcut icon" href="../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>2.4 - Categorização de intenções - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="2.4 - Categorização de intenções" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../css/highlightjs-copy.css">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../js/highlight.min.js"></script>
+    <script src="../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Adicionar Categorias de Inten\u00e7\u00e3o", url: "#adicionar-categorias-de-intencao", children: [
+      ]},
+      {title: "Descrever Categorias", url: "#descrever-categorias", children: [
+      ]},
+      {title: "Procurar Respostas baseadas na Categoria de Inten\u00e7\u00e3o", url: "#procurar-respostas-baseadas-na-categoria-de-intencao", children: [
+      ]},
+      {title: "Visualizar Categorias de Inten\u00e7\u00e3o", url: "#visualizar-categorias-de-intencao", children: [
+      ]},
+      {title: "Tratamento de PII", url: "#tratamento-de-pii", children: [
+          {title: "Desativar \"For\u00e7ar Respostas da Base de Conhecimento\"", url: "#desativar-forcar-respostas-da-base-de-conhecimento" },
+          {title: "Definir os Filtros baseados em LLM PII", url: "#definir-os-filtros-baseados-em-llm-pii" },
+          {title: "Procure uma resposta", url: "#procure-uma-resposta" },
+          {title: "Verifica\u00e7\u00e3o de PII", url: "#verificacao-de-pii" },
+          {title: "Fa\u00e7a uma pergunta adicional", url: "#faca-uma-pergunta-adicional" },
+      ]},
+    ];
+
+</script>
+    <script src="../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../module3/module3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../module3/module3/" class="btn btn-xs btn-link">
+        Visão Geral do Módulo 3.
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module2-3/module2-3/" class="btn btn-xs btn-link">
+        2.3 - Intenções Curadas
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>2.4 - Categorização de intenções</h1>
+          
+          <p>Os utilizadores podem criar categorias usando descrições de linguagem natural para controlar como as intenções nas perguntas do utilizador podem ser categorizadas. Tipicamente, uma pergunta seria automaticamente categorizada como <code>FAQ</code>, mas os utilizadores podem fornecer categorias personalizadas adicionais.</p>
+<p>Uma vez ativada a categorização, as telas Curadoria e Análise mudarão para mostrar agrupamentos em torno das categorias.</p>
+<p>Os utilizadores podem mover intenções para categorias manualmente através do separador Curadoria ou das funcionalidades de download/edição CSV. As edições feitas serão usadas para treinar o sistema para futuros acontecimentos de categorização.</p>
+<h2 id="adicionar-categorias-de-intencao">Adicionar Categorias de Intenção<a class="headerlink" href="#adicionar-categorias-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até ao separador Configurar dentro do NeuralSeek, e expanda o campo <strong>Categorização de Intenção</strong>.</p>
+<ul>
+<li>Clique no ícone da lâmpada para adicionar uma nova linha de categoria.</li>
+<li>Adicione um título à categoria na primeira caixa no lado esquerdo. Por exemplo, adicionar: <code>Virtual Agents</code>.</li>
+<li>Abaixo, adicione um link para a documentação de origem que contém informações sobre a categoria. Por exemplo, adicione <code>https://documentation.neuralseek.com/integrations/supported_virtual_agents/supported_virtual_agents/</code>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/intent_cat_title_url.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_cat_title_url" src="../../../../module2/module2-4/images/intent_cat_title_url.png" /></a></p>
+<h2 id="descrever-categorias">Descrever Categorias<a class="headerlink" href="#descrever-categorias" title="Permanent link"></a></h2>
+<p>A caixa do lado direito é onde os usuários podem adicionar uma descrição de linguagem natural da categoria.</p>
+<ul>
+<li>Adicione uma descrição da categoria. Por exemplo, adicione: <code>Virtual Agents that are supported by NeuralSeek.</code>.</li>
+<li>Clique no ícone Salvar vermelho na parte inferior da tela para salvar a nova Categoria de Intenção adicionada.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/save_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_intent_cat" src="../../../../module2/module2-4/images/save_intent_cat.png" /></a></p>
+<h2 id="procurar-respostas-baseadas-na-categoria-de-intencao">Procurar Respostas baseadas na Categoria de Intenção<a class="headerlink" href="#procurar-respostas-baseadas-na-categoria-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até ao separador Procurar dentro do NeuralSeek.</p>
+<ul>
+<li>Faça uma pergunta envolvendo a Categoria de Intenção recém-criada, para que a intenção apareça na tela de Curadoria e Análise também.<ul>
+<li>Por exemplo, procure: <code>What Virtual Agents are supported by NeuralSeek?</code>, ou <code>Does NeuralSeek support Virtual Agent integration?</code>.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/seek_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_intent_cat" src="../../../../module2/module2-4/images/seek_intent_cat.png" /></a></p>
+<h2 id="visualizar-categorias-de-intencao">Visualizar Categorias de Intenção<a class="headerlink" href="#visualizar-categorias-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até ao separador Curadoria dentro do NeuralSeek.</p>
+<ul>
+<li>Note que há um número <strong>1</strong> ao lado da nova intenção debaixo do rótulo Categoria.</li>
+<li>Clique no número para ver o nome da categoria em que a intenção é agora colocada.</li>
+<li>Opcionalmente, você pode editar em qual categoria intenções se encaixam selecionando no menu suspenso.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/intent_number.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_number" src="../../../../module2/module2-4/images/intent_number.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/change_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="change_intent_cat" src="../../../../module2/module2-4/images/change_intent_cat.png" /></a></p>
+<p>Navegue até ao separador Análise dentro do NeuralSeek para ver o histórico de intenções da categoria recém-criada também.</p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/analytics_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="analytics_intent_cat" src="../../../../module2/module2-4/images/analytics_intent_cat.png" /></a></p>
+<h2 id="tratamento-de-pii">Tratamento de PII<a class="headerlink" href="#tratamento-de-pii" title="Permanent link"></a></h2>
+<p>O NeuralSeek apresenta uma rotina avançada de detecção de Informações Pessoais Identificáveis (PII) que identifica automaticamente qualquer PII dentro de entradas de usuário. Isso permite que os usuários mantenham um ambiente seguro e ainda forneçam respostas precisas às consultas do usuário.</p>
+<h4 id="desativar-forcar-respostas-da-base-de-conhecimento">Desativar "Forçar Respostas da Base de Conhecimento"<a class="headerlink" href="#desativar-forcar-respostas-da-base-de-conhecimento" title="Permanent link"></a></h4>
+<p>Navegue até à tela Configurar no NeuralSeek e expanda os detalhes de <strong>Engenharia de Resposta e Preferências</strong>.</p>
+<ul>
+<li>Mude a seleção de Forçar Respostas da Base de Conhecimento para <strong>False</strong>.</li>
+</ul>
+<p>Configuramos essa configuração para geração de resposta ideal para este próximo exemplo, já que a informação não estará em nossa documentação de origem. </p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/turn_off_force_answers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="turn_off_force_answers" src="../../../../module2/module2-4/images/turn_off_force_answers.png" /></a></p>
+<h4 id="definir-os-filtros-baseados-em-llm-pii">Definir os Filtros baseados em LLM PII<a class="headerlink" href="#definir-os-filtros-baseados-em-llm-pii" title="Permanent link"></a></h4>
+<p>Expandir os detalhes de <strong>Tratamento de Informações Pessoais Identificáveis (PII)</strong>.</p>
+<ul>
+<li>Clique no ícone da lâmpada para adicionar uma nova linha.</li>
+<li>Adicione uma frase de exemplo. Por exemplo: <code>I graduated college from JMU.</code>.</li>
+<li>Na caixa à direita, adicione o elemento PII da frase de exemplo. Neste exemplo: <code>JMU</code>.</li>
+<li>Clique no ícone Salvar vermelho na parte inferior da tela.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/add_PII_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_PII_filter" src="../../../../module2/module2-4/images/add_PII_filter.png" /></a></p>
+<h4 id="procure-uma-resposta">Procure uma resposta<a class="headerlink" href="#procure-uma-resposta" title="Permanent link"></a></h4>
+<p>Navegue até ao separador Buscar do NeuralSeek.</p>
+<ul>
+<li>Procurar a pergunta garantindo referenciar o PII. Neste exemplo, procure por: <code>What colleges are in Virginia?</code></li>
+</ul>
+<p>Observe que a resposta é vaga e não inclui informações sobre colégios específicos naquela área. </p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/seek_PII.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_PII" src="../../../../module2/module2-4/images/seek_PII.png" /></a></p>
+<h4 id="verificacao-de-pii">Verificação de PII<a class="headerlink" href="#verificacao-de-pii" title="Permanent link"></a></h4>
+<p>Navegue até o separador Curadoria do NeuralSeek. Aqui, podemos ver a intenção recém-criada com um símbolo indicando que essa intenção contém PII.</p>
+<ul>
+<li>Expanda a intenção para ver as respostas. Observe que a localização de Virginia que perguntamos na pergunta está mascarada para esconder o PII.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/PII_example1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example1" src="../../../../module2/module2-4/images/PII_example1.png" /></a></p>
+<h4 id="faca-uma-pergunta-adicional">Faça uma pergunta adicional<a class="headerlink" href="#faca-uma-pergunta-adicional" title="Permanent link"></a></h4>
+<p>O usuário pode continuar a procurar consultas e ver como o PII relacionado é mascarado na tela Curar. Por exemplo, procure pela pergunta <code>Where is JMU located?</code>. </p>
+<ul>
+<li>A resposta será vaga e não conterá informações sobre a localização por conter PII.</li>
+<li>Na tela Curate, a intenção aparecerá com o mesmo símbolo indicando PII. Dentro da consulta, <code>JMU</code> também será mascarado para proteger as PII.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/PII_example2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example2" src="../../../../module2/module2-4/images/PII_example2.png" /></a></p>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../module3/module3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../module3/module3/" class="btn btn-xs btn-link">
+        Visão Geral do Módulo 3.
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module2-3/module2-3/" class="btn btn-xs btn-link">
+        2.3 - Intenções Curadas
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

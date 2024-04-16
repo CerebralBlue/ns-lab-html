@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module2/module2-2/module2-2/">
+    <link rel="shortcut icon" href="../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>2.2 - Armazenamento em cache de respostas - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="2.2 - Armazenamento em cache de respostas" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../css/highlightjs-copy.css">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../js/highlight.min.js"></script>
+    <script src="../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Armazenamento em cache", url: "#armazenamento-em-cache", children: [
+      ]},
+      {title: "Exemplo de resposta imprecisa", url: "#exemplo-de-resposta-imprecisa", children: [
+      ]},
+      {title: "Corre\u00e7\u00e3o manual de respostas geradas por AI.", url: "#correcao-manual-de-respostas-geradas-por-ai", children: [
+      ]},
+      {title: "Corresponder a Inten\u00e7\u00e3o e Categoriza\u00e7\u00e3o", url: "#corresponder-a-intencao-e-categorizacao", children: [
+      ]},
+      {title: "Escala de Armazenamento em Cache de Respostas Editadas", url: "#escala-de-armazenamento-em-cache-de-respostas-editadas", children: [
+      ]},
+      {title: "Escala de Armazenamento em Cache de Respostas Normais", url: "#escala-de-armazenamento-em-cache-de-respostas-normais", children: [
+      ]},
+      {title: "Op\u00e7\u00f5es de Salvar", url: "#opcoes-de-salvar", children: [
+      ]},
+      {title: "Consulta Seek", url: "#consulta-seek", children: [
+      ]},
+      {title: "Revis\u00e3o de Sa\u00edda", url: "#revisao-de-saida", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-link">
+        2.3 - Intenções Curadas
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module2-1/module2-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module2-1/module2-1/" class="btn btn-xs btn-link">
+        2.1 - Buscando Respostas
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>2.2 - Armazenamento em cache de respostas</h1>
+          
+          <h2 id="armazenamento-em-cache">Armazenamento em cache<a class="headerlink" href="#armazenamento-em-cache" title="Permanent link"></a></h2>
+<p>NeuralSeek usa uma estratégia de armazenamento em cache ao pesquisar uma Base de Conhecimento corporativa para aprimorar o desempenho e reduzir o custo computacional durante sua operação. O NeuralSeek também utiliza dois tipos de caches tanto para suas respostas editadas quanto para as geradas que podem fornecer respostas armazenadas em cache para as perguntas dos usuários para acelerar os tempos de resposta e produzir resultados mais consistentes.</p>
+<h2 id="exemplo-de-resposta-imprecisa">Exemplo de resposta imprecisa<a class="headerlink" href="#exemplo-de-resposta-imprecisa" title="Permanent link"></a></h2>
+<p>Navegue até a guia Curate do NeuralSeek para ver nosso exemplo de resposta imprecisa.</p>
+<ul>
+<li><strong>(a)</strong> Selecione uma intenção clicando no ícone de menu suspenso. </li>
+<li><strong>(b)</strong> Leia a resposta gerada para essa intenção específica. É possível que o NeuralSeek gere uma resposta imprecisa porque o conteúdo na Base de Conhecimento está desatualizado ou ausente.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/inaccurate_example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="exemplo_impreciso" src="../../../../module2/module2-2/images/inaccurate_example.png" /></a></p>
+<h2 id="correcao-manual-de-respostas-geradas-por-ai">Correção manual de respostas geradas por AI.<a class="headerlink" href="#correcao-manual-de-respostas-geradas-por-ai" title="Permanent link"></a></h2>
+<p>Você pode editar qualquer resposta, e a resposta editada será usada quando você curar e exportá-la para um agente virtual. As respostas editadas também são usadas para treinar as respostas geradas futuras.</p>
+<ul>
+<li><strong>(a)</strong> Clique na caixa de texto para atualizar a resposta para maior precisão. Por exemplo, adicione este texto à resposta: <code>The best cereal is Cheerios.</code></li>
+<li><strong>(b)</strong> Clique em Salvar. A resposta recém-adicionada será marcada como <strong>Editada</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/edited_answer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resposta_editada" src="../../../../module2/module2-2/images/edited_answer.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-2/images/show_answer_as_edited.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="exibir_resposta_editada" src="../../../../module2/module2-2/images/show_answer_as_edited.png" /></a></p>
+<h2 id="corresponder-a-intencao-e-categorizacao">Corresponder a Intenção e Categorização<a class="headerlink" href="#corresponder-a-intencao-e-categorizacao" title="Permanent link"></a></h2>
+<p>Navegue até a guia Configurar do NeuralSeek e 
+expanda os detalhes de <strong>Correspondência da Intenção &amp; Configuração de Cache</strong>.</p>
+<p>Aqui, podemos selecionar o quão estrito queremos ser sobre a correspondência de intenções, isso é útil especialmente se você tiver respostas editadas que deseja que os usuários atinjam mais.</p>
+<h2 id="escala-de-armazenamento-em-cache-de-respostas-editadas">Escala de Armazenamento em Cache de Respostas Editadas<a class="headerlink" href="#escala-de-armazenamento-em-cache-de-respostas-editadas" title="Permanent link"></a></h2>
+<p>Esta escala deslizante permite que o usuário defina quantas respostas editadas diferentes existem para uma pergunta do usuário e fornecerá uma resposta editada pelo menos tantas vezes.</p>
+<ul>
+<li>Configure a escala deslizante para 1 para priorizar o cache de respostas editadas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/edited_cache.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="cache_editada" src="../../../../module2/module2-2/images/edited_cache.png" /></a></p>
+<h2 id="escala-de-armazenamento-em-cache-de-respostas-normais">Escala de Armazenamento em Cache de Respostas Normais<a class="headerlink" href="#escala-de-armazenamento-em-cache-de-respostas-normais" title="Permanent link"></a></h2>
+<p>As respostas editadas têm prioridade no Armazenamento em Cache de Respostas Normais. Esta escala deslizante permite que o usuário defina quantas respostas diferentes existem para uma pergunta do usuário e fornecerá uma resposta recente se a documentação não tiver sido alterada, ou uma resposta editada se estiver disponível.</p>
+<ul>
+<li>Configure a escala deslizante para 1 para priorizar o cache de respostas editadas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/normal_cache.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="cache_normal" src="../../../../module2/module2-2/images/normal_cache.png" /></a></p>
+<h2 id="opcoes-de-salvar">Opções de Salvar<a class="headerlink" href="#opcoes-de-salvar" title="Permanent link"></a></h2>
+<p>Role até o final da tela e clique no botão Salvar vermelho.</p>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/save_cache_settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="salvar_config_cache_settings" src="../../../../module2/module2-2/images/save_cache_settings.png" /></a></p>
+<h2 id="consulta-seek">Consulta Seek<a class="headerlink" href="#consulta-seek" title="Permanent link"></a></h2>
+<p>Navegue até a guia Seek do NeuralSeek.</p>
+<ul>
+<li>Insira a pergunta de exemplo imprecisa e clique em Seek.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/seek_inaccurate_example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="consulta_exemplo_imprecisa" src="../../../../module2/module2-2/images/seek_inaccurate_example.png" /></a></p>
+<h2 id="revisao-de-saida">Revisão de Saída<a class="headerlink" href="#revisao-de-saida" title="Permanent link"></a></h2>
+<p>Observe como a saída gerada é a resposta editada recém-adicionada.</p>
+<ul>
+<li>O tempo total de resposta é inferior a um segundo, porque o fornecimento de respostas armazenadas em cache acelera os tempos de resposta.</li>
+<li>A pontuação semântica é de 100% e há uma indicação ao lado dela mostrando que a resposta está armazenada em cache. </li>
+<li>As pontuações de confiança e cobertura da Base de Conhecimento são de 100% quando uma resposta editada é fornecida. As respostas editadas são mantidas até serem atualizadas ou excluídas, mesmo que a documentação de origem seja alterada, portanto, tenha cuidado para garantir que as respostas editadas contenham informações relevantes.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-2/images/review_output.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="revisao_saída" src="../../../../module2/module2-2/images/review_output.png" /></a></p>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../module2-3/module2-3/" class="btn btn-xs btn-link">
+        2.3 - Intenções Curadas
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../module2-1/module2-1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../module2-1/module2-1/" class="btn btn-xs btn-link">
+        2.1 - Buscando Respostas
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

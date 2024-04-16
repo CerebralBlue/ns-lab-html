@@ -1,0 +1,750 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/">
+    <link rel="shortcut icon" href="../../../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>1.3 - Integrar a Extensão Personalizada NeuralSeek - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="1.3 - Integrar a Extensão Personalizada NeuralSeek" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../../../css/highlightjs-copy.css">
+    <link href="../../../../../css/base.css" rel="stylesheet">
+    <link href="../../../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../../js/highlight.min.js"></script>
+    <script src="../../../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Adicionar NeuralSeek como uma Extens\u00e3o Personalizada", url: "#adicionar-neuralseek-como-uma-extensao-personalizada", children: [
+      ]},
+      {title: "Autenticar NeuralSeek com o Assistente de Watson", url: "#autenticar-neuralseek-com-o-assistente-de-watson", children: [
+      ]},
+      {title: "Adicionar a\u00e7\u00f5es do NeuralSeek Starter Kit", url: "#adicionar-acoes-do-neuralseek-starter-kit", children: [
+      ]},
+      {title: "Alterar padr\u00e3o para respostas generativas de IA", url: "#alterar-padrao-para-respostas-generativas-de-ia", children: [
+      ]},
+    ];
+
+</script>
+    <script src="../../../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3  wm-current "><a href="../../../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="/pt/module2/module2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="/pt/module2/module2/" class="btn btn-xs btn-link">
+        Módulo 2 Visão geral
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../ibm_module1-2/ibm_module1-2/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../ibm_module1-2/ibm_module1-2/" class="btn btn-xs btn-link">
+        1.2 - Configurar Agente Virtual
+      </a>
+    </div>
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1>1.3 - Integrar a Extensão Personalizada NeuralSeek</h1>
+          
+          <h2 id="adicionar-neuralseek-como-uma-extensao-personalizada">Adicionar NeuralSeek como uma Extensão Personalizada<a class="headerlink" href="#adicionar-neuralseek-como-uma-extensao-personalizada" title="Permanent link"></a></h2>
+<p><strong>Abrir Integrações</strong></p>
+<p>No menu esquerdo, clique em "Integrações."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.1" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.1.png" /></a></p>
+<p><strong>Abrir Extensões Personalizadas</strong></p>
+<p>Clique em "Construir extensão personalizada."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.2" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.2.png" /></a></p>
+<p><strong>Começar com as Extensões Personalizadas</strong></p>
+<p>Leia a página de extensão personalizada "Começar". 
+Clique em "Próximo".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.3" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.3.png" /></a></p>
+<p><strong>Informações Básicas</strong></p>
+<ul>
+<li><strong>(a)</strong> Insira informações básicas, neste exemplo o nome da extensão é, "<strong>IBM Learning Lab: NeuralSeek com Watson</strong>" e a descrição da extensão é, "<strong>Participantes trabalham com NeuralSeek e Watson em serviços de IA, adquirindo insights valiosos sobre essas tecnologias.</strong></li>
+<li><strong>(b)</strong> Clique em "Próximo".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.4" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.4.png" /></a></p>
+<p><strong>Importar OpenAPI da Extensão Personalizada</strong></p>
+<p>Para prosseguir, você deve adicionar o arquivo da API do NeuralSeek no campo "Arraste e solte o arquivo aqui ou clique para enviar."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.5" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.5.png" /></a></p>
+<p><strong>Baixar o arquivo OpenAPI do NeuralSeek</strong></p>
+<p>Vá para a interface do usuário do NeuralSeek.</p>
+<ul>
+<li><strong>(a)</strong> No menu superior, clique em "Integrar"</li>
+<li><strong>(b)</strong> No menu esquerdo, clique em "Extensão Personalizada do Watson."</li>
+<li><strong>(c)</strong> Para baixar o arquivo, clique em "Arquivo OpenAPI da Extensão Personalizada."</li>
+<li><strong>(d)</strong> Veja o json baixado no menu de downloads do computador.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.6" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.6.png" /></a></p>
+<p><strong>Enviar o arquivo OpenAPI</strong></p>
+<p>Volte para a página da Extensão Personalizada do Assistente de Watson da IBM.</p>
+<p>Arraste e solte ou clique para enviar o arquivo NeuralSeek.json na caixa de Importar OpenAPI.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.7" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.7.png" /></a></p>
+<p><strong>Upload Completo</strong></p>
+<p>Veja o arquivo NeuralSeek.json. Clique em "Próximo".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.8" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.8.png" /></a></p>
+<p><strong>Extensão Personalizada Concluída</strong></p>
+<p>Revise a extensão. Clique em "Finalizar."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.3.9" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.3.9.png" /></a></p>
+<blockquote>
+<p>NeuralSeek agora foi adicionado como uma extensão personalizada e integrado com o agente virtual <strong>Assistente de Watson da IBM</strong>. Em seguida, precisamos autenticar a extensão.</p>
+</blockquote>
+<h2 id="autenticar-neuralseek-com-o-assistente-de-watson">Autenticar NeuralSeek com o Assistente de Watson<a class="headerlink" href="#autenticar-neuralseek-com-o-assistente-de-watson" title="Permanent link"></a></h2>
+<p><strong>Começar</strong></p>
+<p>Autenticar NeuralSeek com o Assistente de Watson.
+Neste exemplo é, "<strong>IBM Learning Lab: NeuralSeek com Watson</strong>".</p>
+<p><strong>Navegar até as Integrações</strong></p>
+<ul>
+<li><strong>(a)</strong> No menu esquerdo, selecione "Integrações."</li>
+<li><strong>(b)</strong> Procure pela extensão personalizada NeuralSeek, neste exemplo é, "<strong>IBM Learning Lab: NeuralSeek e Watson</strong>."</li>
+<li><strong>(c)</strong> Clique em "+adicionar."</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.1.1" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.1.png" /></a></p>
+<p><strong>Adicionar Extensão</strong></p>
+<p>Revise as extensões personalizadas. Clique em "Adicionar."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.1.2" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.2.png" /></a></p>
+<p>Veja o Começar. Clique em "Próximo".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.1.3" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.1.3.png" /></a></p>
+<p><strong>Página de Autenticação</strong></p>
+<p>Selecione o tipo de autenticação como "Autenticação de Chave de API."</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.2" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.2.png" /></a></p>
+<p><strong>Recuperar chave de autenticação API do NeuralSeek</strong></p>
+<p>Volte para as extensões personalizadas do NeuralSeek. Na linha 5, copie a chave da API para "Autenticação de Chave de API".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.3" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.3.png" /></a></p>
+<p><strong>Cole a chave da API</strong></p>
+<p>Volte para o Assistente de Watson da IBM. </p>
+<ul>
+<li><strong>(a)</strong> Cole a chave da API do NeuralSeek na caixa de texto da chave da API.</li>
+<li><strong>(b)</strong> Clique em "Próximo".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.4" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.4.png" /></a></p>
+<p><strong>Concluir Autenticação</strong></p>
+<p>Revise a autenticação. 
+Clique em "Finalizar". Quando estiver atualizado, clique em "Fechar".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.4.5" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.4.5.png" /></a></p>
+<blockquote>
+<p>A extensão personalizada NeuralSeek integrada com o Assistente de Watson da IBM está agora autenticada e pronta para uso.</p>
+</blockquote>
+<h2 id="adicionar-acoes-do-neuralseek-starter-kit">Adicionar ações do NeuralSeek Starter Kit<a class="headerlink" href="#adicionar-acoes-do-neuralseek-starter-kit" title="Permanent link"></a></h2>
+<p><strong>Abrir Ações</strong></p>
+<p>Abrir o Assistente de Watson da IBM.</p>
+<ul>
+<li><strong>(a)</strong> No menu à esquerda, selecione "Ações".</li>
+<li><strong>(b)</strong> Clique em "Criado por você".</li>
+<li><strong>(c)</strong> Clique em "Criar ação".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.1" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.1.png" /></a></p>
+<p><strong>Criar uma Ação</strong></p>
+<p>Selecione "Iniciar rápido com modelo".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.2" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.2.png" /></a></p>
+<p><strong>Construa na Hyper velocidade</strong></p>
+<p>Selecione "Faça mais com kits iniciais".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.3" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.3.png" /></a></p>
+<p><strong>Iniciar rápido com Modelos</strong></p>
+<p>Procure e selecione "NeuralSeek".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.4" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.4.png" /></a></p>
+<p><strong>Kit Inicial do NeuralSeek</strong></p>
+<p>Clique em "Selecionar este kit inicial".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.5" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.5.png" /></a></p>
+<p><strong>Modelos Selecionados</strong></p>
+<p>Clique em "Adicionar modelos".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.6" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.6.png" /></a></p>
+<p><strong>Visualizar Ações Inativas</strong></p>
+<ul>
+<li><strong>(a)</strong> No menu à esquerda, selecione "Ações".</li>
+<li><strong>(b)</strong> Em Todos os itens, selecione "Criado por você". Do lado direito, sob o status, visualize o círculo vermelho em "Busca NeuralSeek". Nesta etapa, o círculo é vermelho porque as integrações foram adicionadas, mas ainda não estão conectadas à extensão subjacente.</li>
+<li><strong>(c)</strong> Abra a ação, clique em "Busca NeuralSeek".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.7" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.7.png" /></a></p>
+<p><strong>Cliente Começa Com</strong></p>
+<p>No menu à esquerda, selecione a opção 3 destacada em vermelho "Esta etapa não possui conteúdo".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.8" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.8.png" /></a></p>
+<p><strong>Excluir Atribuição</strong></p>
+<p>Do lado direito do conjunto "Query_Context para Contexto", clique em "X". A razão pela qual estamos excluindo é porque às vezes o contexto da consulta fornecido pelo Assistente Watsonx pode ser enorme e exceder o tamanho do corpo da solicitação para a API.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.9" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.9.png" /></a></p>
+<p><strong>Editar Extensão</strong></p>
+<p>Role para baixo e clique em "Editar extensão".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.10" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.10.png" /></a></p>
+<p><strong>Escolha uma Extensão</strong></p>
+<p>Selecione a extensão NeuralSeek, neste exemplo é, "<strong>IBM Learning Lab: NeuralSeek com Watson</strong>".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.11" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.11.png" /></a></p>
+<p><strong>Escolha uma Operação</strong></p>
+<p>Selecione "Buscar uma resposta do NeuralSeek".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.12" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.12.png" /></a></p>
+<p><strong>Definir Parâmetros de Extensão</strong></p>
+<p>Selecione "Variáveis de Sessão".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.13" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.13.png" /></a></p>
+<p><strong>Escolha Parâmetros</strong></p>
+<p>Selecione "query_text" das opções da lista.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.14.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.14" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.14.png" /></a></p>
+<p><strong>Configuração de Extensão</strong></p>
+<p>Clique em "Aplicar".</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.15" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.15.png" /></a></p>
+<p><strong>Salvar Extensão</strong></p>
+<p>No canto superior direito, clique no ícone Salvar.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.16" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.16.png" /></a> </p>
+<p><strong>Fechar Extensão</strong></p>
+<p>No canto superior direito, clique em 'x' para fechar.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.17" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.17.png" /></a></p>
+<p><strong>Confirmar Status</strong></p>
+<p>Do lado direito, veja o círculo verde com um marca de seleção ao lado de Busca NeuralSeek. O círculo agora está verde porque as integrações estão devidamente conectadas à extensão e prontas para uso.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.5.18" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.5.18.png" /></a></p>
+<blockquote>
+<p>As integrações do kit inicial NeuralSeek com IBM watsonx Assistant agora estão conectadas e prontas para uso.</p>
+</blockquote>
+<h2 id="alterar-padrao-para-respostas-generativas-de-ia">Alterar padrão para respostas generativas de IA<a class="headerlink" href="#alterar-padrao-para-respostas-generativas-de-ia" title="Permanent link"></a></h2>
+<p>Configure uma ação de chamada NeuralSeek para usar para que a IA generativa responda a todas as perguntas, mesmo perguntas não listadas no watsonx Assistant.</p>
+<ul>
+<li><strong>(a)</strong> No menu esquerdo, selecione “Ações”.</li>
+<li><strong>(b)</strong> Em Todos os itens, selecione “Definido pelo assistente”.</li>
+<li><strong>(c)</strong> Selecione “Nenhuma ação corresponde”.</li>
+</ul>
+<blockquote>
+<p><em>"Nenhuma ação corresponde" são casos em que um usuário faz uma pergunta não listada nas respostas predefinidas do IBM Watsonx Assistant</em>.</p>
+</blockquote>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.1" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.1.png" /></a></p>
+<p><strong>Excluir 2 contagens de correspondências sem ação</strong></p>
+<p>No menu da esquerda, na etapa 2, clique no ícone “Lixeira”.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.2" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.2.png" /></a></p>
+<p><strong>Confirmar Exclusão</strong></p>
+<p>Clique em “Excluir”. Aguarde o sistema ser treinado.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.3" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.3.png" /></a></p>
+<p><strong>Condições de Exclusão</strong></p>
+<ul>
+<li><strong>(a)</strong> No menu da esquerda, clique em 1.</li>
+<li><strong>(b)</strong> Exclua a condição, clique no “x”.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.4" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.4.png" /></a></p>
+<p><strong>Abrir Pré-visualização</strong></p>
+<p>Clique em “Pré-visualização”.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.5" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.5.png" /></a></p>
+<p><strong>Ver Respostas Padrão Antes de Configurar a Chamada do NeuralSeek</strong></p>
+<ul>
+<li><strong>(a)</strong> Digite uma pergunta aleatória, neste exemplo é, “<strong>Por que o céu é azul?</strong>”</li>
+<li><strong>(b)</strong> Pressione “Enter”.</li>
+</ul>
+<p>Veja a resposta padrão do Assistente do Watson, “Receio não entender. Por favor, reformule sua pergunta.” Isso é para testar se a ação de fallback está sendo acionada corretamente.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.6" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.6.png" /></a></p>
+<p><strong>Excluir Resposta Padrão</strong></p>
+<p>Na caixa de texto do assistente, exclua “Receio não entender. Por favor, reformule sua pergunta.”.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.7" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.7.png" /></a></p>
+<p><strong>Adicionar Subação</strong></p>
+<ul>
+<li><strong>(a)</strong> Role até “Em seguida”, clique em “Encerrar a ação”.</li>
+<li><strong>(b)</strong> Selecione “Ir para uma subação”.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.8" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.8.png" /></a></p>
+<p><strong>Ir para uma Subação</strong></p>
+<p>Selecione “pesquisa NeuralSeek”.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.9" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.9.png" /></a></p>
+<p><strong>Verificar Ação</strong></p>
+<ul>
+<li><strong>(a)</strong> Marque “Encerrar esta ação após a conclusão da outra ação”.</li>
+<li><strong>(b)</strong> Clique em “Aplicar”.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.10" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.10.png" /></a></p>
+<p><strong>Pré-visualização da Resposta da IA Geradora NeuralSeek</strong></p>
+<ul>
+<li><strong>(a)</strong> No canto inferior direito, clique em “Pré-visualização” e digite uma pergunta aleatória, neste exemplo é, “<strong>Por que o céu é azul?</strong>”.</li>
+<li><strong>(b)</strong> Pressione “Enter”.</li>
+</ul>
+<p>Veja a resposta de IA geradora NeuralSeek.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image1.6.11" src="../../../../../module1/module1_ibm/ibm_module1-3/images/image1.6.11.png" /></a></p>
+<blockquote>
+<p>Uma ação de chamada do NeuralSeek que permite respostas de IA geradoras para todas as consultas está agora configurada, testada e pronta para uso.</p>
+</blockquote>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="/pt/module2/module2/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="/pt/module2/module2/" class="btn btn-xs btn-link">
+        Módulo 2 Visão geral
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../ibm_module1-2/ibm_module1-2/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../ibm_module1-2/ibm_module1-2/" class="btn btn-xs btn-link">
+        1.2 - Configurar Agente Virtual
+      </a>
+    </div>
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>

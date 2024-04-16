@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="canonical" href="https://labs.neuralseek.com/pt/additional_info/kendra_keys/">
+    <link rel="shortcut icon" href="../../../img/ns-white.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>AWS - Kendra e Chaves de Acesso - NeuralSeek Learning Labs</title>
+
+  <meta property="og:title" content="AWS - Kendra e Chaves de Acesso" />
+  <meta property="og:description" content="NeuralSeek Learning Labs" />
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/colors.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight-github-theme.css">
+    <link rel="stylesheet" href="../../../css/highlightjs-copy.css">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link href="../../../css/override.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.min.js"></script>
+    <script src="../../../js/highlightjs-copy.min.js"></script>
+    <script src="../../../js/elasticlunr.min.js"></script>
+      
+    <base target="_top">
+    <script>
+      hljs.addPlugin(new CopyButtonPlugin());
+      hljs.configure({languages:[]});
+      hljs.highlightAll();
+    </script>
+    <script>
+  var base_url = '../../..';
+  var is_top_frame = false;
+    
+    var pageToc = [
+      {title: "Configurando AWS Kendra Index e Chaves de Acesso", url: "#configurando-aws-kendra-index-e-chaves-de-acesso", children: [
+          {title: "Acesse o Amazon Kendra", url: "#acesse-o-amazon-kendra" },
+          {title: "Especifique detalhes do \u00edndice", url: "#especifique-detalhes-do-indice" },
+          {title: "Configure o controle de acesso do usu\u00e1rio", url: "#configure-o-controle-de-acesso-do-usuario" },
+          {title: "Adicionar capacidade adicional", url: "#adicionar-capacidade-adicional" },
+          {title: "Revis\u00e3o e Cria\u00e7\u00e3o", url: "#revisao-e-criacao" },
+          {title: "ID do \u00edndice Kendra", url: "#id-do-indice-kendra" },
+          {title: "Crie um usu\u00e1rio", url: "#crie-um-usuario" },
+          {title: "Crie uma chave de acesso", url: "#crie-uma-chave-de-acesso" },
+          {title: "Chaves de acesso \u00e0 fun\u00e7\u00e3o AWS", url: "#chaves-de-acesso-a-funcao-aws" },
+      ]},
+    ];
+
+</script>
+    <script src="../../../js/base.js?v=2"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-LE5XX6X6Z7');
+      </script> 
+ <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wm-top-page">
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="../../../search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-left wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    
+    
+    
+      <div class="wm-top-tool wm-vcenter pull-right">
+  <div class="wm-select wm-vcentered">
+    
+    <button class="wm-header__button wm-icon" aria-label="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="wm-select__inner">
+      <ul class="wm-select__list">
+        
+          <li class="wm-select__item">
+            <a href="/" hreflang="English" class="wm-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/es/" hreflang="Espanol" class="wm-select__link">
+              Espanol
+            </a>
+          </li>
+        
+          <li class="wm-select__item">
+            <a href="/pt/" hreflang="Português" class="wm-select__link">
+              Português
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+    
+    
+
+    
+    <a href="https://labs.neuralseek.com/" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <img class="wm-top-logo" src="../../../img/ns-white.svg"/>
+      
+      <div class="wm-top-title">
+        NeuralSeek Learning Labs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../pt/" class="wm-article-link wm-toc-text">Começando</a>
+</li>
+        
+      
+      
+        
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 1 - Configuração</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module1/module1/" class="wm-article-link wm-toc-text">Módulo 1 - Visão Geral</a>
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da IBM</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_ibm/module1_ibm/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/" class="wm-article-link wm-toc-text">1.1 - Configurar o NeuralSeek.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar a Extensão Personalizada NeuralSeek</a>
+</li>
+  </ul>
+</li>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev2 wm-toc-opener  "><span class="wm-toc-text">Usuários da AWS</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_aws/module1_aws/" class="wm-article-link wm-toc-text">Introdução</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_aws/aws_module1-1/aws_module1-1/" class="wm-article-link wm-toc-text">1.1 - Iniciar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_aws/aws_module1-2/aws_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o NeuralSeek</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../pt/module1/module1_aws/aws_module1-3/aws_module1-3/" class="wm-article-link wm-toc-text">1.3 - Integrar agente virtual</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 2 - Buscando Respostas</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module2/module2-1/module2-1/" class="wm-article-link wm-toc-text">2.1 - Buscando Respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module2/module2-2/module2-2/" class="wm-article-link wm-toc-text">2.2 - Armazenamento em cache de respostas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module2/module2-3/module2-3/" class="wm-article-link wm-toc-text">2.3 - Intenções Curadas</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+</li>
+  </ul>
+</li>
+
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  "><span class="wm-toc-text">Módulo 3 - Explorando mAIstro</span>
+</li>
+<li class="wm-toc-li-nested collapse ">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module3/module3-1/module3-1/" class="wm-article-link wm-toc-text">3.1 - mAIstro Tour</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/module3/module3-2/module3-2/" class="wm-article-link wm-toc-text">3.2 - Modelos de Exemplo</a>
+</li>
+  </ul>
+</li>
+
+        
+
+<li class="wm-toc-li wm-toc-lev0   "><a href="../../../pt/closing/closing/" class="wm-article-link wm-toc-text">Passos de Encerramento</a>
+</li>
+        
+      
+      
+        
+      
+      
+      
+      
+
+<li class="wm-toc-li wm-toc-lev1 wm-toc-opener  wm-toc-open"><span class="wm-toc-text">Informações Adicionais</span>
+</li>
+<li class="wm-toc-li-nested collapse in">
+  <ul class="wm-toctree">
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/additional_info/ibm_llm_info/" class="wm-article-link wm-toc-text">IBM - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../pt/additional_info/aws_llm_info/" class="wm-article-link wm-toc-text">AWS - Conectar LLM</a>
+</li>
+      
+
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../pt/additional_info/kendra_keys/" class="wm-article-link wm-toc-text">AWS - Kendra e Chaves de Acesso</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+  <div class="wm-content-pane">
+    <div class="container-fluid wm-page-content">
+        
+        <div class="wm-page-real-content">
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+  </div>
+
+          <a name="_top"></a>  
+          
+          <h1 id="configurando-aws-kendra-index-e-chaves-de-acesso">Configurando AWS Kendra Index e Chaves de Acesso<a class="headerlink" href="#configurando-aws-kendra-index-e-chaves-de-acesso" title="Permanent link"></a></h1>
+<p>Esta seção descreve como gerar as informações de chave de acesso necessárias para estabelecer uma conexão bem-sucedida entre o Kendra Index da AWS KnowledgeBase e o NeuralSeek.</p>
+<h2 id="acesse-o-amazon-kendra">Acesse o Amazon Kendra<a class="headerlink" href="#acesse-o-amazon-kendra" title="Permanent link"></a></h2>
+<p>Vá para o Amazon Kendra em sua conta do Console AWS.</p>
+<ul>
+<li><strong>(a)</strong> Clique em Criar um índice.</li>
+</ul>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_1" src="../../../additional_info/images-aws/keys_1.png" /></a></p>
+<h2 id="especifique-detalhes-do-indice">Especifique detalhes do índice<a class="headerlink" href="#especifique-detalhes-do-indice" title="Permanent link"></a></h2>
+<p>Crie um novo índice e função IAM.</p>
+<ul>
+<li><strong>(a)</strong> Adicione um nome do índice. Neste exemplo, <strong>learning-lab</strong>.</li>
+<li><strong>(b)</strong> Clique em Criar nova função na lista suspensa Função IAM.</li>
+<li><strong>(c)</strong> Adicione um nome da função. Neste exemplo, <strong>learning-lab</strong>. </li>
+</ul>
+<p>Clique em Avançar para salvar um novo índice e função.</p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_2" src="../../../additional_info/images-aws/keys_2.png" /></a></p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_3" src="../../../additional_info/images-aws/keys_3.png" /></a></p>
+<h2 id="configure-o-controle-de-acesso-do-usuario">Configure o controle de acesso do usuário<a class="headerlink" href="#configure-o-controle-de-acesso-do-usuario" title="Permanent link"></a></h2>
+<p>Configure uma maneira de controlar quem pode ver quais documentos, filtrando-os automaticamente de acordo com o ID do usuário e grupos de usuários.</p>
+<ul>
+<li><strong>(a)</strong> Selecione a opção Configurações de controle de acesso. Neste exemplo, selecione <strong>Nenhum</strong>.</li>
+<li><strong>(b)</strong> Selecione a opção de expansão do grupo de usuários. Neste exemplo, selecione <strong>Nenhum</strong>.</li>
+</ul>
+<p>Clique em Avançar para salvar as preferências de controle de acesso do usuário.</p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_4" src="../../../additional_info/images-aws/keys_4.png" /></a></p>
+<h2 id="adicionar-capacidade-adicional">Adicionar capacidade adicional<a class="headerlink" href="#adicionar-capacidade-adicional" title="Permanent link"></a></h2>
+<p>Selecione a opção desejada para as Edições de Provisionamento. Neste exemplo, selecione a <strong>edição para desenvolvedores</strong>.</p>
+<p>Clique em Avançar para salvar a preferência de edição de provisionamento.</p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_5" src="../../../additional_info/images-aws/keys_5.png" /></a></p>
+<h2 id="revisao-e-criacao">Revisão e Criação<a class="headerlink" href="#revisao-e-criacao" title="Permanent link"></a></h2>
+<p>Revise os detalhes na página para garantir a correção.</p>
+<p>Clique em Criar para gerar um novo índice e função IAM com as configurações de acesso especificadas e edição do provisionamento.</p>
+<blockquote>
+<p>⚠️ Propagar a função IAM e criar o índice pode levar até 30 minutos.</p>
+</blockquote>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_6" src="../../../additional_info/images-aws/keys_6.png" /></a></p>
+<h2 id="id-do-indice-kendra">ID do índice Kendra<a class="headerlink" href="#id-do-indice-kendra" title="Permanent link"></a></h2>
+<p>Na seção Configuração do índice, copie o <strong>ID do índice</strong> exclusivo para usar como ID do índice Kendra na seção Detalhes da base de conhecimento corporativa da guia Configurar do NeuralSeek.</p>
+<h2 id="crie-um-usuario">Crie um usuário<a class="headerlink" href="#crie-um-usuario" title="Permanent link"></a></h2>
+<p>Vá para IAM no Console AWS.</p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_7" src="../../../additional_info/images-aws/keys_7.png" /></a></p>
+<ul>
+<li><strong>(a)</strong> Clique em Usuários no menu de barra lateral esquerda.</li>
+<li><strong>(b)</strong> Clique em Criar um usuário.</li>
+</ul>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_8" src="../../../additional_info/images-aws/keys_8.png" /></a></p>
+<ul>
+<li><strong>(c)</strong> Adicione um nome de usuário. Para este exemplo, <strong>learninglab-testgroup</strong>.</li>
+</ul>
+<p>Clique em Avançar.</p>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_9" src="../../../additional_info/images-aws/keys_9.png" /></a></p>
+<p>Clique em Criar Grupo.</p>
+<ul>
+<li><strong>(e)</strong> Adicione um nome de grupo de usuário. Para este exemplo, <strong>learninglab-testgroup</strong>.</li>
+<li><strong>(f)</strong> Selecione um nome de política com base no melhor caso de uso. Para este laboratório, selecione o nome da política <strong>AmazonKendraReadOnlyAccess</strong>.</li>
+<li><strong>(g)</strong> Clique em Criar grupo de usuário e, em seguida, clique em Avançar.</li>
+</ul>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_10" src="../../../additional_info/images-aws/keys_10.png" /></a></p>
+<p>Revise os detalhes e clique em Criar usuário para criar o usuário.</p>
+<h2 id="crie-uma-chave-de-acesso">Crie uma chave de acesso<a class="headerlink" href="#crie-uma-chave-de-acesso" title="Permanent link"></a></h2>
+<p>Vá para a guia Credenciais de segurança do usuário selecionado depois de verificar que o usuário foi adicionado ao grupo correto.</p>
+<ul>
+<li><strong>(a)</strong> Na seção Chaves de acesso, clique em Criar chave de acesso.</li>
+</ul>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_11" src="../../../additional_info/images-aws/keys_11.png" /></a></p>
+<ul>
+<li><strong>(b)</strong> Selecione o caso de uso apropriado. Para este exemplo, selecione <strong>Aplicativo em execução fora da AWS</strong>.</li>
+<li><strong>(c)</strong> Clique em Avançar. </li>
+</ul>
+<p><a class="glightbox" href="../../../additional_info/images-aws/keys_12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="keys_12" src="../../../additional_info/images-aws/keys_12.png" /></a></p>
+<p>Clique em criar chave de acesso para criar com êxito uma chave de acesso.</p>
+<h2 id="chaves-de-acesso-a-funcao-aws">Chaves de acesso à função AWS<a class="headerlink" href="#chaves-de-acesso-a-funcao-aws" title="Permanent link"></a></h2>
+<blockquote>
+<p>⚠️ Aviso legal: a chave de acesso secreta será acessível apenas uma vez. É importante copiar a chave de acesso secreta antes de prosseguir.</p>
+</blockquote>
+<p>Na página Recuperar chaves de acesso, copie a <strong>chave de acesso</strong> exclusiva para usar como Chave de acesso à função AWS na seção Detalhes da base de conhecimento corporativa da guia Configurar do NeuralSeek.</p>
+<p>Na mesma página, copie a <strong>chave de acesso secreta</strong> exclusiva para usar como Chave de acesso secreta da função AWS na seção Detalhes da base de conhecimento corporativa da guia Configurar do NeuralSeek.</p>
+<p>Clique em Concluído para adicionar com êxito as informações essenciais da Chave de Acesso da AWS em NeuralSeek ao configurar a Base de Conhecimento do Índice Kendra da AWS.</p>
+            <br>
+            
+    
+      
+      
+      
+    
+    
+    
+    
+    
+    
+
+
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+  </div>
+
+
+          <br>
+          <footer class="wm-footer">
+                <p>Ⓒ 2024 NeuralSeek, all rights reserved.</p>
+          </footer>
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../../../scripts/watson.js"></script>
+<script> loadWatson(); </script>
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>
