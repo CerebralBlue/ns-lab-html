@@ -401,9 +401,16 @@
 
 
 <script src="./scripts/watson.js"></script>
-<script> loadWatson(); </script>
+<script> 
+  function isInFrame() {
+    return (window.top !== window);
+  }
+  if (!isInFrame()) {
+    loadWatson(); 
+  }
+</script>
 <script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
 </html>
 <!--
-Build Date UTC : 2024-04-19 17:01:01.471382+00:00
+Build Date UTC : 2024-04-30 22:25:29.327733+00:00
 -->

@@ -562,6 +562,13 @@ Navegue hasta el panel de origen de código en la consola de funciones de AWS La
 
 
 <script src="../../../../../scripts/watson.js"></script>
-<script> loadWatson(); </script>
+<script> 
+  function isInFrame() {
+    return (window.top !== window);
+  }
+  if (!isInFrame()) {
+    loadWatson(); 
+  }
+</script>
 <script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
 </html>

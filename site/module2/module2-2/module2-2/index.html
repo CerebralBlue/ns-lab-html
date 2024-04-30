@@ -497,6 +497,13 @@ expand the <strong>Intent Matching &amp; Cache Configuration</strong> details. <
 
 
 <script src="../../../scripts/watson.js"></script>
-<script> loadWatson(); </script>
+<script> 
+  function isInFrame() {
+    return (window.top !== window);
+  }
+  if (!isInFrame()) {
+    loadWatson(); 
+  }
+</script>
 <script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
 </html>

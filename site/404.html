@@ -156,6 +156,13 @@
 
 
 <script src="https://labs.neuralseek.com//scripts/watson.js"></script>
-<script> loadWatson(); </script>
+<script> 
+  function isInFrame() {
+    return (window.top !== window);
+  }
+  if (!isInFrame()) {
+    loadWatson(); 
+  }
+</script>
 </body>
 </html>
