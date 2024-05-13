@@ -47,19 +47,19 @@
   var is_top_frame = false;
     
     var pageToc = [
-      {title: "B\u00e1sicos - Primeros Pasos", url: "#basicos-primeros-pasos", children: [
+      {title: "Primeros Pasos", url: "#primeros-pasos", children: [
       ]},
       {title: "Datos - Con\u00e9ctese a su Base de Conocimiento", url: "#datos-conectese-a-su-base-de-conocimiento", children: [
-          {title: "Agregar Informaci\u00f3n de la Base de Conocimientos", url: "#agregar-informacion-de-la-base-de-conocimientos" },
+          {title: "Agregar Informaci\u00f3n a la Base de Conocimiento", url: "#agregar-informacion-a-la-base-de-conocimiento" },
           {title: "\u26a0\ufe0f Para crear su propio \u00edndice de Kendra para hacer el laboratorio", url: "#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" },
       ]},
-      {title: "Organiza - Resultados y Categor\u00edas", url: "#organiza-resultados-y-categorias", children: [
+      {title: "Organizar - Resultados y categor\u00edas", url: "#organizar-resultados-y-categorias", children: [
           {title: "Categorizaci\u00f3n", url: "#categorizacion" },
-          {title: "Marco de Agente Virtual", url: "#marco-de-agente-virtual" },
+          {title: "Modelo de Agente Virtual", url: "#modelo-de-agente-virtual" },
       ]},
-      {title: "Afinar - Afinar para sus datos", url: "#afinar-afinar-para-sus-datos", children: [
+      {title: "Ajustar datos", url: "#ajustar-datos", children: [
       ]},
-      {title: "Pregunta y Respuesta", url: "#pregunta-y-respuesta", children: [
+      {title: "Preguntas y Respuestas", url: "#preguntas-y-respuestas", children: [
       ]},
       {title: "Listo", url: "#listo", children: [
       ]},
@@ -400,23 +400,23 @@
           
           <h1>1.2 - Configurar NeuralSeek</h1>
           
-          <h2 id="basicos-primeros-pasos">Básicos - Primeros Pasos<a class="headerlink" href="#basicos-primeros-pasos" title="Permanent link"></a></h2>
+          <h2 id="primeros-pasos">Primeros Pasos<a class="headerlink" href="#primeros-pasos" title="Permanent link"></a></h2>
 <p>En primer lugar, necesitamos una breve descripción sobre su empresa u organización, centrándonos en el caso de uso para esta instancia de NeuralSeek.</p>
 <ul>
 <li><strong>(a)</strong> Agregue una breve descripción de la empresa u organización.</li>
-<li><strong>(b)</strong> Seleccione el idioma de salida en el menú desplegable. En este ejemplo, seleccione <strong>Inglés</strong>. Lo mejor es que coincida con el idioma de su base de conocimientos y preguntas, pero NeuralSeek puede traducir entre muchos idiomas.</li>
-<li><strong>(c)</strong> Seleccione el uso preferido de la instancia de NeuralSeek. ¿Se usará esta instancia de NeuralSeek de forma interna dentro de su organización o es externa y dirigida al cliente? Utilizaremos esta información para sintonizar algunos parámetros de seguridad para usted. En este ejemplo, seleccione <strong>Interno.</strong></li>
+<li><strong>(b)</strong> Seleccione el idioma de output en el menú desplegable. En este ejemplo, seleccione <strong>Inglés</strong>. Lo mejor es que coincida con el idioma de su base de conocimiento y preguntas, pero NeuralSeek puede traducir a otros idiomas.</li>
+<li><strong>(c)</strong> Seleccione el uso preferido de la instancia de NeuralSeek. ¿Se usará esta instancia de NeuralSeek de forma interna dentro de su organización o es externa y dirigida al cliente? Utilizaremos esta información para ajustar algunos parámetros de seguridad. En este ejemplo, seleccione <strong>Interno.</strong></li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" /></a></p>
-<p>¡Haga clic en Siguiente para guardar una descripción única, un idioma y una opción de caso de uso!</p>
+<p>¡Haga clic en Siguiente para guardar la descripción, idioma y opción de uso!</p>
 <h2 id="datos-conectese-a-su-base-de-conocimiento">Datos - Conéctese a su Base de Conocimiento<a class="headerlink" href="#datos-conectese-a-su-base-de-conocimiento" title="Permanent link"></a></h2>
 <ul>
-<li><strong>(a)</strong> Seleccione la base de conocimientos deseada en el menú desplegable. Para el propósito de este laboratorio, recomendamos la base de conocimientos de AWS <strong>Kendra</strong>.</li>
+<li><strong>(a)</strong> Seleccione la base de conocimiento deseada en el menú desplegable. Para el propósito de este laboratorio, recomendamos la base de conocimiento de AWS <strong>Kendra</strong>.</li>
 <li><strong>(b)</strong> Seleccione el idioma deseado. Para el propósito de este laboratorio, haga clic en <strong>Inglés</strong>.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" /></a></p>
-<h3 id="agregar-informacion-de-la-base-de-conocimientos">Agregar Información de la Base de Conocimientos<a class="headerlink" href="#agregar-informacion-de-la-base-de-conocimientos" title="Permanent link"></a></h3>
-<p>El usuario es responsable de proporcionar la información detallada de la base de conocimientos seleccionada. Dado que se tarda un tiempo en configurar estos datos para usted mismo, vamos a usar uno que ya está preparado para el laboratorio de aprendizaje, con acceso de solo lectura. Los valores reales a continuación serán proporcionados durante el curso de este laboratorio por el instructor del laboratorio.</p>
+<h3 id="agregar-informacion-a-la-base-de-conocimiento">Agregar Información a la Base de Conocimiento<a class="headerlink" href="#agregar-informacion-a-la-base-de-conocimiento" title="Permanent link"></a></h3>
+<p>El usuario es responsable de proporcionar la información detallada de la base de conocimiento seleccionada. Dado que se tarda un tiempo en configurar estos datos, vamos a usar una que ya está preparada para el laboratorio de aprendizaje, con acceso de solo lectura. A continuación serán proporcionados los valores reales  a ser usados durante este laboratorio.</p>
 <blockquote>
 <p>⚠️ Para entender cómo crear y localizar las claves de acceso de AWS, consulte la sección <strong>Información adicional - Claves de acceso</strong> en la guía del laboratorio.</p>
 </blockquote>
@@ -428,63 +428,64 @@
 <li><strong>(d)</strong> Agregar Clave de acceso secreta de rol de AWS.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" /></a></p>
-<p>Haga clic en el botón Probar para probar la conexión. Luego, haga clic en Siguiente para guardar la configuración de la base de conocimientos.</p>
+<p>Haga clic en el botón Probar para verificar la conexión. Luego, haga clic en Siguiente para guardar la configuración de la base de conocimiento.</p>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" /></a></p>
 <blockquote>
-<p>¡NeuralSeek ahora está configurado con una base de conocimientos, en este caso: índice Kendra, y listo para buscar!</p>
+<p>¡NeuralSeek ya está configurado y conectado a una base de conocimiento, en este caso el índice Kendra, así que está listo para comenzar a realizar búsquedas!</p>
 </blockquote>
 <h3 id="para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio">⚠️ Para crear su propio índice de Kendra para hacer el laboratorio<a class="headerlink" href="#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" title="Permanent link"></a></h3>
-<p>Con el interés del tiempo, el laboratorio usará un índice Kendra ya incorporado que está prellenado con los datos. Eso se debe al hecho de que crear el índice Kendra y poblar los datos tardaría de 40 minutos a más de una hora en completarse. Sin embargo, en caso de que esté interesado en realizar más tarde el laboratorio usando su propio índice Kendra y claves, puede seguir las siguientes instrucciones.</p>
+<p>Para reducir el tiempo de configuración, el laboratorio usará un índice Kendra previamente poblado con los datos necesarios. Eso se debe al hecho de que crear el índice Kendra y poblar los datos tardaría más de 40 minutos en completarse. Sin embargo, en caso de que esté interesado en realizar más tarde el laboratorio usando su propio índice Kendra y claves, puede seguir las siguientes instrucciones.</p>
 <p>🔗<a href="../../../../additional_info/kendra_keys/">Configurar claves de acceso y el índice AWS Kendra</a></p>
-<h2 id="organiza-resultados-y-categorias">Organiza - Resultados y Categorías<a class="headerlink" href="#organiza-resultados-y-categorias" title="Permanent link"></a></h2>
+<h2 id="organizar-resultados-y-categorias">Organizar - Resultados y categorías<a class="headerlink" href="#organizar-resultados-y-categorias" title="Permanent link"></a></h2>
 <h3 id="categorizacion">Categorización<a class="headerlink" href="#categorizacion" title="Permanent link"></a></h3>
 <p>Categoriza tus intenciones para facilitar el informe y la gestión.</p>
 <blockquote>
-<p>Si está siguiendo el laboratorio en vivo, ¡saltee este paso! Volveremos a este tema en el Módulo 2.</p>
+<p>Si está siguiendo el laboratorio en vivo, ¡Omita este paso! Volveremos a este tema en el Módulo 2.</p>
 </blockquote>
 <ul>
 <li><strong>(a)</strong> Haga clic en el ícono de la bombilla para agregar una nueva fila.</li>
-<li><strong>(b)</strong> Ingrese un nombre de categoría único, una URL correspondiente y una descripción detallada de la categoría con intenciones que no coincidan con ninguna otra categoría.</li>
+<li><strong>(b)</strong> Ingrese un nombre único para la categoría, URL y una descripción detallada de la categoría con intenciones que no coincidan con ninguna otra categoría.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" /></a></p>
-<h3 id="marco-de-agente-virtual">Marco de Agente Virtual<a class="headerlink" href="#marco-de-agente-virtual" title="Permanent link"></a></h3>
+<h3 id="modelo-de-agente-virtual">Modelo de Agente Virtual<a class="headerlink" href="#modelo-de-agente-virtual" title="Permanent link"></a></h3>
 <ul>
 <li><strong>(a)</strong> Seleccione el tipo de agente virtual en el menú desplegable. En este ejemplo, seleccione <strong>AWS Lex V2</strong>.</li>
-<li><strong>(b)</strong> Seleccione la opción preferida para habilitar o deshabilitar la inclusión de enlaces incrustados en las respuestas devueltas. En este ejemplo, seleccione <strong>Deshabilitar</strong>.</li>
+<li><strong>(b)</strong> Seleccione la opción preferida para habilitar o deshabilitar la inclusión de enlaces incrustados en las respuestas. En este ejemplo, seleccione <strong>Deshabilitar</strong>.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" /></a></p>
-<p>Haga clic en Siguiente para guardar las categorías informadas y el marco de agente virtual seleccionado.</p>
-<h2 id="afinar-afinar-para-sus-datos">Afinar - Afinar para sus datos<a class="headerlink" href="#afinar-afinar-para-sus-datos" title="Permanent link"></a></h2>
-<p>Afinemos NeuralSeek para sus datos.</p>
+<p>Haga clic en Siguiente para guardar las categorías y el agente virtual seleccionado.</p>
+<h2 id="ajustar-datos">Ajustar datos<a class="headerlink" href="#ajustar-datos" title="Permanent link"></a></h2>
+<p>Ajustemos los datos a ser usados por NeuralSeek.</p>
 <ul>
-<li><strong>(a)</strong> Seleccione la opción preferida para cuál de estos se parece más a sus datos. Para este ejemplo, seleccione <strong>Las frases importantes están rodeadas por muchas líneas de texto que las explican</strong>.<ul>
+<li><strong>(a)</strong> Seleccione la opción que más se asemeje al estilo de su información. Para este ejemplo, seleccione <strong>Las frases son largas y están rodeadas por muchas líneas de texto que las explican</strong>.<ul>
 <li>La opción <em>Las frases importantes están rodeadas por muchas líneas de texto que las explican</em>, describe datos con explicaciones más elaboradas con pasajes de texto más extensos para una mejor comprensión.</li>
 <li>La opción <em>Las frases importantes están rodeadas por solo una o dos líneas de información relevante</em>, describe datos con una cobertura concisa de frases clave con solo una o dos líneas de contexto necesario.</li>
 </ul>
 </li>
-<li><strong>(b)</strong> Seleccione la opción preferida que mejor describa sus requisitos de datos. Para este ejemplo, seleccione <strong>Quiero dar mucha información al LLM y darle margen de maniobra para decidir la respuesta</strong>.</li>
-<li><strong>(c)</strong> Seleccione la opción preferida que mejor describa su moneda de datos. Para este ejemplo, seleccione <strong>Todos mis documentos son actuales y relevantes</strong>. <ul>
+<li><strong>(b)</strong> Seleccione la opción preferida que mejor describa la estructura y estilo de la información. Para este ejemplo, seleccione <strong>Quiero dar mucha información al LLM y darle una margen de maniobra para decidir la respuesta</strong>.</li>
+<li><strong>(c)</strong> Seleccione la opción preferida que mejor describa la relevancia y fecha de actualización de los mismos. Para este ejemplo, seleccione <strong>Todos mis documentos son actuales y relevantes</strong>. <ul>
 <li>La opción <em>Todos mis documentos son actuales y relevantes</em> describe datos que están actualizados.</li>
 <li>La opción <em>Tengo muchos documentos antiguos o publicaciones de blog, algunos con información contradictoria. Necesito que NeuralSeek me ayude con la priorización de fechas</em>, describe datos que pueden tener detalles contradictorios o irrelevantes en diferentes fuentes o documentos.</li>
 </ul>
 </li>
 </ul>
-<p>Haga clic en Siguiente para guardar las configuraciones de ajuste informadas.</p>
+<p>Haga clic en Siguiente para guardar las configuraciones seleccionadas.</p>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" /></a></p>
-<h2 id="pregunta-y-respuesta">Pregunta y Respuesta<a class="headerlink" href="#pregunta-y-respuesta" title="Permanent link"></a></h2>
+<h2 id="preguntas-y-respuestas">Preguntas y Respuestas<a class="headerlink" href="#preguntas-y-respuestas" title="Permanent link"></a></h2>
 <p>A medida que NeuralSeek responde las preguntas, podemos construir y mantener automáticamente partes de su Agente Virtual.</p>
-<p>Utilice los botones a continuación para generar rápidamente contenido de preguntas y respuestas para arrancar y probar su Agente Virtual.</p>
+<p>A continuación, use los botones para crear contenido de preguntas y respuestas de forma rápida, lo que le permitirá iniciar y probar su Agente Virtual.</p>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image3" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.3.png" /></a> </p>
 <ul>
-<li><strong>Generar Preguntas Automáticamente</strong> consultará la base de conocimientos, pedirá a NeuralSeek que genere información y producirá una variedad de preguntas de prueba basadas en el contenido corporativo. Haga clic en Enviar para que NeuralSeek genere respuestas.</li>
+<li><strong>Generar Preguntas Automáticamente</strong> consultará la base de conocimiento, pedirá a NeuralSeek que genere información y producirá una variedad de preguntas de prueba basadas en el contenido corporativo. Haga clic en Enviar para que NeuralSeek genere respuestas.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image3" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.4.png" /></a> </p>
 <ul>
-<li><strong>Ingresar Preguntas Manualmente</strong> proporcionará un cuadro de prueba en blanco para que ingrese preguntas, una por línea, basadas en su contenido corporativo. Haga clic en Enviar para que NeuralSeek genere respuestas.</li>
+<li><strong>Ingresar Preguntas Manualmente</strong> 
+Proporcionará un cuadro de diálogo para que ingrese preguntas, una por línea, relacionadas con su contenido corporativo. Haga clic en "Enviar" para que NeuralSeek genere las respuestas.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image4" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.6.png" /></a></p>
 <ul>
-<li><strong>Cargar Preguntas de Prueba</strong> proporcionará un enlace a su explorador de archivos local para cargar un archivo CSV de preguntas de prueba. Las preguntas se ejecutarán a través del punto final Seek en paralelo y se calificarán. Utilice el archivo descargable .csv proporcionado como plantilla para sus preguntas. Los archivos de entrada deben conservar estos títulos de columna como mínimo, pero puede agregar columnas de carga útil adicionales. Haga clic en Enviar para que NeuralSeek genere respuestas.</li>
+<li><strong>Cargar Preguntas de Prueba</strong> proporcionará un enlace a su explorador de archivos local para cargar un archivo CSV de preguntas de prueba. Las preguntas se ejecutarán a través de la herramienta Seek en paralelo y se calificarán. Utilice el archivo descargable .csv proporcionado como plantilla para sus preguntas. Los archivos de entrada deben conservar estos títulos de columna como mínimo, pero puede agregar columnas adicionales. Haga clic en Enviar para que NeuralSeek genere sus respuestas.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image5" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" /></a></p>
 <blockquote>
