@@ -3,6 +3,7 @@ body {
   --color-fg-default: #01090f;
   --color-fg-secondary: #666;
   --color-fg-primary: #0d67b4;
+  --color-fg-primary-muted: rgba(13,103,180,0.3);
   --color-fg-accent: #185183;
   --color-href-links: #338dc2;
   --color-canvas-default: #f8f8f8;  

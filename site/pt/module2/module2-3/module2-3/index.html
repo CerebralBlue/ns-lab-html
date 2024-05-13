@@ -56,8 +56,6 @@
       {title: "Exportar Inten\u00e7\u00f5es de Curate", url: "#exportar-intencoes-de-curate", children: [
       ]},
       {title: "Adicionando Inten\u00e7\u00f5es ao Agente Virtual", url: "#adicionando-intencoes-ao-agente-virtual", children: [
-          {title: "IBM watsonx Assistant", url: "#ibm-watsonx-assistant" },
-          {title: "AWS Lex", url: "#aws-lex" },
       ]},
       {title: "Monitoramento de ida e volta", url: "#monitoramento-de-ida-e-volta", children: [
       ]},
@@ -118,19 +116,22 @@
       <ul class="wm-select__list">
         
           <li class="wm-select__item">
-            <a href="/" hreflang="English" class="wm-select__link">
+            
+              <a href="/module2/module2-3/module2-3/" hreflang="English" class="wm-select__link">
               English
             </a>
           </li>
         
           <li class="wm-select__item">
-            <a href="/es/" hreflang="Espanol" class="wm-select__link">
-              Espanol
+            
+              <a href="/es/module2/module2-3/module2-3/" hreflang="Español" class="wm-select__link">
+              Español
             </a>
           </li>
         
           <li class="wm-select__item">
-            <a href="/pt/" hreflang="Português" class="wm-select__link">
+            
+              <a href="/pt/module2/module2-3/module2-3/" hreflang="Português" class="wm-select__link">
               Português
             </a>
           </li>
@@ -437,7 +438,8 @@
 </ul>
 <h2 id="adicionando-intencoes-ao-agente-virtual">Adicionando Intenções ao Agente Virtual<a class="headerlink" href="#adicionando-intencoes-ao-agente-virtual" title="Permanent link"></a></h2>
 <p>Carregue esses arquivos em suas respectivas plataformas de agente virtual para configurar o projeto com intenções curadas manualmente.</p>
-<h4 id="ibm-watsonx-assistant">IBM watsonx Assistant<a class="headerlink" href="#ibm-watsonx-assistant" title="Permanent link"></a></h4>
+<details class="abstract">
+<summary>Etapas para o IBM watsonx Assistant</summary>
 <ul>
 <li>Navegue até o seu projeto de watsonx Assistant e clique em Ações.</li>
 <li>No canto superior direito, clique no ícone de engrenagem para abrir as Configurações Globais.</li>
@@ -474,7 +476,9 @@
 <p><a class="glightbox" href="../../../../module2/module2-3/images/image-027.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_actions-027" src="../../../../module2/module2-3/images/image-027.png" /></a>
 <a class="glightbox" href="../../../../module2/module2-3/images/image-028.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_action-028" src="../../../../module2/module2-3/images/image-028.png" /></a>
 <a class="glightbox" href="../../../../module2/module2-3/images/image-029.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="view_action-029" src="../../../../module2/module2-3/images/image-029.png" /></a></p>
-<h4 id="aws-lex">AWS Lex<a class="headerlink" href="#aws-lex" title="Permanent link"></a></h4>
+</details>
+<details class="abstract">
+<summary>Etapas para o AWS Lex</summary>
 <ul>
 <li>Faça login no Console de Gerenciamento da AWS e vá para AWS Lex&gt; Bots. Você deve ver uma lista de bots disponíveis para mesclar com o NeuraSeek.</li>
 </ul>
@@ -505,6 +509,7 @@
 <li>Clique no botão build. Agora você pode testar as novas intenções importadas.</li>
 </ul>
 <p><a class="glightbox" href="../../../../module2/module2-3/images/build_bot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="build_button" src="../../../../module2/module2-3/images/build_bot.png" /></a></p>
+</details>
 <h2 id="monitoramento-de-ida-e-volta">Monitoramento de ida e volta<a class="headerlink" href="#monitoramento-de-ida-e-volta" title="Permanent link"></a></h2>
 <p>Navegue até a guia Integração dentro do NeuralSeek. 
 As opções disponíveis contendo <strong>Logs</strong> fornecem instruções passo a passo sobre como implementar o monitoramento de ida e volta em Intents NeuralSeek implantados específicos para o provedor de nuvem. </p>
@@ -574,5 +579,6 @@ As opções disponíveis contendo <strong>Logs</strong> fornecem instruções pa
     loadWatson(); 
   }
 </script>
-<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
 </html>
