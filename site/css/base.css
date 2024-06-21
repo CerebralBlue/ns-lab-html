@@ -658,9 +658,9 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
  From override.css
  ***********************************************************************/
 
- .wm-page-content ul > li > ul {
+ .wm-page-content ul > li > ul, .wm-page-content ol > li > ul {
   padding-bottom: 10px;
-}
+} 
 
 .wm-page-content ol > li::marker {
   font-weight: bold;
