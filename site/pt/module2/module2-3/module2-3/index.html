@@ -53,6 +53,14 @@
       ]},
       {title: "A\u00e7\u00f5es adicionais", url: "#acoes-adicionais", children: [
       ]},
+      {title: "Adicionar Categorias de Inten\u00e7\u00e3o", url: "#adicionar-categorias-de-intencao", children: [
+      ]},
+      {title: "Descrever Categorias", url: "#descrever-categorias", children: [
+      ]},
+      {title: "Procurar Respostas baseadas na Categoria de Inten\u00e7\u00e3o", url: "#procurar-respostas-baseadas-na-categoria-de-intencao", children: [
+      ]},
+      {title: "Visualizar Categorias de Inten\u00e7\u00e3o", url: "#visualizar-categorias-de-intencao", children: [
+      ]},
       {title: "Exportar Inten\u00e7\u00f5es de Curate", url: "#exportar-intencoes-de-curate", children: [
       ]},
       {title: "Adicionando Inten\u00e7\u00f5es ao Agente Virtual", url: "#adicionando-intencoes-ao-agente-virtual", children: [
@@ -284,7 +292,7 @@
 </li>
       
 
-<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorização de intenções</a>
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Ajuste da Base de Conhecimento</a>
 </li>
   </ul>
 </li>
@@ -378,7 +386,7 @@
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../module2-4/module2-4/" class="btn btn-xs btn-link">
-        2.4 - Categorização de intenções
+        2.4 - Ajuste da Base de Conhecimento
       </a>
     </div>
     
@@ -423,6 +431,44 @@
 <li>Clique em Importar para carregar um arquivo base do seu assistente virtual. O NeuralSeek mesclará o conteúdo exportado com este arquivo base.</li>
 </ul>
 <p><a class="glightbox" href="../../../../module2/module2-3/images/additional_actions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="additional_actions" src="../../../../module2/module2-3/images/additional_actions.png" /></a></p>
+<p>Os utilizadores podem criar categorias usando descrições de linguagem natural para controlar como as intenções nas perguntas do utilizador podem ser categorizadas. Tipicamente, uma pergunta seria automaticamente categorizada como <code>FAQ</code>, mas os utilizadores podem fornecer categorias personalizadas adicionais.</p>
+<p>Uma vez ativada a categorização, as telas Curadoria e Análise mudarão para mostrar agrupamentos em torno das categorias.</p>
+<p>Os utilizadores podem mover intenções para categorias manualmente através do separador Curadoria ou das funcionalidades de download/edição CSV. As edições feitas serão usadas para treinar o sistema para futuros acontecimentos de categorização.</p>
+<h2 id="adicionar-categorias-de-intencao">Adicionar Categorias de Intenção<a class="headerlink" href="#adicionar-categorias-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até ao separador Configurar dentro do NeuralSeek, e expanda o campo <strong>Categorização de Intenção</strong>.</p>
+<ul>
+<li>Clique no ícone da lâmpada para adicionar uma nova linha de categoria.</li>
+<li>Adicione um título à categoria na primeira caixa no lado esquerdo. Por exemplo, adicionar: <code>Virtual Agents</code>.</li>
+<li>Abaixo, adicione um link para a documentação de origem que contém informações sobre a categoria. Por exemplo, adicione <code>https://documentation.neuralseek.com/integrations/supported_virtual_agents/supported_virtual_agents/</code>.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/intent_cat_title_url.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_cat_title_url" src="../../../../module2/module2-3/images/intent_cat_title_url.png" /></a></p>
+<h2 id="descrever-categorias">Descrever Categorias<a class="headerlink" href="#descrever-categorias" title="Permanent link"></a></h2>
+<p>A caixa do lado direito é onde os usuários podem adicionar uma descrição de linguagem natural da categoria.</p>
+<ul>
+<li>Adicione uma descrição da categoria. Por exemplo, adicione: <code>Virtual Agents that are supported by NeuralSeek.</code>.</li>
+<li>Clique no ícone Salvar vermelho na parte inferior da tela para salvar a nova Categoria de Intenção adicionada.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/save_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_intent_cat" src="../../../../module2/module2-3/images/save_intent_cat.png" /></a></p>
+<h2 id="procurar-respostas-baseadas-na-categoria-de-intencao">Procurar Respostas baseadas na Categoria de Intenção<a class="headerlink" href="#procurar-respostas-baseadas-na-categoria-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até a aba Procurar dentro do NeuralSeek.</p>
+<ul>
+<li>Faça uma pergunta envolvendo a Categoria de Intenção recém-criada, para que a intenção apareça na tela de Curadoria e Análise também.<ul>
+<li>Por exemplo, procure: <code>What Virtual Agents are supported by NeuralSeek?</code>, ou <code>Does NeuralSeek support Virtual Agent integration?</code>.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/seek_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_intent_cat" src="../../../../module2/module2-3/images/seek_intent_cat.png" /></a></p>
+<h2 id="visualizar-categorias-de-intencao">Visualizar Categorias de Intenção<a class="headerlink" href="#visualizar-categorias-de-intencao" title="Permanent link"></a></h2>
+<p>Navegue até a aba Curadoria dentro do NeuralSeek.</p>
+<ul>
+<li>Note que há um número <strong>1</strong> ao lado da nova intenção debaixo do rótulo Categoria.</li>
+<li>Clique no número para ver o nome da categoria em que a intenção é agora colocada.</li>
+<li>Opcionalmente, você pode editar em qual categoria de intenções se encaixam selecionando no menu suspenso.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/intent_number.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_number" src="../../../../module2/module2-3/images/intent_number.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-3/images/change_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="change_intent_cat" src="../../../../module2/module2-3/images/change_intent_cat.png" /></a></p>
+<p>Navegue até a aba Análise dentro do NeuralSeek para ver o histórico de intenções da categoria recém-criada também.</p>
+<p><a class="glightbox" href="../../../../module2/module2-3/images/analytics_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="analytics_intent_cat" src="../../../../module2/module2-3/images/analytics_intent_cat.png" /></a></p>
 <h2 id="exportar-intencoes-de-curate">Exportar Intenções de Curate<a class="headerlink" href="#exportar-intencoes-de-curate" title="Permanent link"></a></h2>
 <p>O NeuralSeek torna a configuração do seu projeto de agente virtual fácil com suas habilidades de Exportação e Importação dentro da guia Curate.</p>
 <ul>
@@ -542,7 +588,7 @@ As opções disponíveis contendo <strong>Logs</strong> fornecem instruções pa
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../module2-4/module2-4/" class="btn btn-xs btn-link">
-        2.4 - Categorização de intenções
+        2.4 - Ajuste da Base de Conhecimento
       </a>
     </div>
     

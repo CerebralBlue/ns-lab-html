@@ -53,6 +53,16 @@
       ]},
       {title: "Additional actions", url: "#additional-actions", children: [
       ]},
+      {title: "Intent Categorization", url: "#intent-categorization", children: [
+      ]},
+      {title: "Add Intent Categories", url: "#add-intent-categories", children: [
+      ]},
+      {title: "Describe Categories", url: "#describe-categories", children: [
+      ]},
+      {title: "Seek Answers based on Intent Category", url: "#seek-answers-based-on-intent-category", children: [
+      ]},
+      {title: "View Intent Categories", url: "#view-intent-categories", children: [
+      ]},
       {title: "Export Curate Intents", url: "#export-curate-intents", children: [
       ]},
       {title: "Adding Intents to Virtual Agent", url: "#adding-intents-to-virtual-agent", children: [
@@ -282,7 +292,7 @@
 </li>
       
 
-<li class="wm-toc-li wm-toc-lev1   "><a href="../../../module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Intent Categorization</a>
+<li class="wm-toc-li wm-toc-lev1   "><a href="../../../module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - KnowledgeBase Tuning</a>
 </li>
   </ul>
 </li>
@@ -374,7 +384,7 @@
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../module2-4/module2-4/" class="btn btn-xs btn-link">
-        2.4 - Intent Categorization
+        2.4 - KnowledgeBase Tuning
       </a>
     </div>
     
@@ -419,6 +429,45 @@
 <li>Click "Import" to upload a basefile from your virtual assistant. NeuralSeek will merge exported content with this basefile.</li>
 </ul>
 <p><a class="glightbox" href="../images/additional_actions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="additional_actions" src="../images/additional_actions.png" /></a></p>
+<h2 id="intent-categorization">Intent Categorization<a class="headerlink" href="#intent-categorization" title="Permanent link"></a></h2>
+<p>Users are able to create categories using natural language descriptions to control how intents in user questions can be categorized. Typically, a question would be automatically categorized as <code>FAQ</code>, but users are able to provide additional custom categories. </p>
+<p>Once categorization is enabled, the Curate and Analytics screens will change to show groupings around categories. </p>
+<p>Users may move intents into categories manually through the Curate tab or the CSV download/edit features. The edits made will be used to train the system for future categorization events.</p>
+<h2 id="add-intent-categories">Add Intent Categories<a class="headerlink" href="#add-intent-categories" title="Permanent link"></a></h2>
+<p>Navigate to the Configure tab within NeuralSeek, and expand the <strong>Intent Categorization</strong> field. </p>
+<ul>
+<li>Click the light bulb icon to add a new category row.</li>
+<li>Add a title to the category in the first box on the left side. For example, add: <code>Virtual Agents</code>.</li>
+<li>Underneath, add a link to the source documentation containing information about the category. For example, add <code>https://documentation.neuralseek.com/integrations/supported_virtual_agents/supported_virtual_agents/</code>. </li>
+</ul>
+<p><a class="glightbox" href="../images/intent_cat_title_url.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_cat_title_url" src="../images/intent_cat_title_url.png" /></a></p>
+<h2 id="describe-categories">Describe Categories<a class="headerlink" href="#describe-categories" title="Permanent link"></a></h2>
+<p>The box on the right side is where users are able to add a natural language description of the category.</p>
+<ul>
+<li>Add a description of the category. For example, add: <code>Virtual Agents that are supported by NeuralSeek.</code>. </li>
+<li>Click the red Save icon at the bottom of the screen to save the newly added Intent Category. </li>
+</ul>
+<p><a class="glightbox" href="../images/save_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_intent_cat" src="../images/save_intent_cat.png" /></a></p>
+<h2 id="seek-answers-based-on-intent-category">Seek Answers based on Intent Category<a class="headerlink" href="#seek-answers-based-on-intent-category" title="Permanent link"></a></h2>
+<p>Navigate to the Seek tab within NeuralSeek.</p>
+<ul>
+<li>Ask a question involving the newly created Intent Category, so the Intent will appear in the Curate and Analytics screen as well. <ul>
+<li>For example, seek: <code>What Virtual Agents are supported by NeuralSeek?</code>, or <code>Does NeuralSeek support Virtual Agent integration?</code>. </li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="../images/seek_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_intent_cat" src="../images/seek_intent_cat.png" /></a></p>
+<h2 id="view-intent-categories">View Intent Categories<a class="headerlink" href="#view-intent-categories" title="Permanent link"></a></h2>
+<p>Navigate to the Curate tab within NeuralSeek.</p>
+<ul>
+<li>Notice how there is a number <strong>1</strong> next to the new intent underneath the Category label.</li>
+<li>Click the number to view the name of the category that intent is now placed in. </li>
+<li>Optionally, you can edit which category Intents fall into by selecting from the dropdown menu. </li>
+</ul>
+<p><a class="glightbox" href="../images/intent_number.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_number" src="../images/intent_number.png" /></a>
+<a class="glightbox" href="../images/change_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="change_intent_cat" src="../images/change_intent_cat.png" /></a></p>
+<p>Navigate to the Analytics tab within NeuralSeek to view the Intent history of the newly created category as well.</p>
+<p><a class="glightbox" href="../images/analytics_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="analytics_intent_cat" src="../images/analytics_intent_cat.png" /></a></p>
 <h2 id="export-curate-intents">Export Curate Intents<a class="headerlink" href="#export-curate-intents" title="Permanent link"></a></h2>
 <p>NeuralSeek makes bootstrapping your virtual agent project easy with its Export/Import abilities within the Curate tab. </p>
 <ul>
@@ -538,7 +587,7 @@ The available options containing <strong>"Logs"</strong> provide step-by-step in
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../module2-4/module2-4/" class="btn btn-xs btn-link">
-        2.4 - Intent Categorization
+        2.4 - KnowledgeBase Tuning
       </a>
     </div>
     

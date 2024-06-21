@@ -13,9 +13,9 @@
     <link rel="shortcut icon" href="../../../../img/ns-white.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
-    <title>2.4 - Categorización de Intención - NeuralSeek Learning Labs</title>
+    <title>2.4 - Ajuste de la Base de Conocimiento - NeuralSeek Learning Labs</title>
 
-  <meta property="og:title" content="2.4 - Categorización de Intención" />
+  <meta property="og:title" content="2.4 - Ajuste de la Base de Conocimiento" />
   <meta property="og:description" content="NeuralSeek Learning Labs" />
     <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
@@ -47,14 +47,6 @@
   var is_top_frame = false;
     
     var pageToc = [
-      {title: "Agregar Categor\u00edas de Intenci\u00f3n", url: "#agregar-categorias-de-intencion", children: [
-      ]},
-      {title: "Describir Categor\u00edas", url: "#describir-categorias", children: [
-      ]},
-      {title: "Buscar Respuestas Basadas en la Categor\u00eda de Intenci\u00f3n", url: "#buscar-respuestas-basadas-en-la-categoria-de-intencion", children: [
-      ]},
-      {title: "Ver Categor\u00edas de Intenci\u00f3n", url: "#ver-categorias-de-intencion", children: [
-      ]},
       {title: "Manejo de Informaci\u00f3n Personal Identificable (PII)", url: "#manejo-de-informacion-personal-identificable-pii", children: [
           {title: "Desactivar la Forzada de Respuestas desde la Base de Conocimientos", url: "#desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos" },
           {title: "Establecer Filtros de PII basados en LLM", url: "#establecer-filtros-de-pii-basados-en-llm" },
@@ -287,7 +279,7 @@
 </li>
       
 
-<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../../es/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Categorización de Intención</a>
+<li class="wm-toc-li wm-toc-lev2  wm-current "><a href="../../../../es/module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Ajuste de la Base de Conocimiento</a>
 </li>
   </ul>
 </li>
@@ -397,47 +389,9 @@
 
           <a name="_top"></a>  
           
-          <h1>2.4 - Categorización de Intención</h1>
+          <h1>2.4 - Ajuste de la Base de Conocimiento</h1>
           
-          <p>Los usuarios pueden crear categorías utilizando descripciones en lenguaje natural para controlar cómo se pueden categorizar los intenciones en las preguntas de los usuarios. Normalmente, una pregunta sería automáticamente categorizada como <code>FAQ</code>, pero los usuarios pueden ofrecer categorías personalizadas adicionales.</p>
-<p>Una vez que la categorización está habilitada, las pantallas de Curación y Análisis cambiarán para mostrar agrupaciones alrededor de las categorías.</p>
-<p>Los usuarios pueden mover intenciones a categorías manualmente a través de la pestaña de Curación o las funciones de descarga/edición CSV. Las ediciones realizadas se utilizarán para entrenar el sistema en eventos futuros de categorización.</p>
-<h2 id="agregar-categorias-de-intencion">Agregar Categorías de Intención<a class="headerlink" href="#agregar-categorias-de-intencion" title="Permanent link"></a></h2>
-<p>Navegue hasta la pestaña de Configuración dentro de NeuralSeek y amplíe el campo <strong>Categorización de Intenciones</strong>.</p>
-<ul>
-<li>Haga clic en el icono de la bombilla para agregar una nueva fila de categoría.</li>
-<li>Inserte un título para la categoría en el primer cuadro del lado izquierdo. Por ejemplo, añada: <code>Virtual Agents</code>.</li>
-<li>Debajo, añada un enlace a la documentación fuente que contenga información sobre la categoría. Por ejemplo, añada <code>https://documentation.neuralseek.com/integrations/supported_virtual_agents/supported_virtual_agents/</code>.</li>
-</ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/intent_cat_title_url.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_cat_title_url" src="../../../../module2/module2-4/images/intent_cat_title_url.png" /></a></p>
-<h2 id="describir-categorias">Describir Categorías<a class="headerlink" href="#describir-categorias" title="Permanent link"></a></h2>
-<p>El cuadro del lado derecho es donde los usuarios pueden agregar una descripción en lenguaje natural de la categoría.</p>
-<ul>
-<li>Añada una descripción de la categoría. Por ejemplo, añada: <code>Virtual Agents that are supported by NeuralSeek.</code>.</li>
-<li>Haga clic en el icono rojo de Guardar en la parte inferior de la pantalla para guardar la nueva Categoría de Intención añadida.</li>
-</ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/save_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_intent_cat" src="../../../../module2/module2-4/images/save_intent_cat.png" /></a></p>
-<h2 id="buscar-respuestas-basadas-en-la-categoria-de-intencion">Buscar Respuestas Basadas en la Categoría de Intención<a class="headerlink" href="#buscar-respuestas-basadas-en-la-categoria-de-intencion" title="Permanent link"></a></h2>
-<p>Vaya a la pestaña de Búsqueda dentro de NeuralSeek.</p>
-<ul>
-<li>Formule una pregunta que involucre la Categoría de Intención recién creada, para que la Intención aparezca también en la pantalla de Curación y Análisis.<ul>
-<li>Por ejemplo, busque: <code>What Virtual Agents are supported by NeuralSeek?</code>, o <code>Does NeuralSeek support Virtual Agent integration?</code>.</li>
-</ul>
-</li>
-</ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/seek_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_intent_cat" src="../../../../module2/module2-4/images/seek_intent_cat.png" /></a></p>
-<h2 id="ver-categorias-de-intencion">Ver Categorías de Intención<a class="headerlink" href="#ver-categorias-de-intencion" title="Permanent link"></a></h2>
-<p>Vaya a la pestaña de Curación dentro de NeuralSeek.</p>
-<ul>
-<li>Observe cómo hay un número <strong>1</strong> al lado de la nueva intención debajo de la etiqueta de Categoría.</li>
-<li>Haga clic en el número para ver el nombre de la categoría en la que se ha colocado esa intención ahora.</li>
-<li>Opcionalmente, puede editar en qué categoría se clasifican las Intenciones seleccionando desde el menú desplegable.</li>
-</ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/intent_number.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_number" src="../../../../module2/module2-4/images/intent_number.png" /></a>
-<a class="glightbox" href="../../../../module2/module2-4/images/change_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="change_intent_cat" src="../../../../module2/module2-4/images/change_intent_cat.png" /></a></p>
-<p>Vaya a la pestaña de Análisis dentro de NeuralSeek para ver el historial de Intención de la nueva categoría creada también.</p>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/analytics_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="analytics_intent_cat" src="../../../../module2/module2-4/images/analytics_intent_cat.png" /></a></p>
-<h2 id="manejo-de-informacion-personal-identificable-pii">Manejo de Información Personal Identificable (PII)<a class="headerlink" href="#manejo-de-informacion-personal-identificable-pii" title="Permanent link"></a></h2>
+          <h2 id="manejo-de-informacion-personal-identificable-pii">Manejo de Información Personal Identificable (PII)<a class="headerlink" href="#manejo-de-informacion-personal-identificable-pii" title="Permanent link"></a></h2>
 <p>NeuralSeek cuenta con un avanzado rutina de detección de Información Personal Identificable (PII) que identifica automáticamente cualquier PII dentro de las entradas de los usuarios. Permite a los usuarios mantener un entorno seguro y ofrecer respuestas precisas a las consultas de los usuarios.</p>
 <h4 id="desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos">Desactivar la Forzada de Respuestas desde la Base de Conocimientos<a class="headerlink" href="#desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos" title="Permanent link"></a></h4>
 <p>Vaya a la pantalla de Configuración en NeuralSeek y amplíe los detalles de <strong>Ingeniería de Respuestas y Preferencias</strong>.</p>

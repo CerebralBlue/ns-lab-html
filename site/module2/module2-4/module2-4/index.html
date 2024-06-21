@@ -13,9 +13,9 @@
     <link rel="shortcut icon" href="../../../img/ns-white.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
-    <title>2.4 - Intent Categorization - NeuralSeek Learning Labs</title>
+    <title>2.4 - KnowledgeBase Tuning - NeuralSeek Learning Labs</title>
 
-  <meta property="og:title" content="2.4 - Intent Categorization" />
+  <meta property="og:title" content="2.4 - KnowledgeBase Tuning" />
   <meta property="og:description" content="NeuralSeek Learning Labs" />
     <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
@@ -47,13 +47,18 @@
   var is_top_frame = false;
     
     var pageToc = [
-      {title: "Add Intent Categories", url: "#add-intent-categories", children: [
+      {title: "Reducing Max Docs, Increasing Snippet Size", url: "#reducing-max-docs-increasing-snippet-size", children: [
       ]},
-      {title: "Describe Categories", url: "#describe-categories", children: [
+      {title: "Increasing Max Docs, Reducing Snippet Size", url: "#increasing-max-docs-reducing-snippet-size", children: [
       ]},
-      {title: "Seek Answers based on Intent Category", url: "#seek-answers-based-on-intent-category", children: [
+      {title: "Reducing the Document Score Range", url: "#reducing-the-document-score-range", children: [
       ]},
-      {title: "View Intent Categories", url: "#view-intent-categories", children: [
+      {title: "Prioritizing Documentation", url: "#prioritizing-documentation", children: [
+      ]},
+      {title: "Governance of Intent Analytics", url: "#governance-of-intent-analytics", children: [
+          {title: "Configuration Insights", url: "#configuration-insights" },
+          {title: "Documentation Insights", url: "#documentation-insights" },
+          {title: "Semantic Insights", url: "#semantic-insights" },
       ]},
       {title: "PII Handling", url: "#pii-handling", children: [
           {title: "Turn Off \"Force Answers from the KnowledgeBase\"", url: "#turn-off-force-answers-from-the-knowledgebase" },
@@ -285,7 +290,7 @@
 </li>
       
 
-<li class="wm-toc-li wm-toc-lev1  wm-current "><a href="../../../module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - Intent Categorization</a>
+<li class="wm-toc-li wm-toc-lev1  wm-current "><a href="../../../module2/module2-4/module2-4/" class="wm-article-link wm-toc-text">2.4 - KnowledgeBase Tuning</a>
 </li>
   </ul>
 </li>
@@ -393,46 +398,126 @@
 
           <a name="_top"></a>  
           
-          <h1>2.4 - Intent Categorization</h1>
+          <h1>2.4 - KnowledgeBase Tuning</h1>
           
-          <p>Users are able to create categories using natural language descriptions to control how intents in user questions can be categorized. Typically, a question would be automatically categorized as <code>FAQ</code>, but users are able to provide additional custom categories. </p>
-<p>Once categorization is enabled, the Curate and Analytics screens will change to show groupings around categories. </p>
-<p>Users may move intents into categories manually through the Curate tab or the CSV download/edit features. The edits made will be used to train the system for future categorization events.</p>
-<h2 id="add-intent-categories">Add Intent Categories<a class="headerlink" href="#add-intent-categories" title="Permanent link"></a></h2>
-<p>Navigate to the Configure tab within NeuralSeek, and expand the <strong>Intent Categorization</strong> field. </p>
+          <p>NeuralSeek offers several ways to improve generated answers from your connected KnowledgeBase. Within the <code>Configure</code> tab of NeuralSeek, you can adjust different parameters best suited for your use case to improve low quality responses. For more information on best KB tuning practices, check out our <code>KnowledgeBase Tuning Guide</code> in our documentation. </p>
+<h2 id="reducing-max-docs-increasing-snippet-size">Reducing Max Docs, Increasing Snippet Size<a class="headerlink" href="#reducing-max-docs-increasing-snippet-size" title="Permanent link"></a></h2>
+<p>The <strong>Max Documents per Seek</strong> option sets the number of documents to send to the LLM on each Seek action. The <strong>Snippet Size</strong> option sets the character count to pass to the KB for document passage size. The larger the number, the bigger the documentation chunk.</p>
+<p>Let's play around with these settings and review how our generated answers are affected. </p>
 <ul>
-<li>Click the light bulb icon to add a new category row.</li>
-<li>Add a title to the category in the first box on the left side. For example, add: <code>Virtual Agents</code>.</li>
-<li>Underneath, add a link to the source documentation containing information about the category. For example, add <code>https://documentation.neuralseek.com/integrations/supported_virtual_agents/supported_virtual_agents/</code>. </li>
+<li>Navigate to the <code>Configure</code> tab in NeuralSeek.</li>
+<li>Expand the <strong>KnowledgeBase Tuning</strong> accordion.</li>
+<li>Use the sliding scale to set the <code>Max Documents per Seek</code> to <strong>1</strong>.</li>
+<li>Use the sliding scale to set the <code>Snippet Size</code> to <strong>1000</strong>. </li>
+<li>Click the red <strong>Save</strong> button to save your setting changes. </li>
 </ul>
-<p><a class="glightbox" href="../images/intent_cat_title_url.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_cat_title_url" src="../images/intent_cat_title_url.png" /></a></p>
-<h2 id="describe-categories">Describe Categories<a class="headerlink" href="#describe-categories" title="Permanent link"></a></h2>
-<p>The box on the right side is where users are able to add a natural language description of the category.</p>
+<p><a class="glightbox" href="../images/LL_lowdoc_highsnippet_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../images/LL_lowdoc_highsnippet_setting.png" /></a></p>
 <ul>
-<li>Add a description of the category. For example, add: <code>Virtual Agents that are supported by NeuralSeek.</code>. </li>
-<li>Click the red Save icon at the bottom of the screen to save the newly added Intent Category. </li>
+<li>Navigate to the <code>Seek</code> tab within NeuralSeek. </li>
+<li>Query <code>"How does NeuralSeek filter?"</code></li>
+<li>View the output below.</li>
 </ul>
-<p><a class="glightbox" href="../images/save_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="save_intent_cat" src="../images/save_intent_cat.png" /></a></p>
-<h2 id="seek-answers-based-on-intent-category">Seek Answers based on Intent Category<a class="headerlink" href="#seek-answers-based-on-intent-category" title="Permanent link"></a></h2>
-<p>Navigate to the Seek tab within NeuralSeek.</p>
+<p><a class="glightbox" href="../images/LL_lowdoc_highsnip_seek2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../images/LL_lowdoc_highsnip_seek2.png" /></a>
+<a class="glightbox" href="../images/LL_lowdoc_highsnip_seek1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../images/LL_lowdoc_highsnip_seek1.png" /></a></p>
+<h2 id="increasing-max-docs-reducing-snippet-size">Increasing Max Docs, Reducing Snippet Size<a class="headerlink" href="#increasing-max-docs-reducing-snippet-size" title="Permanent link"></a></h2>
+<p>Now, let's take a look at how our generated answers are affected when the <strong>Max Documents per Seek</strong> is set to a high number, and the <strong>Snippet Size</strong> is set to a low number.</p>
 <ul>
-<li>Ask a question involving the newly created Intent Category, so the Intent will appear in the Curate and Analytics screen as well. <ul>
-<li>For example, seek: <code>What Virtual Agents are supported by NeuralSeek?</code>, or <code>Does NeuralSeek support Virtual Agent integration?</code>. </li>
+<li>Navigate to the <code>Configure</code> tab in NeuralSeek.</li>
+<li>Expand the <strong>KnowledgeBase Tuning</strong> accordion.</li>
+<li>Use the sliding scale to set the <code>Max Documents per Seek</code> to <strong>30</strong>.</li>
+<li>Use the sliding scale to set the <code>Snippet Size</code> to <strong>250</strong>. </li>
+<li>Click the red <strong>Save</strong> button to save your setting changes.</li>
+</ul>
+<p><a class="glightbox" href="../images/LL_highdoc_lowsnippet_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../images/LL_highdoc_lowsnippet_setting.png" /></a></p>
+<ul>
+<li>Navigate to the <code>Seek</code> tab within NeuralSeek. </li>
+<li>Query <code>"How does NeuralSeek filter?"</code></li>
+<li>View the output below.</li>
+</ul>
+<p><a class="glightbox" href="../images/LL_highdoc_lowsnip_seek1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../images/LL_highdoc_lowsnip_seek1.png" /></a>
+<a class="glightbox" href="../images/LL_highdoc_lowsnip_seek2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../images/LL_highdoc_lowsnip_seek2.png" /></a></p>
+<ul>
+<li>Navigate to the <strong>KnowledgeBase Tuning</strong> section of the <code>Configure</code> tab to reset the values to the optimal settings of:<ul>
+<li>Max Documents per Seek: <strong>4</strong></li>
+<li>Snippet Size: <strong>500</strong> </li>
 </ul>
 </li>
+<li>Click <strong>Save</strong>. </li>
 </ul>
-<p><a class="glightbox" href="../images/seek_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_intent_cat" src="../images/seek_intent_cat.png" /></a></p>
-<h2 id="view-intent-categories">View Intent Categories<a class="headerlink" href="#view-intent-categories" title="Permanent link"></a></h2>
-<p>Navigate to the Curate tab within NeuralSeek.</p>
+<h2 id="reducing-the-document-score-range">Reducing the Document Score Range<a class="headerlink" href="#reducing-the-document-score-range" title="Permanent link"></a></h2>
+<p><strong>Document Score Range</strong> dictates the range of possible relevance scores that NeuralSeek will return as the result. For example, if the score range is set to 0.8, the results will be of documents with a relevance score between the range of 20% to 100%. When the Document Score Range is lowered, there is a greater stringency in sending the best matched result.</p>
+<p>Let's see how reducing the Document Score Range affects our Seek results. </p>
 <ul>
-<li>Notice how there is a number <strong>1</strong> next to the new intent underneath the Category label.</li>
-<li>Click the number to view the name of the category that intent is now placed in. </li>
-<li>Optionally, you can edit which category Intents fall into by selecting from the dropdown menu. </li>
+<li>Navigate to the <code>Configure</code> tab in NeuralSeek.</li>
+<li>Expand the <strong>KnowledgeBase Tuning</strong> accordion.</li>
+<li>Use the sliding scale to set the <code>Document Score Range</code> to <strong>0.2</strong>, or 20%.</li>
+<li>Click the red <strong>Save</strong> button to save your setting changes.</li>
 </ul>
-<p><a class="glightbox" href="../images/intent_number.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="intent_number" src="../images/intent_number.png" /></a>
-<a class="glightbox" href="../images/change_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="change_intent_cat" src="../images/change_intent_cat.png" /></a></p>
-<p>Navigate to the Analytics tab within NeuralSeek to view the Intent history of the newly created category as well.</p>
-<p><a class="glightbox" href="../images/analytics_intent_cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="analytics_intent_cat" src="../images/analytics_intent_cat.png" /></a></p>
+<p><a class="glightbox" href="../images/LL_lowdocrangescore_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_setting" src="../images/LL_lowdocrangescore_setting.png" /></a></p>
+<ul>
+<li>Navigate to the <code>Seek</code> tab within NeuralSeek. </li>
+<li>Query <code>"How is PII secured by NeuralSeek?"</code></li>
+<li>View the output below. The top 20% of our top scoring documents for this query were sent back for answer generation. </li>
+</ul>
+<p><a class="glightbox" href="../images/LL_lowdocrangescore_seek_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_seek_1" src="../images/LL_lowdocrangescore_seek_1.png" /></a>
+<a class="glightbox" href="../images/LL_lowdocrangescore_seek_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_seek_2" src="../images/LL_lowdocrangescore_seek_2.png" /></a></p>
+<ul>
+<li>Navigate to the <strong>KnowledgeBase Tuning</strong> section of the <code>Configure</code> tab to reset the Document Score Range value to the optimal settings of <strong>0.8</strong>, or 80%. </li>
+<li>Click <strong>Save</strong>. </li>
+</ul>
+<h2 id="prioritizing-documentation">Prioritizing Documentation<a class="headerlink" href="#prioritizing-documentation" title="Permanent link"></a></h2>
+<p>The <strong>Re-Sort Values List</strong> tool allows users to prioritize values, without entirely excluding other values.</p>
+<p>Let's look at an example where we would like to prioritize the content in our sources in our KnowledgeBase to generate answers. </p>
+<ul>
+<li>Navigate to the <code>Configure</code> tab in NeuralSeek.</li>
+<li>Expand the <strong>KnowledgeBase Connection</strong> accordion.</li>
+<li>In the <strong>Re-Sort</strong> field, add the metadata property of <code>title</code>.</li>
+<li>Click the <strong>light bulb</strong> icon to add a new priority row. </li>
+<li>For Priority 1, add <code>/^KnowledgeBase Tuning/</code> as the value. This will prioritize values beginning with "KnowledgeBase Tuning" - with our goal being the KnowledgeBase Tuning NeuralSeek Documentation guide - for answer generation. </li>
+<li>Click the red <strong>Save</strong> button to save your setting changes.</li>
+</ul>
+<p><a class="glightbox" href="../images/resort_priority_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_priority_setting" src="../images/resort_priority_setting.png" /></a></p>
+<ul>
+<li>Navigate to the <code>Seek</code> tab within NeuralSeek. </li>
+<li>Query <code>"How can source documentation be improved?"</code></li>
+<li>View the output below. Prioritization of the document titled "KnowledgeBase Tuning NeuralSeek Documentation" is occurring behind the scenes. The <strong>KnowledgeBase Context</strong> details is based on visual ranking, so while a different source may appear at the top of that section, the prioritization of the content from the KnowledgeBase Tuning document still occurs for answer generation. </li>
+</ul>
+<p><a class="glightbox" href="../images/resort_seek_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_seek_1" src="../images/resort_seek_1.png" /></a>
+<a class="glightbox" href="../images/resort_seek_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_seek_2" src="../images/resort_seek_2.png" /></a></p>
+<h2 id="governance-of-intent-analytics">Governance of Intent Analytics<a class="headerlink" href="#governance-of-intent-analytics" title="Permanent link"></a></h2>
+<p>NeuralSeek's Governance tab serves as a centralized platform where users can access various insights and metrics related to the governance of their NeuralSeek system.</p>
+<h4 id="configuration-insights">Configuration Insights<a class="headerlink" href="#configuration-insights" title="Permanent link"></a></h4>
+<ul>
+<li>Navigate to the Governance Tab within NeuralSeek</li>
+<li>Click <code>Configuration Insights</code>. Here, we can review each version of our NeuralSeek configuration containing the different changes made during the NeuralSeek tuning steps. </li>
+<li>Click on a version to show the modifications made in the Configure tab. </li>
+<li>Click the magnifying glass with a plus icon to zoom in on today's date.</li>
+</ul>
+<p><a class="glightbox" href="../images/gov_config_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_config_insight" src="../images/gov_config_insights.png" /></a></p>
+<h4 id="documentation-insights">Documentation Insights<a class="headerlink" href="#documentation-insights" title="Permanent link"></a></h4>
+<ul>
+<li>Click <code>Documentation Insights</code>. Here, we can review the sources and references frequently used by NeuralSeek for answer generation.</li>
+</ul>
+<p><a class="glightbox" href="../images/gov_doc_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insights" src="../images/gov_doc_insights.png" /></a></p>
+<ul>
+<li>Click on the filter icon in to top left corner. </li>
+<li>Click on an intent to filter by, then click the 'x' in the right corner to close the filter screen. </li>
+<li>Notice how the graphs change to provide details on the documentation related to that filtered intent. </li>
+</ul>
+<p><a class="glightbox" href="../images/gov_doc_insights_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insight_filter" src="../images/gov_doc_insights_filter.png" /></a>
+<a class="glightbox" href="../images/gov_doc_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insight2" src="../images/gov_doc_insights2.png" /></a></p>
+<h4 id="semantic-insights">Semantic Insights<a class="headerlink" href="#semantic-insights" title="Permanent link"></a></h4>
+<ul>
+<li>Finally, click <code>Semantic Insights</code>. Here, we can view graphs with insights on our Semantic Confidence, Top Source Coverage, Source Jumps, and more. This gives users a deeper understanding of the context generated, and allows users to monitor the quality.</li>
+</ul>
+<p><a class="glightbox" href="../images/gov_sem_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights" src="../images/gov_sem_insights.png" /></a></p>
+<ul>
+<li>Click the filter icon in the top left corner. </li>
+<li>Click on an intent to filter by, then click the 'x' in the right corner to close the filter screen.</li>
+<li>Notice how the graphs change to provide a more narrow analysis into the semantic insights of the filtered intent. </li>
+</ul>
+<p><a class="glightbox" href="../images/gov_sem_insights_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights_filter" src="../images/gov_sem_insights_filter.png" /></a>
+<a class="glightbox" href="../images/gov_sem_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights2" src="../images/gov_sem_insights2.png" /></a></p>
 <h2 id="pii-handling">PII Handling<a class="headerlink" href="#pii-handling" title="Permanent link"></a></h2>
 <p>NeuralSeek features an advanced Personal Identifiable Information (PII) detection routine that automatically identifies any PII within user inputs. It allows users to maintain a secure environment while still providing accurate responses to user queries.</p>
 <h4 id="turn-off-force-answers-from-the-knowledgebase">Turn Off "Force Answers from the KnowledgeBase"<a class="headerlink" href="#turn-off-force-answers-from-the-knowledgebase" title="Permanent link"></a></h4>
