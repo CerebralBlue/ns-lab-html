@@ -47,6 +47,19 @@
   var is_top_frame = false;
     
     var pageToc = [
+      {title: "Reduzindo o N\u00famero M\u00e1ximo de Documentos, Aumentando o Tamanho do Trecho", url: "#reduzindo-o-numero-maximo-de-documentos-aumentando-o-tamanho-do-trecho", children: [
+      ]},
+      {title: "Aumentando o N\u00famero M\u00e1ximo de Documentos, Reduzindo o Tamanho do Trecho", url: "#aumentando-o-numero-maximo-de-documentos-reduzindo-o-tamanho-do-trecho", children: [
+      ]},
+      {title: "Reduzindo o Intervalo de Pontua\u00e7\u00e3o do Documento", url: "#reduzindo-o-intervalo-de-pontuacao-do-documento", children: [
+      ]},
+      {title: "Priorizando a Documenta\u00e7\u00e3o", url: "#priorizando-a-documentacao", children: [
+      ]},
+      {title: "Governan\u00e7a da An\u00e1lise de Inten\u00e7\u00e3o", url: "#governanca-da-analise-de-intencao", children: [
+          {title: "Insights de Configura\u00e7\u00e3o", url: "#insights-de-configuracao" },
+          {title: "Insights de Documenta\u00e7\u00e3o", url: "#insights-de-documentacao" },
+          {title: "Insights Sem\u00e2nticos", url: "#insights-semanticos" },
+      ]},
       {title: "Tratamento de PII", url: "#tratamento-de-pii", children: [
           {title: "Desativar \"For\u00e7ar Respostas da Base de Conhecimento\"", url: "#desativar-forcar-respostas-da-base-de-conhecimento" },
           {title: "Definir os Filtros baseados em LLM PII", url: "#definir-os-filtros-baseados-em-llm-pii" },
@@ -199,7 +212,7 @@
 </li>
       
 
-<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar Agente Virtual</a>
+<li class="wm-toc-li wm-toc-lev3   "><a href="../../../../pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/" class="wm-article-link wm-toc-text">1.2 - Configurar o Agente Virtual</a>
 </li>
       
 
@@ -263,7 +276,7 @@
   <ul class="wm-toctree">
       
 
-<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 Visão geral</a>
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module2/module2/" class="wm-article-link wm-toc-text">Módulo 2 - Visão Geral</a>
 </li>
       
 
@@ -299,7 +312,7 @@
   <ul class="wm-toctree">
       
 
-<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3.</a>
+<li class="wm-toc-li wm-toc-lev2   "><a href="../../../../pt/module3/module3/" class="wm-article-link wm-toc-text">Visão Geral do Módulo 3</a>
 </li>
       
 
@@ -373,7 +386,7 @@
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../../module3/module3/" class="btn btn-xs btn-link">
-        Visão Geral do Módulo 3.
+        Visão Geral do Módulo 3
       </a>
     </div>
     
@@ -391,7 +404,125 @@
           
           <h1>2.4 - Ajuste da Base de Conhecimento</h1>
           
-          <h2 id="tratamento-de-pii">Tratamento de PII<a class="headerlink" href="#tratamento-de-pii" title="Permanent link"></a></h2>
+          <p>NeuralSeek oferece várias maneiras de melhorar as respostas geradas a partir do seu KnowledgeBase conectado. Dentro da aba <code>Configure</code> do NeuralSeek, você pode ajustar diferentes parâmetros mais adequados ao seu caso de uso para melhorar respostas de baixa qualidade. Para mais informações sobre as melhores práticas de ajuste de KB, confira nosso <code>Guia de Ajuste do KnowledgeBase</code> na nossa documentação.</p>
+<h2 id="reduzindo-o-numero-maximo-de-documentos-aumentando-o-tamanho-do-trecho">Reduzindo o Número Máximo de Documentos, Aumentando o Tamanho do Trecho<a class="headerlink" href="#reduzindo-o-numero-maximo-de-documentos-aumentando-o-tamanho-do-trecho" title="Permanent link"></a></h2>
+<p>A opção <strong>Max Documents per Seek</strong> define o número de documentos enviados ao LLM em cada ação de Seek. A opção <strong>Snippet Size</strong> define a contagem de caracteres a ser enviada ao KB para o tamanho do trecho do documento. Quanto maior o número, maior o pedaço de documentação.</p>
+<p>Vamos brincar com essas configurações e revisar como nossas respostas geradas são afetadas.</p>
+<ul>
+<li>Vá para a aba <code>Configure</code> no NeuralSeek.</li>
+<li>Expanda o acordeão <strong>KnowledgeBase Tuning</strong>.</li>
+<li>Use a escala deslizante para definir o <code>Max Documents per Seek</code> para <strong>1</strong>.</li>
+<li>Use a escala deslizante para definir o <code>Snippet Size</code> para <strong>1000</strong>.</li>
+<li>Clique no botão vermelho <strong>Salvar</strong> para salvar suas mudanças de configuração.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdoc_highsnippet_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../../../../module2/module2-4/images/LL_lowdoc_highsnippet_setting.png" /></a></p>
+<ul>
+<li>Vá para a aba <code>Seek</code> dentro do NeuralSeek.</li>
+<li>Consulte <code>"Como o NeuralSeek filtra?"</code></li>
+<li>Veja a saída abaixo.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdoc_highsnip_seek2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../../../../module2/module2-4/images/LL_lowdoc_highsnip_seek2.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdoc_highsnip_seek1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdoc_highsnippet" src="../../../../module2/module2-4/images/LL_lowdoc_highsnip_seek1.png" /></a></p>
+<h2 id="aumentando-o-numero-maximo-de-documentos-reduzindo-o-tamanho-do-trecho">Aumentando o Número Máximo de Documentos, Reduzindo o Tamanho do Trecho<a class="headerlink" href="#aumentando-o-numero-maximo-de-documentos-reduzindo-o-tamanho-do-trecho" title="Permanent link"></a></h2>
+<p>Agora, vamos ver como nossas respostas geradas são afetadas quando o <strong>Max Documents per Seek</strong> é configurado para um número alto, e o <strong>Snippet Size</strong> é configurado para um número baixo.</p>
+<ul>
+<li>Vá para a aba <code>Configure</code> no NeuralSeek.</li>
+<li>Expanda o acordeão <strong>KnowledgeBase Tuning</strong>.</li>
+<li>Use a escala deslizante para definir o <code>Max Documents per Seek</code> para <strong>30</strong>.</li>
+<li>Use a escala deslizante para definir o <code>Snippet Size</code> para <strong>250</strong>.</li>
+<li>Clique no botão vermelho <strong>Salvar</strong> para salvar suas mudanças de configuração.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_highdoc_lowsnippet_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../../../../module2/module2-4/images/LL_highdoc_lowsnippet_setting.png" /></a></p>
+<ul>
+<li>Vá para a aba <code>Seek</code> dentro do NeuralSeek.</li>
+<li>Consulte <code>"Como o NeuralSeek filtra?"</code></li>
+<li>Veja a saída abaixo.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_highdoc_lowsnip_seek1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../../../../module2/module2-4/images/LL_highdoc_lowsnip_seek1.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/LL_highdoc_lowsnip_seek2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_highdoc_lowsnippet" src="../../../../module2/module2-4/images/LL_highdoc_lowsnip_seek2.png" /></a></p>
+<ul>
+<li>Vá para a seção <strong>KnowledgeBase Tuning</strong> da aba <code>Configure</code> para redefinir os valores ideais para:<ul>
+<li>Max Documents per Seek: <strong>4</strong></li>
+<li>Snippet Size: <strong>500</strong></li>
+</ul>
+</li>
+<li>Clique em <strong>Salvar</strong>.</li>
+</ul>
+<h2 id="reduzindo-o-intervalo-de-pontuacao-do-documento">Reduzindo o Intervalo de Pontuação do Documento<a class="headerlink" href="#reduzindo-o-intervalo-de-pontuacao-do-documento" title="Permanent link"></a></h2>
+<p><strong>Document Score Range</strong> define o intervalo de possíveis pontuações de relevância que o NeuralSeek retornará como resultado. Por exemplo, se o intervalo de pontuação for definido como 0.8, os resultados serão documentos com uma pontuação de relevância entre 20% e 100%. Quando o Document Score Range é reduzido, há uma maior rigorosidade ao enviar o resultado correspondente mais adequado.</p>
+<p>Vamos ver como a redução do Document Score Range afeta nossos resultados de Seek.</p>
+<ul>
+<li>Vá para a aba <code>Configure</code> no NeuralSeek.</li>
+<li>Expanda o acordeão <strong>KnowledgeBase Tuning</strong>.</li>
+<li>Use a escala deslizante para definir o <code>Document Score Range</code> para <strong>0.2</strong>, ou 20%.</li>
+<li>Clique no botão vermelho <strong>Salvar</strong> para salvar suas mudanças de configuração.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdocrangescore_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_setting" src="../../../../module2/module2-4/images/LL_lowdocrangescore_setting.png" /></a></p>
+<ul>
+<li>Vá para a aba <code>Seek</code> dentro do NeuralSeek.</li>
+<li>Consulte <code>"Como o PII é seguro pelo NeuralSeek?"</code></li>
+<li>Veja a saída abaixo. Os 20% superiores dos nossos documentos com maior pontuação para esta consulta foram enviados de volta para geração de resposta.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdocrangescore_seek_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_seek_1" src="../../../../module2/module2-4/images/LL_lowdocrangescore_seek_1.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/LL_lowdocrangescore_seek_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LL_lowdocrangescore_seek_2" src="../../../../module2/module2-4/images/LL_lowdocrangescore_seek_2.png" /></a></p>
+<ul>
+<li>Vá para a seção <strong>KnowledgeBase Tuning</strong> da aba <code>Configure</code> para redefinir o valor do Document Score Range para as configurações ideais de <strong>0.8</strong>, ou 80%.</li>
+<li>Clique em <strong>Salvar</strong>.</li>
+</ul>
+<h2 id="priorizando-a-documentacao">Priorizando a Documentação<a class="headerlink" href="#priorizando-a-documentacao" title="Permanent link"></a></h2>
+<p>A ferramenta <strong>Re-Sort Values List</strong> permite que os usuários priorizem valores, sem excluir totalmente outros valores.</p>
+<p>Vamos ver um exemplo onde gostaríamos de priorizar o conteúdo nas fontes do nosso KnowledgeBase para gerar respostas.</p>
+<ul>
+<li>Vá para a aba <code>Configure</code> no NeuralSeek.</li>
+<li>Expanda o acordeão <strong>KnowledgeBase Connection</strong>.</li>
+<li>No campo <strong>Re-Sort</strong>, adicione a propriedade de metadados <code>title</code>.</li>
+<li>Clique no ícone da <strong>lâmpada</strong> para adicionar uma nova linha de prioridade.</li>
+<li>Para Prioridade 1, adicione <code>/^KnowledgeBase Tuning/</code> como o valor. Isso priorizará valores que começam com "KnowledgeBase Tuning" - com nosso objetivo sendo o guia de documentação NeuralSeek para ajuste do KnowledgeBase - para a geração de resposta.</li>
+<li>Clique no botão vermelho <strong>Salvar</strong> para salvar suas mudanças de configuração.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/resort_priority_setting.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_priority_setting" src="../../../../module2/module2-4/images/resort_priority_setting.png" /></a></p>
+<ul>
+<li>Vá para a aba <code>Seek</code> dentro do NeuralSeek.</li>
+<li>Consulte <code>"Como a documentação da fonte pode ser melhorada?"</code></li>
+<li>Veja a saída abaixo. A priorização do documento intitulado "KnowledgeBase Tuning NeuralSeek Documentation" está ocorrendo nos bastidores. Os detalhes do <strong>Contexto do KnowledgeBase</strong> são baseados em classificação visual, então enquanto uma fonte diferente pode aparecer no topo desta seção, a priorização do conteúdo do documento de ajuste do KnowledgeBase ainda ocorre para a geração de resposta.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/resort_seek_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_seek_1" src="../../../../module2/module2-4/images/resort_seek_1.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/resort_seek_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resort_seek_2" src="../../../../module2/module2-4/images/resort_seek_2.png" /></a></p>
+<h2 id="governanca-da-analise-de-intencao">Governança da Análise de Intenção<a class="headerlink" href="#governanca-da-analise-de-intencao" title="Permanent link"></a></h2>
+<p>A aba de Governança do NeuralSeek serve como uma plataforma centralizada onde os usuários podem acessar vários insights e métricas relacionadas à governança de seu sistema NeuralSeek.</p>
+<h4 id="insights-de-configuracao">Insights de Configuração<a class="headerlink" href="#insights-de-configuracao" title="Permanent link"></a></h4>
+<ul>
+<li>Vá para a aba de Governança dentro do NeuralSeek.</li>
+<li>Clique em <code>Insights de Configuração</code>. Aqui, podemos revisar cada versão de nossa configuração do NeuralSeek contendo as diferentes alterações feitas durante as etapas de ajuste do NeuralSeek.</li>
+<li>Clique em uma versão para mostrar as modificações feitas na aba de Configure.</li>
+<li>Clique no ícone de lupa com o sinal de mais para ampliar a data de hoje.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/gov_config_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_config_insight" src="../../../../module2/module2-4/images/gov_config_insights.png" /></a></p>
+<h4 id="insights-de-documentacao">Insights de Documentação<a class="headerlink" href="#insights-de-documentacao" title="Permanent link"></a></h4>
+<ul>
+<li>Clique em <code>Insights de Documentação</code>. Aqui, podemos revisar as fontes e referências frequentemente utilizadas pelo NeuralSeek para geração de respostas.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/gov_doc_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insights" src="../../../../module2/module2-4/images/gov_doc_insights.png" /></a></p>
+<ul>
+<li>Clique no ícone de filtro no canto superior esquerdo.</li>
+<li>Clique em uma intenção para filtrar por ela, então clique no 'x' no canto direito para fechar a tela de filtro.</li>
+<li>Observe como os gráficos mudam para fornecer detalhes sobre a documentação relacionada a essa intenção filtrada.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/gov_doc_insights_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insight_filter" src="../../../../module2/module2-4/images/gov_doc_insights_filter.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/gov_doc_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_doc_insight2" src="../../../../module2/module2-4/images/gov_doc_insights2.png" /></a></p>
+<h4 id="insights-semanticos">Insights Semânticos<a class="headerlink" href="#insights-semanticos" title="Permanent link"></a></h4>
+<ul>
+<li>Por fim, clique em <code>Insights Semânticos</code>. Aqui, podemos ver gráficos com insights sobre nossa Confiança Semântica, Cobertura de Principais Fontes, Saltos de Fontes e mais. Isso proporciona aos usuários uma compreensão mais profunda do contexto gerado e permite monitorar a qualidade.</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/gov_sem_insights.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights" src="../../../../module2/module2-4/images/gov_sem_insights.png" /></a></p>
+<ul>
+<li>Clique no ícone de filtro no canto superior esquerdo.</li>
+<li>Clique em uma intenção para filtrar por ela, então clique no 'x' no canto direito para fechar a tela de filtro.</li>
+<li>Observe como os gráficos mudam para fornecer uma análise mais estreita sobre os insights semânticos da intenção filtrada</li>
+</ul>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/gov_sem_insights_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights_filter" src="../../../../module2/module2-4/images/gov_sem_insights_filter.png" /></a>
+<a class="glightbox" href="../../../../module2/module2-4/images/gov_sem_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights2" src="../../../../module2/module2-4/images/gov_sem_insights2.png" /></a></p>
+<h2 id="tratamento-de-pii">Tratamento de PII<a class="headerlink" href="#tratamento-de-pii" title="Permanent link"></a></h2>
 <p>O NeuralSeek apresenta uma rotina avançada de detecção de Informações Pessoais Identificáveis (PII) que identifica automaticamente qualquer PII dentro de entradas de usuário. Isso permite que os usuários mantenham um ambiente seguro e ainda forneçam respostas precisas às consultas do usuário.</p>
 <h4 id="desativar-forcar-respostas-da-base-de-conhecimento">Desativar "Forçar Respostas da Base de Conhecimento"<a class="headerlink" href="#desativar-forcar-respostas-da-base-de-conhecimento" title="Permanent link"></a></h4>
 <p>Navegue até à tela Configurar no NeuralSeek e expanda os detalhes de <strong>Engenharia de Resposta e Preferências</strong>.</p>
@@ -452,7 +583,7 @@
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
       <a href="../../../module3/module3/" class="btn btn-xs btn-link">
-        Visão Geral do Módulo 3.
+        Visão Geral do Módulo 3
       </a>
     </div>
     
