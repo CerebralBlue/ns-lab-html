@@ -61,11 +61,9 @@
           {title: "Semantic Insights", url: "#semantic-insights" },
       ]},
       {title: "PII Handling", url: "#pii-handling", children: [
-          {title: "Turn Off \"Force Answers from the KnowledgeBase\"", url: "#turn-off-force-answers-from-the-knowledgebase" },
           {title: "Set LLM - Based PII Filters", url: "#set-llm-based-pii-filters" },
           {title: "Seek an Answer", url: "#seek-an-answer" },
           {title: "Inspect PII", url: "#inspect-pii" },
-          {title: "Ask an Additional Question", url: "#ask-an-additional-question" },
       ]},
     ];
 
@@ -520,42 +518,36 @@
 <a class="glightbox" href="../images/gov_sem_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights2" src="../images/gov_sem_insights2.png" /></a></p>
 <h2 id="pii-handling">PII Handling<a class="headerlink" href="#pii-handling" title="Permanent link"></a></h2>
 <p>NeuralSeek features an advanced Personal Identifiable Information (PII) detection routine that automatically identifies any PII within user inputs. It allows users to maintain a secure environment while still providing accurate responses to user queries.</p>
-<h4 id="turn-off-force-answers-from-the-knowledgebase">Turn Off "Force Answers from the KnowledgeBase"<a class="headerlink" href="#turn-off-force-answers-from-the-knowledgebase" title="Permanent link"></a></h4>
-<p>Navigate to the Configure screen in NeuralSeek and expand the <strong>Answer Engineering &amp; Preferences</strong> details.</p>
-<ul>
-<li>Change the "Force Answers from the KnowledgeBase" selection to <strong>False</strong>. </li>
-</ul>
-<p>We configure this setting for optimal answer generation for this next example, since the information will not be in our source documentation. </p>
-<p><a class="glightbox" href="../images/turn_off_force_answers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="turn_off_force_answers" src="../images/turn_off_force_answers.png" /></a></p>
+<p>Navigate to the Configure screen in NeuralSeek and click the Guardrails box.</p>
+<p><a class="glightbox" href="../images/guardrails.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="guardrails" src="../images/guardrails.png" /></a></p>
 <h4 id="set-llm-based-pii-filters">Set LLM - Based PII Filters<a class="headerlink" href="#set-llm-based-pii-filters" title="Permanent link"></a></h4>
-<p>Expand the <strong>Personal Identifiable Information (PII) Handling</strong> details.</p>
+<p>Click the <strong>Personal Identifiable Information (PII) Handling</strong> tab at the top of the window.</p>
 <ul>
-<li>Click the light bulb icon to add a new row. </li>
-<li>Add an example sentence. For example: <code>I graduated college from JMU.</code> </li>
-<li>In the box to the right, add the PII element of the example sentence. In this example: <code>JMU</code>. </li>
-<li>Click the red Save icon at the bottom of the screen. </li>
+<li>Navigate to <strong>LLM - Based PII Filters</strong> and click the light bulb icon to add a new row.</li>
+<li>Add an example sentence. For example: "<strong>I went to college at Harvard.</strong>"</li>
+<li>In the box to the right, add the PII element of the example sentence. In this example: "<strong>Harvard</strong>".</li>
+<li>Click the Save icon at the bottom of the screen.</li>
 </ul>
-<p><a class="glightbox" href="../images/add_PII_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_PII_filter" src="../images/add_PII_filter.png" /></a></p>
+<p><a class="glightbox" href="../images/harvard_PII_set.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="set_pii" src="../images/harvard_PII_set.png" /></a></p>
+<ul>
+<li>Click the "<strong>Try it Out</strong>" button to test th PII masking function.</li>
+<li>Type an example question, like: "<strong>Is Harvard a good college?</strong>".</li>
+<li>Notice how “Harvard” is masked in the sentence, PII is marked as true, and it lists the correct PII element. </li>
+</ul>
+<p><a class="glightbox" href="../images/harvard_pii_test.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="test_pii" src="../images/harvard_pii_test.png" /></a></p>
 <h4 id="seek-an-answer">Seek an Answer<a class="headerlink" href="#seek-an-answer" title="Permanent link"></a></h4>
 <p>Navigate to the Seek screen of NeuralSeek. </p>
 <ul>
-<li>Seek the question being sure to reference the PII. In this example, seek: <code>What colleges are in Virginia?</code></li>
+<li>Seek the question related to the PII element to view the masking functionality. In this example, seek: <code>What is the address for Harvard?</code></li>
 </ul>
-<p>Notice the answer is vague and does not include information about specific colleges in that area. </p>
-<p><a class="glightbox" href="../images/seek_PII.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_PII" src="../images/seek_PII.png" /></a></p>
+<p>Notice the answer does not mask in the output. However, it does mask in both the question and the answer in the created Intent.</p>
+<p><a class="glightbox" href="../images/harvard_PII_seek.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_PII" src="../images/harvard_PII_seek.png" /></a></p>
 <h4 id="inspect-pii">Inspect PII<a class="headerlink" href="#inspect-pii" title="Permanent link"></a></h4>
 <p>Navigate to the Curate screen in NeuralSeek. Here, we can see that newly created intent with a symbol indicating that this intent contains PII.</p>
 <ul>
-<li>Expand the intent to view the answers. Notice how the location of "Virginia" that we asked in the question is masked to hide the PII. </li>
+<li>Expand the intent to view the answers. Notice how the PII element is masked in both the question and the answer. </li>
 </ul>
-<p><a class="glightbox" href="../images/PII_example1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example1" src="../images/PII_example1.png" /></a></p>
-<h4 id="ask-an-additional-question">Ask an Additional Question<a class="headerlink" href="#ask-an-additional-question" title="Permanent link"></a></h4>
-<p>Optionally, you can continue to seek queries and view how the related PII is masked in the Curate screen. For example, seek the question, <code>Where is JMU located?</code>. </p>
-<ul>
-<li>The answer will be vague and not contain information regarding the location due to it containing PII.</li>
-<li>In the Curate screen, the intent will appear with the same symbol indicating PII. Inside the query, <code>JMU</code> will also be masked to protect the PII. </li>
-</ul>
-<p><a class="glightbox" href="../images/PII_example2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example2" src="../images/PII_example2.png" /></a></p>
+<p><a class="glightbox" href="../images/harvard_PII_curate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example1" src="../images/harvard_PII_curate.png" /></a></p>
             <br>
             
     

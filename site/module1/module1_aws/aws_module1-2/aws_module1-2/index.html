@@ -50,8 +50,6 @@
       {title: "Basics - Getting Started", url: "#basics-getting-started", children: [
       ]},
       {title: "Data - Connect to your KnowledgeBase", url: "#data-connect-to-your-knowledgebase", children: [
-          {title: "Add KnowledgeBase Information", url: "#add-knowledgebase-information" },
-          {title: "\u26a0\ufe0f For creating your own Kendra index to do the lab", url: "#for-creating-your-own-kendra-index-to-do-the-lab" },
       ]},
       {title: "Organize - Outputs and Categories", url: "#organize-outputs-and-categories", children: [
           {title: "Categorization", url: "#categorization" },
@@ -59,9 +57,12 @@
       ]},
       {title: "Tune - Tune for your Data", url: "#tune-tune-for-your-data", children: [
       ]},
-      {title: "Question and Answer", url: "#question-and-answer", children: [
+      {title: "Configure - KnowledgeBase Connection", url: "#configure-knowledgebase-connection", children: [
       ]},
       {title: "Ready", url: "#ready", children: [
+      ]},
+      {title: "Question and Answer", url: "#question-and-answer", children: [
+          {title: "\u26a0\ufe0f For creating your own Kendra index to do the lab", url: "#for-creating-your-own-kendra-index-to-do-the-lab" },
       ]},
     ];
 
@@ -402,54 +403,35 @@
 <li><strong>(a)</strong> Add a brief company or organization description. </li>
 <li><strong>(b)</strong> Select "Output Language" from the drop down menu. In this example, select "<strong>English</strong>". It's best to match the language of your KnowledgeBase and questions, but NeuralSeek is able to translate between many languages.</li>
 <li><strong>(c)</strong> Select preferred use of NeuralSeek instance. Will this instance of NeuralSeek be used internally within your organization, or is it external - customer facing? We'll use this info to pre-tune some safety parameters for you. In this example, select "<strong>Internal</strong>". </li>
+<li><strong>(d)</strong> Select the preferred option to hide API keys of connected platforms from Configuration Admins. Setting this option to true will require you re-enter all API keys when importing a configuration file and cannot be disabled later. In this example, select "<strong>False</strong>". </li>
 </ul>
-<p><a class="glightbox" href="../images/aws_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_001.png" /></a></p>
-<p>Click "Next" to save a unique description, language and use-case choice. </p>
+<p><a class="glightbox" href="../images/home_basics.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_basics" src="../images/home_basics.png" /></a></p>
 <h2 id="data-connect-to-your-knowledgebase">Data - Connect to your KnowledgeBase<a class="headerlink" href="#data-connect-to-your-knowledgebase" title="Permanent link"></a></h2>
-<ul>
-<li><strong>(a)</strong> Select desired KnowledgeBase from the drop-down menu. For the purpose of this lab, we recommend the AWS KnowledgeBase "<strong>Kendra</strong>." </li>
-<li><strong>(b)</strong> Select desired language. For the purpose of this lab, click "<strong>English</strong>." </li>
-</ul>
-<p><a class="glightbox" href="../images/aws_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_002.png" /></a></p>
-<h3 id="add-knowledgebase-information">Add KnowledgeBase Information<a class="headerlink" href="#add-knowledgebase-information" title="Permanent link"></a></h3>
-<p>User is responsible for providing selected KnowledgeBase details information. Since it takes time to set these up for yourself, we are going to be using the one that is already prepared for the learning lab, with read-only access. The actual values below will be provided during the course of this lab by the lab instructor.</p>
-<blockquote>
-<p>⚠️ To understand how to create and locate the AWS access keys, refer to the <strong>Additional Information - Access Keys</strong> section of the lab guide.</p>
-</blockquote>
-<p>Please enter the following:</p>
-<ul>
-<li><strong>(a)</strong> Add "Kendra Index ID".</li>
-<li><strong>(b)</strong> Add "AWS Role Access Key".</li>
-<li><strong>(c)</strong> Add "AWS Region".</li>
-<li><strong>(d)</strong> Add "AWS Role Secret Access Key".</li>
-</ul>
-<p><a class="glightbox" href="../images/aws_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_003.png" /></a></p>
-<p>Click the "Test" button to test the connection. Then, click "Next" to save KnowledgeBase configuration. </p>
-<p><a class="glightbox" href="../images/aws_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_004.png" /></a></p>
-<blockquote>
-<p>NeuralSeek is now set up with a KnowledgeBase, in this case: <strong>Kendra Index</strong>, and ready to seek. </p>
-</blockquote>
-<h3 id="for-creating-your-own-kendra-index-to-do-the-lab">⚠️ For creating your own Kendra index to do the lab<a class="headerlink" href="#for-creating-your-own-kendra-index-to-do-the-lab" title="Permanent link"></a></h3>
-<p>With the interest of time, the lab will use an already built-in Kendra index that is pre-filled with the data. That is because of the fact that creating Kendra index and populating the data would take from 40 minutes to even over an hour to complete. However, in case you are interested to later perform the lab using your own Kendra index and keys, you can follow the below instruction.</p>
-<p>🔗<a href="../../../../additional_info/kendra_keys/">Setting up AWS Kendra Index and Access Keys</a></p>
+<p>After completing the Home Journey steps, navigate to the Configure tab to add your KnowledgeBase Connection details. </p>
+<p><a class="glightbox" href="../images/home_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_data" src="../images/home_data.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Follow the steps here for <a href="./#configure-knowledgebase-connection">KnowledgeBase Configuration</a>.</p>
+</div>
 <h2 id="organize-outputs-and-categories">Organize - Outputs and Categories<a class="headerlink" href="#organize-outputs-and-categories" title="Permanent link"></a></h2>
 <h3 id="categorization">Categorization<a class="headerlink" href="#categorization" title="Permanent link"></a></h3>
 <p>Categorize your intents for easier reporting and management. </p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If following the live lab, skip this step! We revisit this in Module 2.</p>
-</blockquote>
+</div>
 <ul>
 <li><strong>(a)</strong> Click the light bulb icon to add a new row. </li>
-<li><strong>(b)</strong> Enter in a unique category name, a corresponding URL, and a detailed description of the category with intents that do not match any other category.</li>
+<li><strong>(b)</strong> Enter a unique category name and a detailed description of the category with intents that do not match any other category.</li>
 </ul>
-<p><a class="glightbox" href="../images/aws_005.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_005.png" /></a></p>
+<p><a class="glightbox" href="../images/home_org1AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_org1AWS" src="../images/home_org1AWS.png" /></a></p>
 <h3 id="virtual-agent-framework">Virtual Agent Framework<a class="headerlink" href="#virtual-agent-framework" title="Permanent link"></a></h3>
 <ul>
 <li><strong>(a)</strong> Select "Virtual Agent Type" from the drop down menu. In this example, select "<strong>AWS Lex V2</strong>".</li>
 <li><strong>(b)</strong> Select preferred choice of enabling or disabling embedding links into returned responses. In this example, select "<strong>Disable</strong>". </li>
 </ul>
-<p><a class="glightbox" href="../images/aws_006.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_006.png" /></a></p>
-<p>Click "Next" to save reported categories andthe selected Virtual Agent framework. </p>
+<p><a class="glightbox" href="../images/home_org2AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_org2AWS" src="../images/home_org2AWS.png" /></a></p>
+<p>Click "Next" to save reported categories and the selected Virtual Agent framework. </p>
 <h2 id="tune-tune-for-your-data">Tune - Tune for your Data<a class="headerlink" href="#tune-tune-for-your-data" title="Permanent link"></a></h2>
 <p>Let's tune NeuralSeek for your data.</p>
 <ul>
@@ -466,7 +448,33 @@
 </li>
 </ul>
 <p>Click "Next" to save reported tuning configurations. </p>
-<p><a class="glightbox" href="../images/aws_007.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_007.png" /></a></p>
+<p><a class="glightbox" href="../images/home_tune.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_tune" src="../images/home_tune.png" /></a></p>
+<h2 id="configure-knowledgebase-connection">Configure - KnowledgeBase Connection<a class="headerlink" href="#configure-knowledgebase-connection" title="Permanent link"></a></h2>
+<p>To finalize setting up your NeuralSeek instance, navigate to the Configure tab in NeuralSeek to add your KnowledgeBase Connection details.</p>
+<p>Multi-Agent Routing is the default configuration setting for NeuralSeek. To add your KnowledgeBase detail, open your Default Configuration. </p>
+<p><a class="glightbox" href="../images/config_multiagent.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="config_multiagent" src="../images/config_multiagent.png" /></a></p>
+<ul>
+<li><strong>(a)</strong> Click the arrow next to <strong>KnowledgeBase Connection</strong> to expand the accordion. </li>
+</ul>
+<p><a class="glightbox" href="../images/config_multiagent_KBConnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_KBconfigAWS" src="../images/config_multiagent_KBConnect.png" /></a></p>
+<ul>
+<li><strong>(b)</strong> Select your KnowledgeBase Type. In this example "<strong>Kendra</strong>". </li>
+<li><strong>(c)</strong> Select your KnowledgeBase language. In this example "<strong>English</strong>."</li>
+<li><strong>(d)</strong> Enter the "<strong>Kendra Index ID</strong>".</li>
+<li><strong>(e)</strong> Enter the "<strong>AWS Role Access Key</strong>".</li>
+<li><strong>(f)</strong> Enter the "<strong>AWS Region</strong>".</li>
+<li><strong>(g)</strong> Enter the "<strong>AWS Role Secret Access Key</strong>".</li>
+</ul>
+<p><a class="glightbox" href="../images/config_AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configAWS" src="../images/config_AWS.png" /></a></p>
+<p>Click the "Save" button to save your KnowledgeBase configuration. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since it takes time to set these up for yourself, we are going to be using the one that is already prepared for the learning lab, with read-only access. The actual values below will be provided during the course of this lab by the lab instructor.</p>
+</div>
+<h2 id="ready">Ready<a class="headerlink" href="#ready" title="Permanent link"></a></h2>
+<p>NeuralSeek is setup, connected to a KnowledgeBase, and ready to seek. </p>
+<p>Return on the <strong>Home</strong> tab to learn how to quickly generate content for your NeuralSeek instance.</p>
+<p><a class="glightbox" href="../images/home_QandA.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_QandA" src="../images/home_QandA.png" /></a></p>
 <h2 id="question-and-answer">Question and Answer<a class="headerlink" href="#question-and-answer" title="Permanent link"></a></h2>
 <p>As questions are answered by NeuralSeek, we can automatically build out and maintain portions of your Virtual Agent.</p>
 <p>Use the buttons below to quickly generate Q&amp;A content to bootstrap and test your Virtual Agent.</p>
@@ -483,15 +491,9 @@
 <li><strong>Upload Test Questions</strong> will provide a link to your local file explorer to upload a CSV file of test questions. The questions will be run through the Seek endpoint in parallel and scored. Please use the provided downloadable .csv file as a template for your questions.  Input files must retain these column titles at a minimum, but you may add additional payload columns. Click "Submit" to have NeuralSeek generate answers. </li>
 </ul>
 <p><a class="glightbox" href="../images/1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image5" src="../images/1.5.8.png" /></a></p>
-<blockquote>
-<p>NeuralSeek is now ready to answer!</p>
-</blockquote>
-<h2 id="ready">Ready<a class="headerlink" href="#ready" title="Permanent link"></a></h2>
-<p>NeuralSeek is ready to seek.</p>
-<p><a class="glightbox" href="../images/aws_008.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../images/aws_008.png" /></a></p>
-<blockquote>
-<p>NeuralSeek is now set up and ready to use. </p>
-</blockquote>
+<h3 id="for-creating-your-own-kendra-index-to-do-the-lab">⚠️ For creating your own Kendra index to do the lab<a class="headerlink" href="#for-creating-your-own-kendra-index-to-do-the-lab" title="Permanent link"></a></h3>
+<p>With the interest of time, the lab will use an already built-in Kendra index that is pre-filled with the data. That is because of the fact that creating Kendra index and populating the data would take from 40 minutes to even over an hour to complete. However, in case you are interested to later perform the lab using your own Kendra index and keys, you can follow the below instruction.</p>
+<p>🔗<a href="../../../../additional_info/kendra_keys/">Setting up AWS Kendra Index and Access Keys</a></p>
             <br>
             
     
