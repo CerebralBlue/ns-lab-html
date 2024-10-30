@@ -74,11 +74,9 @@
           {title: "Conocimientos sem\u00e1nticos", url: "#conocimientos-semanticos_1" },
       ]},
       {title: "Manejo de Informaci\u00f3n Personal Identificable (PII)", url: "#manejo-de-informacion-personal-identificable-pii", children: [
-          {title: "Desactivar la Forzada de Respuestas desde la Base de Conocimientos", url: "#desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos" },
           {title: "Establecer Filtros de PII basados en LLM", url: "#establecer-filtros-de-pii-basados-en-llm" },
           {title: "Buscar una Consulta", url: "#buscar-una-consulta" },
           {title: "Inspeccionar PII", url: "#inspeccionar-pii" },
-          {title: "Hacer una Pregunta Adicional", url: "#hacer-una-pregunta-adicional" },
       ]},
     ];
 
@@ -655,42 +653,36 @@ NeuralSeek ofrece diversas opciones para mejorar las respuestas generadas a part
 <a class="glightbox" href="../../../../module2/module2-4/images/gov_sem_insights2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="gov_sem_insights2" src="../../../../module2/module2-4/images/gov_sem_insights2.png" /></a></p>
 <h2 id="manejo-de-informacion-personal-identificable-pii">Manejo de Información Personal Identificable (PII)<a class="headerlink" href="#manejo-de-informacion-personal-identificable-pii" title="Permanent link"></a></h2>
 <p>NeuralSeek cuenta con un avanzado rutina de detección de Información Personal Identificable (PII) que identifica automáticamente cualquier PII dentro de las entradas de los usuarios. Permite a los usuarios mantener un entorno seguro y ofrecer respuestas precisas a las consultas de los usuarios.</p>
-<h4 id="desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos">Desactivar la Forzada de Respuestas desde la Base de Conocimientos<a class="headerlink" href="#desactivar-la-forzada-de-respuestas-desde-la-base-de-conocimientos" title="Permanent link"></a></h4>
-<p>Vaya a la pantalla de Configuración en NeuralSeek y amplíe los detalles de <strong>Ingeniería de Respuestas y Preferencias</strong>.</p>
-<ul>
-<li>Cambie la selección de Forzada de Respuestas desde la Base de Conocimientos a <strong>Falso</strong>.</li>
-</ul>
-<p>Configuramos este ajuste para generar respuestas óptimas en este ejemplo siguiente, ya que la información no estará en nuestra documentación fuente.</p>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/turn_off_force_answers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="turn_off_force_answers" src="../../../../module2/module2-4/images/turn_off_force_answers.png" /></a></p>
+<p>Navegue a la pantalla Configurar en NeuralSeek y haga clic en el cuadro Guardrails.</p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/guardrails.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="guardrails" src="../../../../module2/module2-4/images/guardrails.png" /></a></p>
 <h4 id="establecer-filtros-de-pii-basados-en-llm">Establecer Filtros de PII basados en LLM<a class="headerlink" href="#establecer-filtros-de-pii-basados-en-llm" title="Permanent link"></a></h4>
 <p>Amplíe los detalles de <strong>Manejo de Información Personal Identificable (PII)</strong>.</p>
 <ul>
-<li>Haga clic en el icono de la bombilla para agregar una nueva fila.</li>
-<li>Agregue una oración de ejemplo. Por ejemplo: <code>I graduated college from JMU.</code></li>
-<li>En el cuadro de la derecha, agregue el elemento de PII de la oración de ejemplo. En este ejemplo: <code>JMU</code>.</li>
+<li>Navegue hasta <strong>LLM - Filtros de PII basados ​​en</strong> y haga clic en el ícono de la bombilla para agregar una nueva fila.</li>
+<li>Agregue una oración de ejemplo. Por ejemplo: <code>I went to college at Harvard.</code></li>
+<li>En el cuadro de la derecha, agregue el elemento de PII de la oración de ejemplo. En este ejemplo: <code>Harvard</code>.</li>
 <li>Haga clic en el icono rojo de Guardar en la parte inferior de la pantalla.</li>
 </ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/add_PII_filter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="add_PII_filter" src="../../../../module2/module2-4/images/add_PII_filter.png" /></a></p>
-<h4 id="buscar-una-consulta">Buscar una Consulta<a class="headerlink" href="#buscar-una-consulta" title="Permanent link"></a></h4>
-<p>Vaya a la pantalla de Búsqueda de NeuralSeek.</p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/harvard_PII_set.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="set_pii" src="../../../../module2/module2-4/images/harvard_PII_set.png" /></a></p>
 <ul>
-<li>Busque la pregunta asegurándose de hacer referencia al PII. En este ejemplo, busque: <code>What colleges are in Virginia?</code></li>
+<li>Haga clic en el botón "<strong>Pruébelo</strong>" para probar la función de enmascaramiento de PII.</li>
+<li>Escriba una pregunta de ejemplo, como: <code>Is Harvard a good college?</code>.</li>
+<li>Observe cómo "Harvard" está enmascarado en la oración, la PII está marcada como verdadera y enumera el elemento de PII correcto.</li>
 </ul>
-<p>Note que la respuesta es vaga y no incluye información sobre colegios específicos en esa área.</p>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/seek_PII.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_PII" src="../../../../module2/module2-4/images/seek_PII.png" /></a></p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/harvard_pii_test.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="test_pii" src="../../../../module2/module2-4/images/harvard_pii_test.png" /></a></p>
+<h4 id="buscar-una-consulta">Buscar una Consulta<a class="headerlink" href="#buscar-una-consulta" title="Permanent link"></a></h4>
+<p>Navegue a la pantalla de búsqueda de NeuralSeek. </p>
+<ul>
+<li>Busque la pregunta relacionada con el elemento PII para ver la funcionalidad de enmascaramiento. En este ejemplo, busque: <code>What is the address for Harvard?</code></li>
+</ul>
+<p>Observe que la respuesta no se enmascara en el resultado. Sin embargo, enmascara tanto la pregunta como la respuesta en la intención creada.</p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/harvard_PII_seek.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="seek_PII" src="../../../../module2/module2-4/images/harvard_PII_seek.png" /></a></p>
 <h4 id="inspeccionar-pii">Inspeccionar PII<a class="headerlink" href="#inspeccionar-pii" title="Permanent link"></a></h4>
 <p>Vaya a la pantalla de Curación en NeuralSeek. Aquí, podemos ver esa intención recién creada con un símbolo que indica que contiene PII.</p>
 <ul>
 <li>Amplíe la intención para ver las respuestas. Note cómo la ubicación de Virginia que preguntamos en la pregunta está oculta para proteger el PII.</li>
 </ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/PII_example1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example1" src="../../../../module2/module2-4/images/PII_example1.png" /></a></p>
-<h4 id="hacer-una-pregunta-adicional">Hacer una Pregunta Adicional<a class="headerlink" href="#hacer-una-pregunta-adicional" title="Permanent link"></a></h4>
-<p>Opcionalmente, puede continuar buscando consultas y ver cómo el PII relacionado se muestra en la pantalla de Curación. Por ejemplo, busque la pregunta, <code>Where is JMU located?</code>.</p>
-<ul>
-<li>La respuesta será vaga y no contendrá información sobre la ubicación debido a que contiene PII.</li>
-<li>En la pantalla Curar, la intención aparecerá con el mismo símbolo que indica PII. Dentro de la consulta, <code>JMU</code> también estará enmascarada para proteger la PII.</li>
-</ul>
-<p><a class="glightbox" href="../../../../module2/module2-4/images/PII_example2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example2" src="../../../../module2/module2-4/images/PII_example2.png" /></a></p>
+<p><a class="glightbox" href="../../../../module2/module2-4/images/harvard_PII_curate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PII_example1" src="../../../../module2/module2-4/images/harvard_PII_curate.png" /></a></p>
             <br>
             
     

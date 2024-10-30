@@ -50,8 +50,6 @@
       {title: "Primeros Pasos", url: "#primeros-pasos", children: [
       ]},
       {title: "Datos - Con\u00e9ctese a su Base de Conocimiento", url: "#datos-conectese-a-su-base-de-conocimiento", children: [
-          {title: "Agregar Informaci\u00f3n a la Base de Conocimiento", url: "#agregar-informacion-a-la-base-de-conocimiento" },
-          {title: "\u26a0\ufe0f Para crear su propio \u00edndice de Kendra para hacer el laboratorio", url: "#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" },
       ]},
       {title: "Organizar - Resultados y categor\u00edas", url: "#organizar-resultados-y-categorias", children: [
           {title: "Categorizaci\u00f3n", url: "#categorizacion" },
@@ -59,9 +57,12 @@
       ]},
       {title: "Ajustar datos", url: "#ajustar-datos", children: [
       ]},
-      {title: "Preguntas y Respuestas", url: "#preguntas-y-respuestas", children: [
+      {title: "Configurar - Conexi\u00f3n a su Base de Conocimiento", url: "#configurar-conexion-a-su-base-de-conocimiento", children: [
       ]},
       {title: "Listo", url: "#listo", children: [
+      ]},
+      {title: "Preguntas y Respuestas", url: "#preguntas-y-respuestas", children: [
+          {title: "\u26a0\ufe0f Para crear su propio \u00edndice de Kendra para hacer el laboratorio", url: "#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" },
       ]},
     ];
 
@@ -406,53 +407,30 @@
 <li><strong>(a)</strong> Agregue una breve descripción de la empresa u organización.</li>
 <li><strong>(b)</strong> Seleccione el idioma de output en el menú desplegable. En este ejemplo, seleccione <strong>Inglés</strong>. Lo mejor es que coincida con el idioma de su base de conocimiento y preguntas, pero NeuralSeek puede traducir a otros idiomas.</li>
 <li><strong>(c)</strong> Seleccione el uso preferido de la instancia de NeuralSeek. ¿Se usará esta instancia de NeuralSeek de forma interna dentro de su organización o es externa y dirigida al cliente? Utilizaremos esta información para ajustar algunos parámetros de seguridad. En este ejemplo, seleccione <strong>Interno.</strong></li>
+<li><strong>(d)</strong> Seleccione la opción preferida para ocultar las claves API de las plataformas conectadas a los administradores de configuración. Establecer esta opción en verdadero requerirá que vuelva a ingresar todas las claves API al importar un archivo de configuración y no se puede deshabilitar más adelante. En este ejemplo, seleccione "<strong>Falso</strong>".</li>
 </ul>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_001.png" /></a></p>
-<p>¡Haga clic en Siguiente para guardar la descripción, idioma y opción de uso!</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_basics.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_basics" src="../../../../../module1/module1_aws/aws_module1-2/images/home_basics.png" /></a></p>
 <h2 id="datos-conectese-a-su-base-de-conocimiento">Datos - Conéctese a su Base de Conocimiento<a class="headerlink" href="#datos-conectese-a-su-base-de-conocimiento" title="Permanent link"></a></h2>
-<ul>
-<li><strong>(a)</strong> Seleccione la base de conocimiento deseada en el menú desplegable. Para el propósito de este laboratorio, recomendamos la base de conocimiento de AWS <strong>Kendra</strong>.</li>
-<li><strong>(b)</strong> Seleccione el idioma deseado. Para el propósito de este laboratorio, haga clic en <strong>Inglés</strong>.</li>
-</ul>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_002.png" /></a></p>
-<h3 id="agregar-informacion-a-la-base-de-conocimiento">Agregar Información a la Base de Conocimiento<a class="headerlink" href="#agregar-informacion-a-la-base-de-conocimiento" title="Permanent link"></a></h3>
-<p>El usuario es responsable de proporcionar la información detallada de la base de conocimiento seleccionada. Dado que se tarda un tiempo en configurar estos datos, vamos a usar una que ya está preparada para el laboratorio de aprendizaje, con acceso de solo lectura. A continuación serán proporcionados los valores reales  a ser usados durante este laboratorio.</p>
-<blockquote>
-<p>⚠️ Para entender cómo crear y localizar las claves de acceso de AWS, consulte la sección <strong>Información adicional - Claves de acceso</strong> en la guía del laboratorio.</p>
-</blockquote>
-<p>Por favor, ingrese lo siguiente:</p>
-<ul>
-<li><strong>(a)</strong> Agregar ID de índice Kendra.</li>
-<li><strong>(b)</strong> Agregar Clave de acceso de rol de AWS.</li>
-<li><strong>(c)</strong> Agregar Región de AWS.</li>
-<li><strong>(d)</strong> Agregar Clave de acceso secreta de rol de AWS.</li>
-</ul>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_003.png" /></a></p>
-<p>Haga clic en el botón Probar para verificar la conexión. Luego, haga clic en Siguiente para guardar la configuración de la base de conocimiento.</p>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_004.png" /></a></p>
-<blockquote>
-<p>¡NeuralSeek ya está configurado y conectado a una base de conocimiento, en este caso el índice Kendra, así que está listo para comenzar a realizar búsquedas!</p>
-</blockquote>
-<h3 id="para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio">⚠️ Para crear su propio índice de Kendra para hacer el laboratorio<a class="headerlink" href="#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" title="Permanent link"></a></h3>
-<p>Para reducir el tiempo de configuración, el laboratorio usará un índice Kendra previamente poblado con los datos necesarios. Eso se debe al hecho de que crear el índice Kendra y poblar los datos tardaría más de 40 minutos en completarse. Sin embargo, en caso de que esté interesado en realizar más tarde el laboratorio usando su propio índice Kendra y claves, puede seguir las siguientes instrucciones.</p>
-<p>🔗<a href="../../../../additional_info/kendra_keys/">Configurar claves de acceso y el índice AWS Kendra</a></p>
+<p>Después de completar los pasos del viaje a casa, navegue hasta la pestaña Configurar para agregar los detalles de su conexión a la base de conocimientos.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_data" src="../../../../../module1/module1_aws/aws_module1-2/images/home_data.png" /></a></p>
 <h2 id="organizar-resultados-y-categorias">Organizar - Resultados y categorías<a class="headerlink" href="#organizar-resultados-y-categorias" title="Permanent link"></a></h2>
 <h3 id="categorizacion">Categorización<a class="headerlink" href="#categorizacion" title="Permanent link"></a></h3>
 <p>Categoriza tus intenciones para facilitar el informe y la gestión.</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Si está siguiendo el laboratorio en vivo, ¡Omita este paso! Volveremos a este tema en el Módulo 2.</p>
-</blockquote>
+</div>
 <ul>
 <li><strong>(a)</strong> Haga clic en el ícono de la bombilla para agregar una nueva fila.</li>
-<li><strong>(b)</strong> Ingrese un nombre único para la categoría, URL y una descripción detallada de la categoría con intenciones que no coincidan con ninguna otra categoría.</li>
+<li><strong>(b)</strong> Ingrese un nombre de categoría único y una descripción detallada de la categoría con intenciones que no coincidan con ninguna otra categoría.</li>
 </ul>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_005.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_org1AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_org1AWS" src="../../../../../module1/module1_aws/aws_module1-2/images/home_org1AWS.png" /></a></p>
 <h3 id="modelo-de-agente-virtual">Modelo de Agente Virtual<a class="headerlink" href="#modelo-de-agente-virtual" title="Permanent link"></a></h3>
 <ul>
 <li><strong>(a)</strong> Seleccione el tipo de agente virtual en el menú desplegable. En este ejemplo, seleccione <strong>AWS Lex V2</strong>.</li>
 <li><strong>(b)</strong> Seleccione la opción preferida para habilitar o deshabilitar la inclusión de enlaces incrustados en las respuestas. En este ejemplo, seleccione <strong>Deshabilitar</strong>.</li>
 </ul>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_006.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_org2AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_org2AWS" src="../../../../../module1/module1_aws/aws_module1-2/images/home_org2AWS.png" /></a></p>
 <p>Haga clic en Siguiente para guardar las categorías y el agente virtual seleccionado.</p>
 <h2 id="ajustar-datos">Ajustar datos<a class="headerlink" href="#ajustar-datos" title="Permanent link"></a></h2>
 <p>Ajustemos los datos a ser usados por NeuralSeek.</p>
@@ -470,7 +448,33 @@
 </li>
 </ul>
 <p>Haga clic en Siguiente para guardar las configuraciones seleccionadas.</p>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_007.png" /></a></p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_tune.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_tune" src="../../../../../module1/module1_aws/aws_module1-2/images/home_tune.png" /></a></p>
+<h2 id="configurar-conexion-a-su-base-de-conocimiento">Configurar - Conexión a su Base de Conocimiento<a class="headerlink" href="#configurar-conexion-a-su-base-de-conocimiento" title="Permanent link"></a></h2>
+<p>Para finalizar la configuración de su instancia de NeuralSeek, navegue hasta la pestaña Configurar en NeuralSeek para agregar los detalles de su conexión a la base de conocimientos.</p>
+<p>El enrutamiento de múltiples agentes es la configuración predeterminada para NeuralSeek. Para agregar los detalles de su base de conocimientos, abra su configuración predeterminada.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/config_multiagent.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="config_multiagent" src="../../../../../module1/module1_aws/aws_module1-2/images/config_multiagent.png" /></a></p>
+<ul>
+<li><strong>(a)</strong> Haga clic en la flecha junto a <strong>Conexión de KnowledgeBase</strong> para expandir el acordeón.</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/config_multiagent_KBConnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_KBconfigAWS" src="../../../../../module1/module1_aws/aws_module1-2/images/config_multiagent_KBConnect.png" /></a></p>
+<ul>
+<li><strong>(b)</strong> Seleccione su tipo de base de conocimientos. En este ejemplo "<strong>Kendra</strong>". </li>
+<li><strong>(c)</strong> Seleccione el idioma de su base de conocimientos. En este ejemplo "<strong>inglés</strong>".</li>
+<li><strong>(d)</strong> Introduzca el "<strong>ID del índice Kendra</strong>".</li>
+<li><strong>(e)</strong> Introduzca la "<strong>Clave de acceso a funciones de AWS</strong>".</li>
+<li><strong>(f)</strong> Introduzca la "<strong>Región de AWS</strong>".</li>
+<li><strong>(g)</strong> Introduzca la "<strong>Clave de acceso secreta de función de AWS</strong>".</li>
+</ul>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/config_AWS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="configAWS" src="../../../../../module1/module1_aws/aws_module1-2/images/config_AWS.png" /></a></p>
+<p>Haga clic en el botón "Guardar" para guardar la configuración de su base de conocimientos.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dado que configurarlos usted mismo lleva tiempo, usaremos el que ya está preparado para el laboratorio de aprendizaje, con acceso de solo lectura. El instructor de laboratorio proporcionará los valores reales a continuación durante el transcurso de esta práctica de laboratorio.</p>
+</div>
+<h2 id="listo">Listo<a class="headerlink" href="#listo" title="Permanent link"></a></h2>
+<p>NeuralSeek está configurado, conectado a una base de conocimientos y listo para buscar. </p>
+<p>Regrese a la pestaña <strong>Inicio</strong> para aprender cómo generar contenido rápidamente para su instancia de NeuralSeek.</p>
+<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/home_QandA.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="home_QandA" src="../../../../../module1/module1_aws/aws_module1-2/images/home_QandA.png" /></a></p>
 <h2 id="preguntas-y-respuestas">Preguntas y Respuestas<a class="headerlink" href="#preguntas-y-respuestas" title="Permanent link"></a></h2>
 <p>A medida que NeuralSeek responde las preguntas, podemos construir y mantener automáticamente partes de su Agente Virtual.</p>
 <p>A continuación, use los botones para crear contenido de preguntas y respuestas de forma rápida, lo que le permitirá iniciar y probar su Agente Virtual.</p>
@@ -488,15 +492,9 @@ Proporcionará un cuadro de diálogo para que ingrese preguntas, una por línea,
 <li><strong>Cargar Preguntas de Prueba</strong> proporcionará un enlace a su explorador de archivos local para cargar un archivo CSV de preguntas de prueba. Las preguntas se ejecutarán a través de la herramienta Seek en paralelo y se calificarán. Utilice el archivo descargable .csv proporcionado como plantilla para sus preguntas. Los archivos de entrada deben conservar estos títulos de columna como mínimo, pero puede agregar columnas adicionales. Haga clic en Enviar para que NeuralSeek genere sus respuestas.</li>
 </ul>
 <p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image5" src="../../../../../module1/module1_aws/aws_module1-2/images/1.5.8.png" /></a></p>
-<blockquote>
-<p>¡NeuralSeek está listo para responder!</p>
-</blockquote>
-<h2 id="listo">Listo<a class="headerlink" href="#listo" title="Permanent link"></a></h2>
-<p>NeuralSeek está listo para buscar.</p>
-<p><a class="glightbox" href="../../../../../module1/module1_aws/aws_module1-2/images/aws_008.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../../../../module1/module1_aws/aws_module1-2/images/aws_008.png" /></a></p>
-<blockquote>
-<p>NeuralSeek está configurado y listo para usar.</p>
-</blockquote>
+<h3 id="para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio">⚠️ Para crear su propio índice de Kendra para hacer el laboratorio<a class="headerlink" href="#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" title="Permanent link"></a></h3>
+<p>Para reducir el tiempo de configuración, el laboratorio usará un índice Kendra previamente poblado con los datos necesarios. Eso se debe al hecho de que crear el índice Kendra y poblar los datos tardaría más de 40 minutos en completarse. Sin embargo, en caso de que esté interesado en realizar más tarde el laboratorio usando su propio índice Kendra y claves, puede seguir las siguientes instrucciones.</p>
+<p>🔗<a href="../../../../additional_info/kendra_keys/">Configurar claves de acceso y el índice AWS Kendra</a></p>
             <br>
             
     
