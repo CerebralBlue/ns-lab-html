@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../..';
   var is_top_frame = false;
     
@@ -56,19 +63,20 @@
       {title: "Prioritizing Documentation", url: "#prioritizing-documentation", children: [
       ]},
       {title: "Governance of Intent Analytics", url: "#governance-of-intent-analytics", children: [
-          {title: "Configuration Insights", url: "#configuration-insights" },
-          {title: "Documentation Insights", url: "#documentation-insights" },
-          {title: "Semantic Insights", url: "#semantic-insights" },
+          {title: htmlDecode("Configuration Insights"), url: "#configuration-insights" },
+          {title: htmlDecode("Documentation Insights"), url: "#documentation-insights" },
+          {title: htmlDecode("Semantic Insights"), url: "#semantic-insights" },
       ]},
       {title: "PII Handling", url: "#pii-handling", children: [
-          {title: "Set LLM - Based PII Filters", url: "#set-llm-based-pii-filters" },
-          {title: "Seek an Answer", url: "#seek-an-answer" },
-          {title: "Inspect PII", url: "#inspect-pii" },
+          {title: htmlDecode("Set LLM - Based PII Filters"), url: "#set-llm-based-pii-filters" },
+          {title: htmlDecode("Seek an Answer"), url: "#seek-an-answer" },
+          {title: htmlDecode("Inspect PII"), url: "#inspect-pii" },
       ]},
     ];
 
 </script>
-    <script src="../../../js/base.js?v=2"></script>
+    <script src="../../../js/hl.js?v=3"></script>
+    <script src="../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

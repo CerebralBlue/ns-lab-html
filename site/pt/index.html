@@ -39,23 +39,31 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Bem-vindo", url: "#bem-vindo", children: [
-          {title: "M\u00f3dulo 1: Configura\u00e7\u00e3o e Integra\u00e7\u00e3o", url: "#modulo-1-configuracao-e-integracao" },
-          {title: "M\u00f3dulo 2: Buscando Respostas", url: "#modulo-2-buscando-respostas" },
-          {title: "M\u00f3dulo 3: Explorando mAIstro", url: "#modulo-3-explorando-maistro" },
+          {title: htmlDecode("M\u00f3dulo 1: Configura\u00e7\u00e3o e Integra\u00e7\u00e3o"), url: "#modulo-1-configuracao-e-integracao" },
+          {title: htmlDecode("M\u00f3dulo 2: Buscando Respostas"), url: "#modulo-2-buscando-respostas" },
+          {title: htmlDecode("M\u00f3dulo 3: Explorando mAIstro"), url: "#modulo-3-explorando-maistro" },
       ]},
     ];
 
 </script>
-    <script src="../js/base.js?v=2"></script>
+    <script src="../js/hl.js?v=3"></script>
+    <script src="../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

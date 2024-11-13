@@ -161,7 +161,8 @@ function initMainWindow() {
   initSearch();
 
   // Other initialization of contents.
-  hljs.highlightAll();
+  initHighlighting();
+  
   $('table').addClass('table table-striped table-hover table-bordered table-condensed');
   let m = mainWindow.location.href.match(/(#[\w-_]+)$/g);
   if(m && m[0]) {

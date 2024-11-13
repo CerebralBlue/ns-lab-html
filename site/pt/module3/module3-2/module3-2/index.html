@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -50,9 +57,9 @@
       {title: "Carregar Modelo", url: "#carregar-modelo", children: [
       ]},
       {title: "N\u00f3s Preenchidos", url: "#nos-preenchidos", children: [
-          {title: "N\u00f3 de Texto", url: "#no-de-texto" },
-          {title: "N\u00f3 de Busca de KB", url: "#no-de-busca-de-kb" },
-          {title: "N\u00f3 Enviar para LLM", url: "#no-enviar-para-llm" },
+          {title: htmlDecode("N\u00f3 de Texto"), url: "#no-de-texto" },
+          {title: htmlDecode("N\u00f3 de Busca de KB"), url: "#no-de-busca-de-kb" },
+          {title: htmlDecode("N\u00f3 Enviar para LLM"), url: "#no-enviar-para-llm" },
       ]},
       {title: "Avaliar o Fluxo mAIstro", url: "#avaliar-o-fluxo-maistro", children: [
       ]},
@@ -65,7 +72,8 @@
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

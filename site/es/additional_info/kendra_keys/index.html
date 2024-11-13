@@ -39,29 +39,37 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Configurar el \u00cdndice de AWS Kendra y las Claves de Acceso", url: "#configurar-el-indice-de-aws-kendra-y-las-claves-de-acceso", children: [
-          {title: "Acceder a Amazon Kendra", url: "#acceder-a-amazon-kendra" },
-          {title: "Especificar Detalles del \u00cdndice", url: "#especificar-detalles-del-indice" },
-          {title: "Configurar el Control de Acceso del Usuario", url: "#configurar-el-control-de-acceso-del-usuario" },
-          {title: "Agregar Capacidad Adicional", url: "#agregar-capacidad-adicional" },
-          {title: "Revisar y Crear", url: "#revisar-y-crear" },
-          {title: "ID del \u00cdndice de Kendra", url: "#id-del-indice-de-kendra" },
-          {title: "Crear Usuario", url: "#crear-usuario" },
-          {title: "Crear Clave de Acceso", url: "#crear-clave-de-acceso" },
-          {title: "Claves de Acceso del Rol de AWS", url: "#claves-de-acceso-del-rol-de-aws" },
+          {title: htmlDecode("Acceder a Amazon Kendra"), url: "#acceder-a-amazon-kendra" },
+          {title: htmlDecode("Especificar Detalles del \u00cdndice"), url: "#especificar-detalles-del-indice" },
+          {title: htmlDecode("Configurar el Control de Acceso del Usuario"), url: "#configurar-el-control-de-acceso-del-usuario" },
+          {title: htmlDecode("Agregar Capacidad Adicional"), url: "#agregar-capacidad-adicional" },
+          {title: htmlDecode("Revisar y Crear"), url: "#revisar-y-crear" },
+          {title: htmlDecode("ID del \u00cdndice de Kendra"), url: "#id-del-indice-de-kendra" },
+          {title: htmlDecode("Crear Usuario"), url: "#crear-usuario" },
+          {title: htmlDecode("Crear Clave de Acceso"), url: "#crear-clave-de-acceso" },
+          {title: htmlDecode("Claves de Acceso del Rol de AWS"), url: "#claves-de-acceso-del-rol-de-aws" },
       ]},
     ];
 
 </script>
-    <script src="../../../js/base.js?v=2"></script>
+    <script src="../../../js/hl.js?v=3"></script>
+    <script src="../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

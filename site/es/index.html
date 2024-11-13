@@ -39,25 +39,33 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Bienvenido", url: "#bienvenido", children: [
-          {title: "M\u00f3dulo 1: Configuraci\u00f3n e Integraci\u00f3n", url: "#modulo-1-configuracion-e-integracion" },
-          {title: "M\u00f3dulo 2: En Busca de Respuestas", url: "#modulo-2-en-busca-de-respuestas" },
-          {title: "M\u00f3dulo 3: Explorando mAIstro", url: "#modulo-3-explorando-maistro" },
+          {title: htmlDecode("M\u00f3dulo 1: Configuraci\u00f3n e Integraci\u00f3n"), url: "#modulo-1-configuracion-e-integracion" },
+          {title: htmlDecode("M\u00f3dulo 2: En Busca de Respuestas"), url: "#modulo-2-en-busca-de-respuestas" },
+          {title: htmlDecode("M\u00f3dulo 3: Explorando mAIstro"), url: "#modulo-3-explorando-maistro" },
       ]},
       {title: "Mira el \u00faltimo v\u00eddeo", url: "#mira-el-ultimo-video", children: [
       ]},
     ];
 
 </script>
-    <script src="../js/base.js?v=2"></script>
+    <script src="../js/hl.js?v=3"></script>
+    <script src="../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

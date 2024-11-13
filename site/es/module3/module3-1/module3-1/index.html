@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -50,17 +57,17 @@
       {title: "Editor Visual", url: "#editor-visual", children: [
       ]},
       {title: "Agregar un Nodo", url: "#agregar-un-nodo", children: [
-          {title: "Configurar el nodo Texto del sitio web", url: "#configurar-el-nodo-texto-del-sitio-web" },
+          {title: htmlDecode("Configurar el nodo Texto del sitio web"), url: "#configurar-el-nodo-texto-del-sitio-web" },
       ]},
       {title: "Agregar un Segundo Nodo", url: "#agregar-un-segundo-nodo", children: [
-          {title: "Encadenar el nodo LLM", url: "#encadenar-el-nodo-llm" },
-          {title: "Configurar el nodo LLM", url: "#configurar-el-nodo-llm" },
+          {title: htmlDecode("Encadenar el nodo LLM"), url: "#encadenar-el-nodo-llm" },
+          {title: htmlDecode("Configurar el nodo LLM"), url: "#configurar-el-nodo-llm" },
       ]},
       {title: "Agregar un Tercer Nodo", url: "#agregar-un-tercer-nodo", children: [
-          {title: "Configurar el nodo LLM", url: "#configurar-el-nodo-llm_1" },
+          {title: htmlDecode("Configurar el nodo LLM"), url: "#configurar-el-nodo-llm_1" },
       ]},
       {title: "Evaluar el Flujo de mAIstro", url: "#evaluar-el-flujo-de-maistro", children: [
-          {title: "Descargar los contenidos generados", url: "#descargar-los-contenidos-generados" },
+          {title: htmlDecode("Descargar los contenidos generados"), url: "#descargar-los-contenidos-generados" },
       ]},
       {title: "Depurar el Flujo", url: "#depurar-el-flujo", children: [
       ]},
@@ -71,7 +78,8 @@
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

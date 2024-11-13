@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../../..';
   var is_top_frame = false;
     
@@ -50,12 +57,12 @@
       {title: "Conceitos b\u00e1sicos - Come\u00e7ando", url: "#conceitos-basicos-comecando", children: [
       ]},
       {title: "Dados - Conectar-se \u00e0 sua Base de Conhecimento", url: "#dados-conectar-se-a-sua-base-de-conhecimento", children: [
-          {title: "Adicionar informa\u00e7\u00f5es de Base de Conhecimento", url: "#adicionar-informacoes-de-base-de-conhecimento" },
-          {title: "\u26a0\ufe0f Para criar seu pr\u00f3prio \u00edndice Kendra para fazer o laborat\u00f3rio", url: "#para-criar-seu-proprio-indice-kendra-para-fazer-o-laboratorio" },
+          {title: htmlDecode("Adicionar informa\u00e7\u00f5es de Base de Conhecimento"), url: "#adicionar-informacoes-de-base-de-conhecimento" },
+          {title: htmlDecode("\u26a0\ufe0f Para criar seu pr\u00f3prio \u00edndice Kendra para fazer o laborat\u00f3rio"), url: "#para-criar-seu-proprio-indice-kendra-para-fazer-o-laboratorio" },
       ]},
       {title: "Organizar - Sa\u00eddas e Categorias", url: "#organizar-saidas-e-categorias", children: [
-          {title: "Categoriza\u00e7\u00e3o", url: "#categorizacao" },
-          {title: "Framework do Agente Virtual", url: "#framework-do-agente-virtual" },
+          {title: htmlDecode("Categoriza\u00e7\u00e3o"), url: "#categorizacao" },
+          {title: htmlDecode("Framework do Agente Virtual"), url: "#framework-do-agente-virtual" },
       ]},
       {title: "Ajustar - Ajustar para seus Dados", url: "#ajustar-ajustar-para-seus-dados", children: [
       ]},
@@ -66,7 +73,8 @@
     ];
 
 </script>
-    <script src="../../../../../js/base.js?v=2"></script>
+    <script src="../../../../../js/hl.js?v=3"></script>
+    <script src="../../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

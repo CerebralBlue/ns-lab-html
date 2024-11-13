@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../../..';
   var is_top_frame = false;
     
@@ -54,11 +61,11 @@
       {title: "B\u00e1sicos - Primeros pasos", url: "#basicos-primeros-pasos", children: [
       ]},
       {title: "Datos - Conectar a tu base de conocimientos", url: "#datos-conectar-a-tu-base-de-conocimientos", children: [
-          {title: "Agregar informaci\u00f3n de la base de conocimientos", url: "#agregar-informacion-de-la-base-de-conocimientos" },
+          {title: htmlDecode("Agregar informaci\u00f3n de la base de conocimientos"), url: "#agregar-informacion-de-la-base-de-conocimientos" },
       ]},
       {title: "Organizar - Salidas y categor\u00edas", url: "#organizar-salidas-y-categorias", children: [
-          {title: "Categorizaci\u00f3n", url: "#categorizacion" },
-          {title: "Marco de agente virtual", url: "#marco-de-agente-virtual" },
+          {title: htmlDecode("Categorizaci\u00f3n"), url: "#categorizacion" },
+          {title: htmlDecode("Marco de agente virtual"), url: "#marco-de-agente-virtual" },
       ]},
       {title: "Sintonizar - Ajustar para tus datos", url: "#sintonizar-ajustar-para-tus-datos", children: [
       ]},
@@ -69,7 +76,8 @@
     ];
 
 </script>
-    <script src="../../../../../js/base.js?v=2"></script>
+    <script src="../../../../../js/hl.js?v=3"></script>
+    <script src="../../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

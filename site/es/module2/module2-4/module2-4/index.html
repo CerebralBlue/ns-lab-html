@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -56,9 +63,9 @@
       {title: "Priorizar la documentaci\u00f3n", url: "#priorizar-la-documentacion", children: [
       ]},
       {title: "Gobernanza de la anal\u00edtica de intenciones", url: "#gobernanza-de-la-analitica-de-intenciones", children: [
-          {title: "Conocimientos de configuraci\u00f3n", url: "#conocimientos-de-configuracion" },
-          {title: "Conocimientos de documentaci\u00f3n", url: "#conocimientos-de-documentacion" },
-          {title: "Conocimientos sem\u00e1nticos", url: "#conocimientos-semanticos" },
+          {title: htmlDecode("Conocimientos de configuraci\u00f3n"), url: "#conocimientos-de-configuracion" },
+          {title: htmlDecode("Conocimientos de documentaci\u00f3n"), url: "#conocimientos-de-documentacion" },
+          {title: htmlDecode("Conocimientos sem\u00e1nticos"), url: "#conocimientos-semanticos" },
       ]},
       {title: "Reducci\u00f3n de documentos m\u00e1ximos, aumento del tama\u00f1o del fragmento", url: "#reduccion-de-documentos-maximos-aumento-del-tamano-del-fragmento_1", children: [
       ]},
@@ -69,19 +76,20 @@
       {title: "Priorizar la documentaci\u00f3n", url: "#priorizar-la-documentacion_1", children: [
       ]},
       {title: "Gobernanza de la anal\u00edtica de intenciones", url: "#gobernanza-de-la-analitica-de-intenciones_1", children: [
-          {title: "Conocimientos de configuraci\u00f3n", url: "#conocimientos-de-configuracion_1" },
-          {title: "Conocimientos de documentaci\u00f3n", url: "#conocimientos-de-documentacion_1" },
-          {title: "Conocimientos sem\u00e1nticos", url: "#conocimientos-semanticos_1" },
+          {title: htmlDecode("Conocimientos de configuraci\u00f3n"), url: "#conocimientos-de-configuracion_1" },
+          {title: htmlDecode("Conocimientos de documentaci\u00f3n"), url: "#conocimientos-de-documentacion_1" },
+          {title: htmlDecode("Conocimientos sem\u00e1nticos"), url: "#conocimientos-semanticos_1" },
       ]},
       {title: "Manejo de Informaci\u00f3n Personal Identificable (PII)", url: "#manejo-de-informacion-personal-identificable-pii", children: [
-          {title: "Establecer Filtros de PII basados en LLM", url: "#establecer-filtros-de-pii-basados-en-llm" },
-          {title: "Buscar una Consulta", url: "#buscar-una-consulta" },
-          {title: "Inspeccionar PII", url: "#inspeccionar-pii" },
+          {title: htmlDecode("Establecer Filtros de PII basados en LLM"), url: "#establecer-filtros-de-pii-basados-en-llm" },
+          {title: htmlDecode("Buscar una Consulta"), url: "#buscar-una-consulta" },
+          {title: htmlDecode("Inspeccionar PII"), url: "#inspeccionar-pii" },
       ]},
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

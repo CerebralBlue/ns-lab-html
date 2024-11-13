@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -56,20 +63,21 @@
       {title: "Data - Connect to your KnowledgeBase", url: "#data-connect-to-your-knowledgebase", children: [
       ]},
       {title: "Organize - Outputs and Categories", url: "#organize-outputs-and-categories", children: [
-          {title: "Categorization", url: "#categorization" },
-          {title: "Virtual Agent Framework", url: "#virtual-agent-framework" },
+          {title: htmlDecode("Categorization"), url: "#categorization" },
+          {title: htmlDecode("Virtual Agent Framework"), url: "#virtual-agent-framework" },
       ]},
       {title: "Tune - Tune for your Data", url: "#tune-tune-for-your-data", children: [
       ]},
       {title: "Configure - KnowledgeBase Connection", url: "#configure-knowledgebase-connection", children: [
       ]},
       {title: "Ready", url: "#ready", children: [
-          {title: "Questions and Answers", url: "#questions-and-answers" },
+          {title: htmlDecode("Questions and Answers"), url: "#questions-and-answers" },
       ]},
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

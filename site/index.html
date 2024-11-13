@@ -39,25 +39,33 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '.';
   var is_top_frame = (window === window.parent);
     
     var pageToc = [
       {title: "Welcome", url: "#welcome", children: [
-          {title: "Module 1: Configuration and Integration", url: "#module-1-configuration-and-integration" },
-          {title: "Module 2: Seeking Answers", url: "#module-2-seeking-answers" },
-          {title: "Module 3: Exploring mAIstro", url: "#module-3-exploring-maistro" },
+          {title: htmlDecode("Module 1: Configuration and Integration"), url: "#module-1-configuration-and-integration" },
+          {title: htmlDecode("Module 2: Seeking Answers"), url: "#module-2-seeking-answers" },
+          {title: htmlDecode("Module 3: Exploring mAIstro"), url: "#module-3-exploring-maistro" },
       ]},
       {title: "Check Out the Latest Videos", url: "#check-out-the-latest-videos", children: [
       ]},
     ];
 
 </script>
-    <script src="./js/base.js?v=2"></script>
+    <script src="./js/hl.js?v=3"></script>
+    <script src="./js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
@@ -427,5 +435,5 @@
 </script></body>
 </html>
 <!--
-Build Date UTC : 2024-10-30 16:41:28.026847+00:00
+Build Date UTC : 2024-11-13 23:10:53.487020+00:00
 -->

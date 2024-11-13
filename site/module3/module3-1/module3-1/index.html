@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../..';
   var is_top_frame = false;
     
@@ -50,17 +57,17 @@
       {title: "Visual Editor", url: "#visual-editor", children: [
       ]},
       {title: "Add a Node", url: "#add-a-node", children: [
-          {title: "Configure the Website Text Node", url: "#configure-the-website-text-node" },
+          {title: htmlDecode("Configure the Website Text Node"), url: "#configure-the-website-text-node" },
       ]},
       {title: "Add a Second Node", url: "#add-a-second-node", children: [
-          {title: "Chain the LLM Node", url: "#chain-the-llm-node" },
-          {title: "Configure the LLM Node", url: "#configure-the-llm-node" },
+          {title: htmlDecode("Chain the LLM Node"), url: "#chain-the-llm-node" },
+          {title: htmlDecode("Configure the LLM Node"), url: "#configure-the-llm-node" },
       ]},
       {title: "Add a Third Node", url: "#add-a-third-node", children: [
-          {title: "Configure the LLM Node", url: "#configure-the-llm-node_1" },
+          {title: htmlDecode("Configure the LLM Node"), url: "#configure-the-llm-node_1" },
       ]},
       {title: "Evaluate the mAIstro Flow", url: "#evaluate-the-maistro-flow", children: [
-          {title: "Download Generated Contents", url: "#download-generated-contents" },
+          {title: htmlDecode("Download Generated Contents"), url: "#download-generated-contents" },
       ]},
       {title: "Debug the Flow", url: "#debug-the-flow", children: [
       ]},
@@ -71,7 +78,8 @@
     ];
 
 </script>
-    <script src="../../../js/base.js?v=2"></script>
+    <script src="../../../js/hl.js?v=3"></script>
+    <script src="../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -50,17 +57,17 @@
       {title: "Editor Visual", url: "#editor-visual", children: [
       ]},
       {title: "Adicione um N\u00f3", url: "#adicione-um-no", children: [
-          {title: "Configure o N\u00f3 de Texto do Site", url: "#configure-o-no-de-texto-do-site" },
+          {title: htmlDecode("Configure o N\u00f3 de Texto do Site"), url: "#configure-o-no-de-texto-do-site" },
       ]},
       {title: "Adicione um Segundo N\u00f3", url: "#adicione-um-segundo-no", children: [
-          {title: "Conecte o N\u00f3 LLM", url: "#conecte-o-no-llm" },
-          {title: "Configure o N\u00f3 LLM", url: "#configure-o-no-llm" },
+          {title: htmlDecode("Conecte o N\u00f3 LLM"), url: "#conecte-o-no-llm" },
+          {title: htmlDecode("Configure o N\u00f3 LLM"), url: "#configure-o-no-llm" },
       ]},
       {title: "Adicione um Terceiro N\u00f3", url: "#adicione-um-terceiro-no", children: [
-          {title: "Configure o N\u00f3 LLM", url: "#configure-o-no-llm_1" },
+          {title: htmlDecode("Configure o N\u00f3 LLM"), url: "#configure-o-no-llm_1" },
       ]},
       {title: "Avalie o Fluxo do mAIstro", url: "#avalie-o-fluxo-do-maistro", children: [
-          {title: "Baixe o Conte\u00fado Gerado", url: "#baixe-o-conteudo-gerado" },
+          {title: htmlDecode("Baixe o Conte\u00fado Gerado"), url: "#baixe-o-conteudo-gerado" },
       ]},
       {title: "Depurar o Fluxo", url: "#depurar-o-fluxo", children: [
       ]},
@@ -71,7 +78,8 @@
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

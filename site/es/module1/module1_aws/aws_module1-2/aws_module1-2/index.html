@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../../..';
   var is_top_frame = false;
     
@@ -52,8 +59,8 @@
       {title: "Datos - Con\u00e9ctese a su Base de Conocimiento", url: "#datos-conectese-a-su-base-de-conocimiento", children: [
       ]},
       {title: "Organizar - Resultados y categor\u00edas", url: "#organizar-resultados-y-categorias", children: [
-          {title: "Categorizaci\u00f3n", url: "#categorizacion" },
-          {title: "Modelo de Agente Virtual", url: "#modelo-de-agente-virtual" },
+          {title: htmlDecode("Categorizaci\u00f3n"), url: "#categorizacion" },
+          {title: htmlDecode("Modelo de Agente Virtual"), url: "#modelo-de-agente-virtual" },
       ]},
       {title: "Ajustar datos", url: "#ajustar-datos", children: [
       ]},
@@ -62,12 +69,13 @@
       {title: "Listo", url: "#listo", children: [
       ]},
       {title: "Preguntas y Respuestas", url: "#preguntas-y-respuestas", children: [
-          {title: "\u26a0\ufe0f Para crear su propio \u00edndice de Kendra para hacer el laboratorio", url: "#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" },
+          {title: htmlDecode("\u26a0\ufe0f Para crear su propio \u00edndice de Kendra para hacer el laboratorio"), url: "#para-crear-su-propio-indice-de-kendra-para-hacer-el-laboratorio" },
       ]},
     ];
 
 </script>
-    <script src="../../../../../js/base.js?v=2"></script>
+    <script src="../../../../../js/hl.js?v=3"></script>
+    <script src="../../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

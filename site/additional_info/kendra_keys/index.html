@@ -39,29 +39,37 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Setting up AWS Kendra Index and Access Keys", url: "#setting-up-aws-kendra-index-and-access-keys", children: [
-          {title: "Access Amazon Kendra", url: "#access-amazon-kendra" },
-          {title: "Specify Index Details", url: "#specify-index-details" },
-          {title: "Configure User Access Control", url: "#configure-user-access-control" },
-          {title: "Add Additional Capacity", url: "#add-additional-capacity" },
-          {title: "Review and Create", url: "#review-and-create" },
-          {title: "Kendra Index ID", url: "#kendra-index-id" },
-          {title: "Create User", url: "#create-user" },
-          {title: "Create Access Key", url: "#create-access-key" },
-          {title: "AWS Role Access Keys", url: "#aws-role-access-keys" },
+          {title: htmlDecode("Access Amazon Kendra"), url: "#access-amazon-kendra" },
+          {title: htmlDecode("Specify Index Details"), url: "#specify-index-details" },
+          {title: htmlDecode("Configure User Access Control"), url: "#configure-user-access-control" },
+          {title: htmlDecode("Add Additional Capacity"), url: "#add-additional-capacity" },
+          {title: htmlDecode("Review and Create"), url: "#review-and-create" },
+          {title: htmlDecode("Kendra Index ID"), url: "#kendra-index-id" },
+          {title: htmlDecode("Create User"), url: "#create-user" },
+          {title: htmlDecode("Create Access Key"), url: "#create-access-key" },
+          {title: htmlDecode("AWS Role Access Keys"), url: "#aws-role-access-keys" },
       ]},
     ];
 
 </script>
-    <script src="../../js/base.js?v=2"></script>
+    <script src="../../js/hl.js?v=3"></script>
+    <script src="../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

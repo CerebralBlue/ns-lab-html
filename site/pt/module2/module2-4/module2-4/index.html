@@ -39,10 +39,17 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../../..';
   var is_top_frame = false;
     
@@ -56,21 +63,22 @@
       {title: "Priorizando a Documenta\u00e7\u00e3o", url: "#priorizando-a-documentacao", children: [
       ]},
       {title: "Governan\u00e7a da An\u00e1lise de Inten\u00e7\u00e3o", url: "#governanca-da-analise-de-intencao", children: [
-          {title: "Insights de Configura\u00e7\u00e3o", url: "#insights-de-configuracao" },
-          {title: "Insights de Documenta\u00e7\u00e3o", url: "#insights-de-documentacao" },
-          {title: "Insights Sem\u00e2nticos", url: "#insights-semanticos" },
+          {title: htmlDecode("Insights de Configura\u00e7\u00e3o"), url: "#insights-de-configuracao" },
+          {title: htmlDecode("Insights de Documenta\u00e7\u00e3o"), url: "#insights-de-documentacao" },
+          {title: htmlDecode("Insights Sem\u00e2nticos"), url: "#insights-semanticos" },
       ]},
       {title: "Tratamento de PII", url: "#tratamento-de-pii", children: [
-          {title: "Desativar \"For\u00e7ar Respostas da Base de Conhecimento\"", url: "#desativar-forcar-respostas-da-base-de-conhecimento" },
-          {title: "Definir os Filtros baseados em LLM PII", url: "#definir-os-filtros-baseados-em-llm-pii" },
-          {title: "Procure uma resposta", url: "#procure-uma-resposta" },
-          {title: "Verifica\u00e7\u00e3o de PII", url: "#verificacao-de-pii" },
-          {title: "Fa\u00e7a uma pergunta adicional", url: "#faca-uma-pergunta-adicional" },
+          {title: htmlDecode("Desativar \"For\u00e7ar Respostas da Base de Conhecimento\""), url: "#desativar-forcar-respostas-da-base-de-conhecimento" },
+          {title: htmlDecode("Definir os Filtros baseados em LLM PII"), url: "#definir-os-filtros-baseados-em-llm-pii" },
+          {title: htmlDecode("Procure uma resposta"), url: "#procure-uma-resposta" },
+          {title: htmlDecode("Verifica\u00e7\u00e3o de PII"), url: "#verificacao-de-pii" },
+          {title: htmlDecode("Fa\u00e7a uma pergunta adicional"), url: "#faca-uma-pergunta-adicional" },
       ]},
     ];
 
 </script>
-    <script src="../../../../js/base.js?v=2"></script>
+    <script src="../../../../js/hl.js?v=3"></script>
+    <script src="../../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

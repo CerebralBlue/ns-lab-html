@@ -39,24 +39,32 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../../..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Agregar un modelo de lenguaje grande (LLM) a NeuralSeek", url: "#agregar-un-modelo-de-lenguaje-grande-llm-a-neuralseek", children: [
-          {title: "Agregar un LLM", url: "#agregar-un-llm" },
-          {title: "Selecci\u00f3n de plataforma y LLM", url: "#seleccion-de-plataforma-y-llm" },
-          {title: "Funciones de LLM", url: "#funciones-de-llm" },
-          {title: "Probar el LLM", url: "#probar-el-llm" },
+          {title: htmlDecode("Agregar un LLM"), url: "#agregar-un-llm" },
+          {title: htmlDecode("Selecci\u00f3n de plataforma y LLM"), url: "#seleccion-de-plataforma-y-llm" },
+          {title: htmlDecode("Funciones de LLM"), url: "#funciones-de-llm" },
+          {title: htmlDecode("Probar el LLM"), url: "#probar-el-llm" },
       ]},
     ];
 
 </script>
-    <script src="../../../js/base.js?v=2"></script>
+    <script src="../../../js/hl.js?v=3"></script>
+    <script src="../../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];

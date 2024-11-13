@@ -39,24 +39,32 @@
     <base target="_top">
     <script>
       hljs.addPlugin(new CopyButtonPlugin());
-      hljs.configure({languages:[]});
-      hljs.highlightAll();
     </script>
     <script>
+  function htmlDecode(input){
+    if (!input || (input && !input.includes('&')))
+      return input;
+
+    var e = document.createElement('textarea');
+    e.innerHTML = input;
+    // handle case of empty input
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
   var base_url = '../..';
   var is_top_frame = false;
     
     var pageToc = [
       {title: "Connect a Large Language Model (LLM) with NeuralSeek", url: "#connect-a-large-language-model-llm-with-neuralseek", children: [
-          {title: "Add an LLM", url: "#add-an-llm" },
-          {title: "Platform and LLM Selection", url: "#platform-and-llm-selection" },
-          {title: "LLM Functions", url: "#llm-functions" },
-          {title: "Test the LLM", url: "#test-the-llm" },
+          {title: htmlDecode("Add an LLM"), url: "#add-an-llm" },
+          {title: htmlDecode("Platform and LLM Selection"), url: "#platform-and-llm-selection" },
+          {title: htmlDecode("LLM Functions"), url: "#llm-functions" },
+          {title: htmlDecode("Test the LLM"), url: "#test-the-llm" },
       ]},
     ];
 
 </script>
-    <script src="../../js/base.js?v=2"></script>
+    <script src="../../js/hl.js?v=3"></script>
+    <script src="../../js/base.js?v=3"></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE5XX6X6Z7"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
