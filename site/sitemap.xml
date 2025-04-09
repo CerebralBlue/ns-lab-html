@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://labs.neuralseek.com/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/"/>
@@ -10,7 +10,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/additional_info/aws_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_llm_info/"/>
@@ -18,7 +18,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/additional_info/ibm_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_llm_info/"/>
@@ -26,15 +26,31 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/additional_info/kendra_keys/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/additional_info/kendra_keys/"/>
     </url>
     <url>
+        <loc>https://labs.neuralseek.com/certification/certification/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/certification/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/certification/linkedin/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/linkedin/"/>
+    </url>
+    <url>
         <loc>https://labs.neuralseek.com/closing/closing/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/closing/closing/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/closing/closing/"/>
@@ -42,7 +58,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1/"/>
@@ -50,7 +66,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_aws/module1_aws/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/module1_aws/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/module1_aws/"/>
@@ -58,7 +74,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_aws/aws_module1-1/aws_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
@@ -66,7 +82,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_aws/aws_module1-2/aws_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
@@ -74,7 +90,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_aws/aws_module1-3/aws_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
@@ -82,7 +98,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_ibm/module1_ibm/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/module1_ibm/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/module1_ibm/"/>
@@ -90,7 +106,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-1/ibm_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
@@ -98,7 +114,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-2/ibm_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
@@ -106,7 +122,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-3/ibm_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
@@ -114,7 +130,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module2/module2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2/"/>
@@ -122,7 +138,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module2/module2-1/module2-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-1/module2-1/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-1/module2-1/"/>
@@ -130,7 +146,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module2/module2-2/module2-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-2/module2-2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-2/module2-2/"/>
@@ -138,7 +154,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module2/module2-3/module2-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-3/module2-3/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-3/module2-3/"/>
@@ -146,7 +162,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module2/module2-4/module2-4/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-4/module2-4/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-4/module2-4/"/>
@@ -154,7 +170,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module3/module3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3/"/>
@@ -162,7 +178,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module3/module3-1/module3-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-1/module3-1/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3-1/module3-1/"/>
@@ -170,15 +186,39 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/module3/module3-2/module3-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module3/module3-2/module3-2/"/>
     </url>
     <url>
+        <loc>https://labs.neuralseek.com/module4/module4/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/module4/module4-1/module4-1/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-1/module4-1/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/module4/module4-2/module4-2/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-2/module4-2/"/>
+    </url>
+    <url>
         <loc>https://labs.neuralseek.com/es/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/"/>
@@ -186,7 +226,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/additional_info/aws_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/aws_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_llm_info/"/>
@@ -194,7 +234,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/additional_info/ibm_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/ibm_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_llm_info/"/>
@@ -202,15 +242,31 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/additional_info/kendra_keys/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/additional_info/kendra_keys/"/>
     </url>
     <url>
+        <loc>https://labs.neuralseek.com/es/certification/certification/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/certification/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/es/certification/linkedin/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/linkedin/"/>
+    </url>
+    <url>
         <loc>https://labs.neuralseek.com/es/closing/closing/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/closing/closing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/closing/closing/"/>
@@ -218,7 +274,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1/"/>
@@ -226,7 +282,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_aws/module1_aws/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/module1_aws/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/module1_aws/"/>
@@ -234,7 +290,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-1/aws_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
@@ -242,7 +298,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-2/aws_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
@@ -250,7 +306,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-3/aws_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
@@ -258,7 +314,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_ibm/module1_ibm/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/module1_ibm/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/module1_ibm/"/>
@@ -266,7 +322,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-1/ibm_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
@@ -274,7 +330,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-2/ibm_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
@@ -282,7 +338,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-3/ibm_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
@@ -290,7 +346,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module2/module2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2/"/>
@@ -298,7 +354,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module2/module2-1/module2-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-1/module2-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-1/module2-1/"/>
@@ -306,7 +362,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module2/module2-2/module2-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-2/module2-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-2/module2-2/"/>
@@ -314,7 +370,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module2/module2-3/module2-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-3/module2-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-3/module2-3/"/>
@@ -322,7 +378,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module2/module2-4/module2-4/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module2/module2-4/module2-4/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-4/module2-4/"/>
@@ -330,7 +386,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module3/module3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3/"/>
@@ -338,7 +394,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module3/module3-1/module3-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3-1/module3-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-1/module3-1/"/>
@@ -346,15 +402,39 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/es/module3/module3-2/module3-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module3/module3-2/module3-2/"/>
     </url>
     <url>
+        <loc>https://labs.neuralseek.com/es/module4/module4/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/es/module4/module4-1/module4-1/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-1/module4-1/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/es/module4/module4-2/module4-2/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-2/module4-2/"/>
+    </url>
+    <url>
         <loc>https://labs.neuralseek.com/pt/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/"/>
@@ -362,7 +442,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/additional_info/aws_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/additional_info/aws_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/aws_llm_info/"/>
@@ -370,7 +450,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/additional_info/ibm_llm_info/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/additional_info/ibm_llm_info/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/ibm_llm_info/"/>
@@ -378,15 +458,31 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/additional_info/kendra_keys/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/additional_info/kendra_keys/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/additional_info/kendra_keys/"/>
     </url>
     <url>
+        <loc>https://labs.neuralseek.com/pt/certification/certification/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/certification/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/certification/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/pt/certification/linkedin/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/certification/linkedin/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/certification/linkedin/"/>
+    </url>
+    <url>
         <loc>https://labs.neuralseek.com/pt/closing/closing/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/closing/closing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/closing/closing/"/>
@@ -394,7 +490,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1/"/>
@@ -402,7 +498,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_aws/module1_aws/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_aws/module1_aws/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/module1_aws/"/>
@@ -410,7 +506,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-1/aws_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-1/aws_module1-1/"/>
@@ -418,7 +514,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-2/aws_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-2/aws_module1-2/"/>
@@ -426,7 +522,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-3/aws_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_aws/aws_module1-3/aws_module1-3/"/>
@@ -434,7 +530,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_ibm/module1_ibm/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_ibm/module1_ibm/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/module1_ibm/"/>
@@ -442,7 +538,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-1/ibm_module1-1/"/>
@@ -450,7 +546,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-2/ibm_module1-2/"/>
@@ -458,7 +554,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module1/module1_ibm/ibm_module1-3/ibm_module1-3/"/>
@@ -466,7 +562,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module2/module2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module2/module2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2/"/>
@@ -474,7 +570,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module2/module2-1/module2-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module2/module2-1/module2-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-1/module2-1/"/>
@@ -482,7 +578,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module2/module2-2/module2-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module2/module2-2/module2-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-2/module2-2/"/>
@@ -490,7 +586,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module2/module2-3/module2-3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module2/module2-3/module2-3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-3/module2-3/"/>
@@ -498,7 +594,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module2/module2-4/module2-4/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module2/module2-4/module2-4/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module2/module2-4/module2-4/"/>
@@ -506,7 +602,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module3/module3/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module3/module3/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3/"/>
@@ -514,7 +610,7 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module3/module3-1/module3-1/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module3/module3-1/module3-1/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-1/module3-1/"/>
@@ -522,10 +618,34 @@
     </url>
     <url>
         <loc>https://labs.neuralseek.com/pt/module3/module3-2/module3-2/</loc>
-        <lastmod>2025-02-14</lastmod>
+        <lastmod>2025-04-09</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module3/module3-2/module3-2/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module3/module3-2/module3-2/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/pt/module4/module4/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/pt/module4/module4-1/module4-1/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-1/module4-1/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-1/module4-1/"/>
+    </url>
+    <url>
+        <loc>https://labs.neuralseek.com/pt/module4/module4-2/module4-2/</loc>
+        <lastmod>2025-04-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://labs.neuralseek.com/pt/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://labs.neuralseek.com/module4/module4-2/module4-2/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://labs.neuralseek.com/es/module4/module4-2/module4-2/"/>
     </url>
 </urlset>
