@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const apiURL = 'https://api-usw.neuralseek.com/v1/511ac1dd124ebcfc5e42d108/mAIstro'; //'https://stagingapi.neuralseek.com/v1/jfrantz_testing_mAIstro/mAIstro';
     const embedcode = '1115148838'; //'2099133463'
     const data = {
-      agent: "labs_certification-v2", //change to single mAIstro template with Email node calling email variable
+      agent: "labs_certification-v2", //change to v3 if Certifer is approved
       params: [{
         name: "email",
         value: inputText
