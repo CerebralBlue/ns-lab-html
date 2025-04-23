@@ -176,6 +176,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return response.json();
       })
+      .then(() => {
+        const successMessage = document.getElementById('success-message');
+        successMessage.style.display = 'block';
+
+        const closeBtn = document.getElementById('close-success');
+        closeBtn.addEventListener('click', () => {
+          successMessage.style.display = 'none';
+        });
+      })
       .catch(error => {
         console.error('Error:', error);
       });
